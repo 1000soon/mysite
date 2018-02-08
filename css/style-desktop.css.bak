@@ -20,8 +20,7 @@ body,input,textarea,select
 }
 .homepage #page
 {
-	padding-top: 3em;
-	padding-bottom: 2em;
+	padding-top: 3em
 }
 
 #main

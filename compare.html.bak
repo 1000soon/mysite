@@ -1,0 +1,304 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Banklist</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />	
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+	</head>
+	<body class="left-sidebar">
+
+	<!-- Header -->
+		<div id="header">
+			<div class="container">					
+				<!-- Logo -->
+				<div id="logo">
+					<h1><a href="#">Bank<b style="color:#e95d3c">l</b>ist</a></h1>
+				</div>				
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="my.html">나의 금리 진단받기</a></li>
+						<li class="active"><a href="compare.html">담보대출 금리 비교</a></li>
+						<li><a href="help.html">대출 도우미</a></li>
+						<li><a href="">고객센터</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	<!-- Header -->
+		
+	<!-- Banner -->
+		<div id="banner">
+			<div class="container">
+			</div>
+		</div>
+	<!-- /Banner -->
+
+	<!-- Main -->
+		<div id="page">
+				
+			<!-- Main -->
+			<div id="main" class="container">
+				<div class="row">
+
+					<div class="3u">
+						<section class="sidebar">
+							<header>
+								<h2>담보대출 금리 비교</h2>
+							</header>
+							<ul class="style1">
+								<li class="active"><a href="#">아파트 매매 잔금 대출</a></li>
+								<li><a href="#">아파트신규/대환 담보 대출</a></li>
+								<li><a href="#">전세자금대출</a></li>
+								<li><a href="#">빌라/주택 담보 대출</a></li>
+								<li><a href="#">오피스텔 담보 대출</a></li>
+								<li><a href="#">기타 부동산 담보 대출</a></li>
+							</ul>
+						</section>					
+					</div>
+				
+					<div class="9u skel-cell-important">
+						<section>
+							<header>
+								<h2>전세자금대출 한도 및 금리 비교</h2>
+								<span class="byline">2018.02.08 기준</span>
+							</header>
+							<form name="form1" method="post">
+								<table>
+									<tr>
+										<td>
+										  <select name="areacode" class="form2" id="areacode" onchange="">
+											 <option value="">-광역시/도-</option>
+											 <option value="1100000">서울</option>
+											 <option value="1410000">경기</option>
+											 <option value="1400000">인천</option>
+											 <option value="1600000">부산</option>
+											 <option value="1700000">대구</option>
+											 <option value="1500000">광주</option>
+											 <option value="1300000">대전</option>
+											 <option value="1680000">울산</option>
+											 <option value="1200000">강원</option>
+											 <option value="1620000">경남</option>
+											 <option value="1710000">경북</option>
+											 <option value="1510000">전남</option>
+											 <option value="1560000">전북</option>
+											 <option value="1310000">충남</option>
+											 <option value="1360000">충북</option>
+											 <option value="1690000">제주</option>
+											 <option value="1900000">세종</option>
+										   </select>
+										   <select name="sigugun" class="form2" id="select2" onchange="">
+											 <option value="">-시/구/군-</option>
+											   <option value="강남구">강남구</option><option value="강동구">강동구</option><option value="강북구">강북구</option><option value="강서구">강서구</option>
+											   <option value="관악구">관악구</option><option value="광진구">광진구</option><option value="구로구">구로구</option><option value="금천구">금천구</option>
+											   <option value="노원구">노원구</option><option value="도봉구">도봉구</option><option value="동대문구">동대문구</option><option value="동작구">동작구</option>
+											   <option value="마포구">마포구</option><option value="서대문구">서대문구</option><option value="서초구">서초구</option><option value="성동구">성동구</option
+											   <option value="성북구">성북구</option><option value="송파구">송파구</option><option value="양천구">양천구</option><option value="영등포구">영등포구</option>
+											   <option value="용산구">용산구</option><option value="은평구">은평구</option><option value="종로구">종로구</option><option value="중구">중구</option>
+											   <option value="중랑구">중랑구</option>
+										   </select>
+										   <select name="dong" class="form2" id="select3" onchange="loadData3(this,'danji')">
+											 <option value="">-읍/면/동-</option>
+										   <option value="개포동">개포동</option><option value="논현동">논현동</option><option value="대치동">대치동</option><option value="도곡동">도곡동</option><option value="삼성동">삼성동</option><option value="세곡동">세곡동</option><option value="수서동">수서동</option><option value="신사동">신사동</option><option value="압구정동">압구정동</option><option value="역삼동">역삼동</option><option value="율현동">율현동</option><option value="일원동">일원동</option><option value="자곡동">자곡동</option><option value="청담동">청담동</option></select>
+										   <select name="danji" class="form2" id="select4" onchange="loadData4(this,'pyung')">
+											 <option value="">-아파트-</option>
+										   <option value="<해당 아파트 없음>">&lt;해당 아파트 없음&gt;</option><option value="강남파라곤">강남파라곤</option><option value="거평프리젠">거평프리젠</option><option value="경남논현">경남논현</option><option value="논현(신동아)">논현(신동아)</option><option value="논현동">논현동</option><option value="논현동동부센트레빌">논현동동부센트레빌</option><option value="논현동동양파라곤">논현동동양파라곤</option><option value="논현동한진로즈힐">논현동한진로즈힐</option><option value="논현동한화꿈에그린">논현동한화꿈에그린</option><option value="논현두산위브">논현두산위브</option><option value="논현베르빌">논현베르빌</option><option value="논현e-편한세상">논현e-편한세상</option><option value="동현">동현</option><option value="마일스디오빌">마일스디오빌</option><option value="쌍용">쌍용</option><option value="아크로힐스논현">아크로힐스논현</option><option value="우민">우민</option><option value="청학">청학</option></select>
+										   <select name="pyung" class="form2" id="pyung">
+											 <option value="">-평형-</option>
+										   <option value="100.88㎡">100.88㎡(31 평)</option><option value="140.85㎡">140.85㎡(43 평)</option><option value="143.68㎡">143.68㎡(43 평)</option><option value="179.7㎡">179.7㎡(54 평)</option><option value="203.87㎡">203.87㎡(62 평)</option>
+										   </select>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											  <select name="bankcode" class="form2" onchange="">
+							 <option value="">선택</option>
+							 <option value="1">매매가</option>
+							 <option value="1">분양가</option>
+						   </select>
+						  <input type="text" name="bondhigh" id="bondhigh" class="form2" size="15" style="background: rgb(255, 255, 255); text-align: right; color: rgb(0, 0, 0);" onkeyup="inputNumberFormat(this);numberKor(this,'kor');"><font color="white"> 만원 <span id="kor">(육억원)</span></font>
+										</td>
+									</tr>
+									<tr><td style="text-align:center"><input type="submit" class="button" value="조회하기"></td></tr>      
+								</table>
+						 </form>
+				<br><hr><br>
+							<h4>한도 조회 분석 결과</h4>
+							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tbody><tr>
+								  <td height="2" colspan="6" bgcolor="#e0e0e0"></td>
+								</tr>
+								<tr>
+								  <td height="31" align="center" bgcolor="#f2f2f2"></td>
+								  <td align="center" bgcolor="#f2f2f2"><strong>금융기관명</strong></td>
+								  <td align="center" bgcolor="#f2f2f2"><strong>유형</strong></td>
+								  <td align="center" bgcolor="#f2f2f2"><strong>금리</strong></td>
+								  <td align="center" bgcolor="#f2f2f2"><strong>한도비율</strong></td>
+								  <td align="center" bgcolor="#f2f2f2"><strong>대출한도</strong></td>
+								</tr>
+								<tr>
+								  <td height="1" colspan="6" bgcolor="#e0e0e0"></td>
+								</tr>
+								<tr>
+								  <td width="40" height="50" align="center" style="border-right: 1px solid #e0e0e0"><input type="checkbox" name="loanlist" id="checkbox2" value="297"></td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0">A 은행</td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0">변동</td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0"><strong><font color="#FF6600">2.91%~3.51%</font></strong></td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0">80%</td>
+								  <td height="50" align="center"><strong class="text_18"><font color="#CC0000">8,000</font></strong> 만원</td>
+								</tr>
+								<tr>
+								  <td height="1" colspan="6" bgcolor="#e0e0e0"></td>
+								</tr>
+								<tr>
+								  <td width="40" height="50" align="center" style="border-right: 1px solid #e0e0e0"><input type="checkbox" name="loanlist" id="checkbox2" value="320"></td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0">B 은행</td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0">변동</td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0"><strong><font color="#FF6600">2.92%~3.39%</font></strong></td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0">80%</td>
+								  <td height="50" align="center"><strong class="text_18"><font color="#CC0000">8,000</font></strong> 만원</td>
+								</tr>
+								<tr>
+								  <td height="1" colspan="6" bgcolor="#e0e0e0"></td>
+								</tr>
+								<tr>
+								  <td width="40" height="50" align="center" style="border-right: 1px solid #e0e0e0"><input type="checkbox" name="loanlist" id="checkbox2" value="295"></td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0">C 은행</td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0">변동</td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0"><strong><font color="#FF6600">2.93%~3.33%</font></strong></td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0">80%</td>
+								  <td height="50" align="center"><strong class="text_18"><font color="#CC0000">8,000</font></strong> 만원</td>
+								</tr>
+								<tr>
+								  <td height="1" colspan="6" bgcolor="#e0e0e0"></td>
+								</tr>
+								<tr>
+								  <td width="40" height="50" align="center" style="border-right: 1px solid #e0e0e0"><input type="checkbox" name="loanlist" id="checkbox2" value="296"></td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0">D 은행</td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0">변동</td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0"><strong><font color="#FF6600">2.93%~3.28%</font></strong></td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0">80%</td>
+								  <td height="50" align="center"><strong class="text_18"><font color="#CC0000">8,000</font></strong> 만원</td>
+								</tr>
+								<tr>
+								  <td height="1" colspan="6" bgcolor="#e0e0e0"></td>
+								</tr>
+								<tr>
+								  <td width="40" height="50" align="center" style="border-right: 1px solid #e0e0e0"><input type="checkbox" name="loanlist" id="checkbox2" value="321"></td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0">E 은행</td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0">변동</td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0"><strong><font color="#FF6600">3.06%~3.66%</font></strong></td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0">80%</td>
+								  <td height="50" align="center"><strong class="text_18"><font color="#CC0000">8,000</font></strong> 만원</td>
+								</tr>
+								<tr>
+								  <td height="1" colspan="6" bgcolor="#e0e0e0"></td>
+								</tr>
+								<tr>
+								  <td width="40" height="50" align="center" style="border-right: 1px solid #e0e0e0"><input type="checkbox" name="loanlist" id="checkbox2" value="298"></td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0">F 은행</td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0">적격고정</td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0"><strong><font color="#FF6600">3.43%~3.81%</font></strong></td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0">80%</td>
+								  <td height="50" align="center"><strong class="text_18"><font color="#CC0000">8,000</font></strong> 만원</td>
+								</tr>
+								<tr>
+								  <td height="1" colspan="6" bgcolor="#e0e0e0"></td>
+								</tr>
+								<tr>
+								  <td width="40" height="50" align="center" style="border-right: 1px solid #e0e0e0"><input type="checkbox" name="loanlist" id="checkbox2" value="304"></td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0">A 보험사</td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0">혼합고정</td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0"><strong><font color="#FF6600">3.74%~4.14%</font></strong></td>
+								  <td height="50" align="center" style="border-right: 1px solid #e0e0e0">80%</td>
+								  <td height="50" align="center"><strong class="text_18"><font color="#CC0000">8,000</font></strong> 만원</td>
+								</tr>
+								<tr>
+								  <td height="1" colspan="6" bgcolor="#e0e0e0"></td>
+								</tr>
+							  </tbody>
+							</table>
+						</section>
+					</div>
+					
+				</div>
+			</div>
+			<!-- Main -->
+
+		</div>
+	<!-- /Main -->
+<br/>
+<br/>
+	<!-- Footer -->
+		<div id="footer">
+			<div class="container">
+				<div class="row">					
+					<div class="4u">
+						<section>
+							<h2>Donec dictum</h2>
+							<ul class="default">
+								<li>
+									<h3>Mauris vulputate dolor sit amet</h3>
+									<p><a href="#">Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</a></p>
+								</li>
+								<li>
+									<h3>Fusce ultrices fringilla metus</h3>
+									<p><a href="#">Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</a></p>
+								</li>
+								<li>
+									<h3>Donec dictum metus in sapien</h3>
+									<p><a href="#">Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</a></p>
+								</li>
+							</ul>
+						</section>
+					</div>
+					<div class="4u">
+						<section>
+							<h2>제휴업체</h2>
+							<p><strong>각 금융권과 제휴하여 전국 은행 상품을 찾아서 비교해 드립니다.</strong></p>
+							*제2금융권 및 보험사, 캐피탈사 상품을 포함합니다.
+							<ul class="style5">
+								<li><a href="#"><img src="images/pics07.jpg" alt=""></a></li>
+								<li><a href="#"><img src="images/pics08.jpg" alt=""></a></li>
+								<li><a href="#"><img src="images/pics09.jpg" alt=""></a></li>
+								<li><a href="#"><img src="images/pics10.jpg" alt=""></a></li>
+								<li><a href="#"><img src="images/pics11.jpg" alt=""></a></li>
+								<li><a href="#"><img src="images/pics12.jpg" alt=""></a></li>
+							</ul>
+							<a href="#" class="button">광고/제휴 문의</a>
+						</section>
+					</div>
+					<div class="4u">
+						<section>
+							<h2>간편 상담 접수</h2>
+							<p><strong>Aliquam erat volutpat. Pellentesque tristique ante ut risus. </strong></p>
+							<p>Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum congue, nibh. Suspendisse dictum porta lectus. Donec placerat odio vel elit.</p>
+							<p>Donec placerat odio vel elit. Nullam ante orci, pellentesque eget, tempus quis, ultrices in, est. Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat.</p>
+							<a href="#" class="button">상담 접수</a>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- /Footer -->
+
+	<!-- Copyright -->
+		<div id="copyright" class="container">
+			Copyright &copy; All right reserved.
+		</div>
+	</body>
+</html>
