@@ -2,7 +2,7 @@
 @import url(nanumgothic.css);
 body
 {
-	background: #202020 url(images/img01.jpg) repeat;
+	background: #202020 url(images/bg_stripe.png) repeat;
 }
 
 body,input,textarea,select
@@ -23,7 +23,7 @@ h1,h2,h3,h4,h5,h6
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
 	{
 		color: inherit;
-		text-decoration: none;
+
 	}
 	
 /* Change this to whatever font weight/color pairing is most suitable */
@@ -41,7 +41,8 @@ em, i
 /* Don't forget to set this to something that matches the design */
 a
 {
-	color: #ff0000;
+	text-decoration: none;
+	color: #5B73D5;
 }
 
 sub
@@ -86,6 +87,26 @@ tr td
 {
 	vertical-align:middle;
 }
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+	background: rgba(144, 144, 144, 0.075);
+	border-radius: 4px;
+	border: none;
+	border: solid 1px #dee1e3;
+	color: inherit;
+	display: inline-block;
+	outline: 0;
+	padding: 0 0.5em;
+	text-decoration: none;
+}
 header
 {
 	margin-bottom: 1em;
@@ -113,11 +134,18 @@ footer
 
 .clear
 {
-	clear: both;
+	clear: both;zoom:1;
 }
-
+.fix {
+}
+.fix::after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
 /* Sections/Articles */
-
 	section,
 	article
 	{
@@ -300,8 +328,8 @@ footer
 		position: relative;
 		display: inline-block;
 		padding: 0.50em 1.5em;
-		background: #e95d3c;
-		border-radius: 6px;
+		background: #5B73D5;
+		border-radius: 4px;
 		text-decoration: none;
 		text-transform: uppercase;
 		font-size: 1.1em;
@@ -862,7 +890,22 @@ footer
 	border-top: 1px solid;
 	border-color: rgba(0,0,0,.2);
 }
-
+#bar
+{
+	padding:1em;background:#eee;
+}
+	#bar dl
+	{
+		margin-bottom:0;
+	}
+	#bar.container dl dt
+	{
+		font-weight:bold;color:#E36442;
+	}
+	#bar.container dl dt, #bar.container dl dd
+	{
+		float:left; margin-right:20px;
+	}
 .sidebar header h2
 {
 	font-size: 1.6em;
@@ -889,14 +932,13 @@ footer
 	float:right;
 }
 
-/*********************************************************************************/
-/* Footer                                                                        */
-/*********************************************************************************/
+/* Footer */
 
 #footer
 {
 	position: relative;
-	color: rgba(255,255,255,.4);
+	/*color: rgba(255,255,255,.4);*/
+	color:#eee;
 }
 
 #footer .container
@@ -919,11 +961,16 @@ footer
 {
 	color: rgba(255,255,255,.7);
 }
-
-/*********************************************************************************/
-/* Copyright                                                                     */
-/*********************************************************************************/
-
+#footer dl{
+	width:350px;margin:0 auto;
+}
+#footer dl dt
+{
+	display:none;
+}
+#footer dl dd{
+	float:left; margin-right:10px;
+}
 #copyright
 {
 	position: relative;
@@ -943,10 +990,6 @@ footer
 	text-decoration: none;
 	color: rgba(255,255,255,.4) !important;
 }
-
-/*********************************************************************************/
-/* Marketing                                                                     */
-/*********************************************************************************/
 
 #marketing
 {

@@ -20,19 +20,21 @@ body,input,textarea,select
 }
 .homepage #page
 {
-	padding-top: 3em;
+	padding-top: 2em;
 	padding-bottom: 2em;
 }
-
-#main
+#page .container
 {
-	margin-top: 2em;
+	margin-bottom: 2em;
+}
+#main
+{	
 	border-top: none;
 }
 .homepage #main
 {
 	margin-top: 2em;
-	padding-top: 4em;
+	padding-top: 1em;
 }
 
 #footer
