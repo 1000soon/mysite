@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Banklist</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />	
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+	</head>
+	<body class="no-sidebar">
+
+	<!-- Header -->
+		<div id="header">
+			<div class="container">					
+				<!-- Logo -->
+				<div id="logo">
+					<h1><a href="index.html">Bank<b style="color:#e95d3c">l</b>ist</a></h1>
+				</div>				
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="my.html">나의 금리 진단받기</a></li>
+						<li><a href="compare.html">담보대출 금리 비교</a></li>
+						<li><a href="help.html">대출 도우미</a></li>
+						<li class="active"><a href="">고객센터</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	<!-- Header -->		
+	<!-- Banner -->
+		<div id="banner">
+			<div class="container">
+			</div>
+		</div>
+	<!-- /Banner -->
+
+	<!-- Main -->
+		<div id="page">				
+			<!-- Main -->
+			<div id="main" class="container">
+				<div class="row">
+					<div class="12u content">
+						<section>
+							<a href="board_insert.php?build=" class="button" >문의하기</a>
+							<br/><br/>
+							<table class="gray border" style="width:100%;">
+								<colgroup>		
+									<col style="width:6%"/>
+									<col style="width:14%"/>					
+									<col style="width:*"/>
+									<col style="width:12%"/>
+									<col style="width:12%"/>				
+								</colgroup>
+								<thead>
+									<tr>						
+										<th>번호</th>
+										<th>작성자</th>					
+										<th>제목</th>
+										<th>조회수</th>
+										<th>등록일</th>				
+									</tr>
+								</thead>
+								<tbody>								
+										<tr><td colspan=6 align=center>등록 된 글이 없습니다.</td></tr>							
+								</tbody>
+							</table>
+							<br/>			
+							<!--페이징-->
+							
+							<!--검색-->
+							<form action="" method="get" id="form1" class="">
+								<select name="searchType" id="searchType">
+									<option value="1">제목</option>
+									<option value="2">작성자</option>
+									<option value="3">제목+내용</option>
+								</select>
+								<input type="text" name="searchVal" id="searchVal" value=""/>
+								<button type="button" onclick="search();"><img src="images/ico/btn_search.png" alt="검색"/></button>						
+								<button type="button" onclick="location.replace('mn_board.php?build=');"><img src="images/ico/btn_return.png" alt="뒤로"/></button>						
+							</form>
+						
+						</section>
+					</div>
+				</div>			
+			</div>
+			<!-- Main -->
+		</div>
+	<!-- /Main -->
+	<br>
+	<!-- Footer -->
+		<div id="footer">
+			<div class="container">		
+					<div class="12u" style="text-align:center;">
+						<section>	
+							<dl>
+								<dt>footer menu</dt>
+								<dd>회사소개</dd>
+								<dd>Sitemap</dd>
+								<dd>개인정보처리방침</dd>
+								<dd>고객센터</dd>								
+							</dl>
+							&nbsp;
+						</section>
+					</div>
+				</div>
+		</div>
+	<!-- /Footer -->
+
+	<!-- Copyright -->
+		<div id="copyright" class="container">
+			Copyright &copy; All right reserved.
+		</div>
+	</body>
+</html>

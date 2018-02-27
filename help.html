@@ -59,7 +59,6 @@
 						<section class="sidebar">
 							<header>
 								<h2>대출 도우미</h2>
-								<p>실시간 무료</p>
 								<ul class="style1">
 									<li class="active"><a href="#">대출계산기</a></li>
 									<li><a href="#">부대비용 &amp; 필요 서류</a></li>
@@ -73,69 +72,49 @@
 					<div class="9u skel-cell-important">
 						<section>
 						<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
-        <form name="frm" method="post" action="lc.asp" onsubmit="return loan()"></form>
-        <input type="hidden" name="cycle" value="1">
-        <input type="hidden" name="cal_Date" value="2018-02-08" readonly="">
-          <input type="hidden" name="loanprice" id="loanprice" value="0">
-          <tbody><tr>
-            <td width="15%" bgcolor="#f7f7f5" height="30" style="border-top:2px solid #ccd5cc;border-right:1px solid #ccd5cc"><b>대출금액</b></td>
-            <td width="55%" style="border-top:2px solid #ccd5cc;padding-left:10px" align="left">
-
-              <input type="text" dir="rtl" name="loanprice2" id="loanprice2" value="0" size="15" onclick="if(this.value==0){this.value='';}" onkeyup="keyprice(this.value);numberKor2(this,'kor');" class="form num-only">원 <span id="kor"></span>
-
-            </td>
-
-          </tr>
-
-          <!--tr>
-            <td colspan="2" height="1"  bgcolor="#d7d7d7"></td>
-          </tr-->
-          <tr>
-            <td height="30" bgcolor="#f7f7f5" style="border-top:1px solid #ccd5cc;border-right:1px solid #ccd5cc"><b>대출기간</b></td>
-            <td style="border-top:1px solid #ccd5cc;padding-left:10px" align="left"><input type="text" dir="rtl" name="period" id="period" value="" size="15" onclick="if(this.value==0){this.value='';}" class="form num-only">개월</td>
-          </tr>
-
-          <tr>
-            <td height="30" bgcolor="#f7f7f5" style="border-top:1px solid #ccd5cc;border-right:1px solid #ccd5cc"><b>대출금리</b></td>
-            <td style="border-top:1px solid #ccd5cc;padding-left:10px" align="left"><input type="text" dir="rtl" name="rate" value="" size="15">%</td>
-
-          </tr>
-          <tr>
-            <td height="30" bgcolor="#f7f7f5" style="border-top:1px solid #ccd5cc;border-right:1px solid #ccd5cc"><b>거치기간</b></td>
-            <td style="border-top:1px solid #ccd5cc;padding-left:10px" align="left"><input type="text" dir="rtl" name="period_year" id="period_year" value="" size="" class="form num-only">년</td>
-
-          </tr>
-
-
-
-          <tr>
-            <td height="30" bgcolor="#f7f7f5" style="border-top:1px solid #ccd5cc;border-right:1px solid #ccd5cc"><b>상환방법</b></td>
-            <td style="border-top:1px solid #ccd5cc;padding-left:10px" align="left">
-              <input type="radio" value="1" name="RPM" checked="" onclick="period_readonly(this.value)">원리금균등상환
-              <input type="radio" value="2" name="RPM" onclick="period_readonly(this.value)">원금균등상환
-              <input type="radio" value="3" name="RPM" onclick="period_readonly(this.value)">원금만기일시상환
-              <input type="radio" value="4" name="RPM" onclick="period_readonly(this.value)">거치후원리금균등상환
-              <br><input type="radio" value="5" name="RPM" onclick="period_readonly(this.value)">거치후원금균등상환
-            </td>
-          </tr>
-
-          <tr>
-            <td colspan="3" height="2" bgcolor="#d7d7d7"></td>
-          </tr>
-          <tr>
-            <td colspan="3" height="50" align="center"><input type="submit" class="button" value="대출이자계산" ></td>
-          </tr>
-        
-        </tbody>
-		</table>
-						
+							<tbody>
+							<tr>
+								<td align="center" bgcolor="#f2f2f2"><b>대출금액</b></td>
+								<td>
+								<input type="text" dir="rtl" name="loanprice2" id="loanprice2"  size="15">원
+								</td>
+							</tr>
+							<tr>
+								<td align="center" bgcolor="#f2f2f2"><b>대출기간</b></td>
+								<td><input type="text" dir="rtl" name="period" id="period" value="">개월</td>
+							</tr>
+							<tr>
+								<td align="center" bgcolor="#f2f2f2"><b>대출금리</b></td>
+								<td><input type="text" dir="rtl" name="rate" value="" size="15">%</td>
+							</tr>
+							<tr>
+								<td align="center" bgcolor="#f2f2f2"><b>거치기간</b></td>
+								<td><input type="text" dir="rtl" name="period_year" id="period_year">년</td>
+							</tr>
+							<tr>
+								<td align="center" bgcolor="#f2f2f2"><b>상환방법</b></td>
+								<td>
+								<input type="radio" value="1" name="RPM">원리금균등상환
+								<input type="radio" value="2" name="RPM">원금균등상환
+								<input type="radio" value="3" name="RPM">원금만기일시상환
+								<input type="radio" value="4" name="RPM">거치후원리금균등상환
+								<input type="radio" value="5" name="RPM">거치후원금균등상환
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2" height="2" bgcolor="#d7d7d7"></td>
+							</tr>
+							<tr>
+								<td colspan="2" height="50" align="center"><input type="submit" class="button" value="대출이자계산" ></td>
+							</tr>        
+							</tbody>
+						</table>						
 						</section>
 					</div>
 					
 				</div>
 			</div>
 			<!-- Main -->
-
 		</div>
 	<!-- /Main -->
 <br/>
