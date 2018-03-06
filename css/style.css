@@ -84,8 +84,10 @@ p, ul, ol, dl, table
 	margin-bottom: 0.6em;
 }
 table
-{
-	border-top:2px solid #e0e0e0;
+{	
+	width:100%;
+	border-collapse:collapse;border-spacing:0;	
+	border-top:1px solid #e0e0e0;
 }
 tr
 {
@@ -905,7 +907,10 @@ footer
 	position: relative;
 	background: #fff;
 }
-
+.homepage #page #marketing section
+{
+	text-align:center;
+}
 #main
 {
 	border-top: 1px solid;

@@ -5,23 +5,27 @@ body,input,textarea,select
 {
 	font-size: 11pt;
 }
-#banner
-{
-	padding: 6em 0em;
-}
 .homepage #banner
 {
 	padding: 10em 0em;
-}
-
-#page
-{
-	padding: 2em 0em 4em 0em;
 }
 .homepage #page
 {
 	padding-top: 2em;
 	padding-bottom: 2em;
+}
+.homepage #main
+{
+	margin-top: 2em;
+	padding-top: 1em;
+}
+#banner
+{
+	padding: 6em 0em;
+}
+#page
+{
+	padding: 2em 0em 4em 0em;
 }
 #page .container
 {
@@ -31,16 +35,9 @@ body,input,textarea,select
 {	
 	border-top: none;
 }
-.homepage #main
-{
-	margin-top: 2em;
-	padding-top: 1em;
-}
-
 #footer
 {
 }
-
 #featured
 {
 	padding: 4em 0em;
