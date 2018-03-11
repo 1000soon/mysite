@@ -147,13 +147,13 @@
 							<tr id="D01_add01">
 							  <th>금액</th>
 							  <td colspan="3" align="left">
-								&nbsp;<input type="text" name="loanprice" class="form" numberonly="true" value="" style="width:108px;"> 만원 <span id="kor1"></span>
+								&nbsp;<input type="text" name="loanprice" class="form" numberonly="true" value="" style="width:108px;"> 만원 
 							  </td>
 							</tr>
 							<tr id="D02_add01" style="display:none">
 							  <td align="center" bgcolor="#cffcf9">주소</td>
 							  <td colspan="3">
-								&nbsp;<select name="areacode" class="form2" id="areacode" onchange="loadData(this,'sigugun')">
+								&nbsp;<select name="areacode" class="form2" id="areacode" onchange="">
 								  <option value="">-광역시/도-</option>
 								  <option value="1100000">서울</option>
 								  <option value="1410000">경기</option>
@@ -172,10 +172,10 @@
 								  <option value="1360000">충북</option>
 								  <option value="1690000">제주</option>
 								</select>
-								<select name="sigugun" class="form2" id="select2" onchange="loadData2(this,'dong')">
+								<select name="sigugun" class="form2" id="select2" onchange="">
 								  <option value="">-시/군/구-</option>
 								</select>
-								<select name="dong" class="form2" id="select3" onchange="loadData3(this,'danji')">
+								<select name="dong" class="form2" id="select3" onchange="">
 								  <option value="">-읍/면/동-</option>
 								</select>
 								<select name="danji" class="form2" id="select4">
@@ -185,7 +185,7 @@
 							</tr>
 							<tr>
 							  <th>기타사항</th>
-							  <td colspan="3">&nbsp;<textarea name="qcontents" cols=70 rows=5  placeholder="특이사항이나 상담 가능 시간을 남겨주세요"></textarea></td>
+							  <td colspan="3"><!--&nbsp;<textarea name="qcontents" cols=70 rows=5  placeholder="특이사항이나 상담 가능 시간을 남겨주세요"></textarea>--></td>
 							</tr>
 							<tr class="last">
 								<td colspan=4 height="50" style="text-align:center">
