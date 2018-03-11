@@ -954,6 +954,10 @@ footer
 	overflow:hidden;
 	text-overflow:ellipsis;
 	text-decoration:none;
+	color:#999;
+}
+.sidebar a.title:hover{
+	color:#000;
 }
 .sidebar .right
 {

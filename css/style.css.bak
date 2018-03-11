@@ -2,7 +2,7 @@
 @import url(nanumgothic.css);
 body
 {
-	background: #202020 url(images/img01.jpg) repeat;
+	background: #202020 url(images/bg_stripe.png) repeat;
 }
 
 body,input,textarea,select
@@ -23,7 +23,7 @@ h1,h2,h3,h4,h5,h6
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
 	{
 		color: inherit;
-		text-decoration: none;
+
 	}
 	
 /* Change this to whatever font weight/color pairing is most suitable */
@@ -41,7 +41,8 @@ em, i
 /* Don't forget to set this to something that matches the design */
 a
 {
-	color: #ff0000;
+	text-decoration: none;
+	color: #5B73D5;
 }
 
 sub
@@ -82,9 +83,54 @@ p, ul, ol, dl, table
 {
 	margin-bottom: 0.6em;
 }
-tr td
+table
+{	
+	width:100%;
+	border-collapse:collapse;border-spacing:0;	
+	border-top:1px solid #e0e0e0;
+}
+tr
+{	
+	line-height:30px;
+	border-bottom:1px solid #e0e0e0;
+}
+tr.last{
+	border-bottom:0;
+}
+tr th, tr td
 {
 	vertical-align:middle;
+	border-right:1px solid #e0e0e0;
+}
+tr th
+{
+	text-align:center;
+	font-weight:bold;
+	background:#f9f9f9;
+}
+tr th:last-child, tr td:last-child
+{
+	border-right:0;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+	background: rgba(144, 144, 144, 0.075);
+	border-radius: 4px;
+	border: none;
+	border: solid 1px #dee1e3;
+	color: inherit;
+	display: inline-block;
+	outline: 0;
+	padding: 0 0.5em;
+	text-decoration: none;
 }
 header
 {
@@ -113,11 +159,18 @@ footer
 
 .clear
 {
-	clear: both;
+	clear: both;zoom:1;
 }
-
+.fix {
+}
+.fix::after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
 /* Sections/Articles */
-
 	section,
 	article
 	{
@@ -300,8 +353,8 @@ footer
 		position: relative;
 		display: inline-block;
 		padding: 0.50em 1.5em;
-		background: #e95d3c;
-		border-radius: 6px;
+		background: #5B73D5;
+		border-radius: 4px;
 		text-decoration: none;
 		text-transform: uppercase;
 		font-size: 1.1em;
@@ -856,13 +909,31 @@ footer
 	position: relative;
 	background: #fff;
 }
-
+.homepage #page #marketing section
+{
+	text-align:center;
+}
 #main
 {
 	border-top: 1px solid;
 	border-color: rgba(0,0,0,.2);
 }
-
+#bar
+{
+	padding:1em;background:#eee;
+}
+	#bar dl
+	{
+		margin-bottom:0;
+	}
+	#bar.container dl dt
+	{
+		font-weight:bold;color:#E36442;
+	}
+	#bar.container dl dt, #bar.container dl dd
+	{
+		float:left; margin-right:20px;
+	}
 .sidebar header h2
 {
 	font-size: 1.6em;
@@ -870,6 +941,8 @@ footer
 .sidebar h3
 {
 	font-size:1.3em;
+	font-weight:bold;
+	margin-bottom:3px;
 }
 .sidebar a.title
 {
@@ -881,20 +954,20 @@ footer
 	overflow:hidden;
 	text-overflow:ellipsis;
 	text-decoration:none;
+	color:#999;
 }
 .sidebar .right
 {
 	float:right;
 }
 
-/*********************************************************************************/
-/* Footer                                                                        */
-/*********************************************************************************/
+/* Footer */
 
 #footer
 {
 	position: relative;
-	color: rgba(255,255,255,.4);
+	/*color: rgba(255,255,255,.4);*/
+	color:#eee;
 }
 
 #footer .container
@@ -917,11 +990,16 @@ footer
 {
 	color: rgba(255,255,255,.7);
 }
-
-/*********************************************************************************/
-/* Copyright                                                                     */
-/*********************************************************************************/
-
+#footer dl{
+	width:350px;margin:0 auto;
+}
+#footer dl dt
+{
+	display:none;
+}
+#footer dl dd{
+	float:left; margin-right:10px;
+}
 #copyright
 {
 	position: relative;
@@ -941,10 +1019,6 @@ footer
 	text-decoration: none;
 	color: rgba(255,255,255,.4) !important;
 }
-
-/*********************************************************************************/
-/* Marketing                                                                     */
-/*********************************************************************************/
 
 #marketing
 {
@@ -990,4 +1064,21 @@ footer
 {
 	color: #333 !important;
 }
-
+/****/
+.container .content #titleArea{width:700px;border-bottom:2px solid #ccc;padding-bottom:10px;margin-bottom:30px;}
+.container .content #titleArea h3{font-size:25px;}
+.container .content table{font-size:14px;}
+.container .content table tr{line-height:35px;}
+.container .content table.gray thead{color:#000;background: rgb(255,255,255);
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNWU1ZTUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1)));
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
+background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
+background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );
+}
+.container .content table.border{border-top:1px solid #eee;}
+.container .content table.border tr{border-bottom:1px solid #ddd;}
+.page{text-align:center;}
