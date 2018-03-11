@@ -956,6 +956,9 @@ footer
 	text-decoration:none;
 	color:#999;
 }
+.sidebar a.title:hover{
+	color:#000;
+}
 .sidebar .right
 {
 	float:right;
@@ -1082,3 +1085,5 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .container .content table.border{border-top:1px solid #eee;}
 .container .content table.border tr{border-bottom:1px solid #ddd;}
 .page{text-align:center;}
+
+#dv_rolling ul li{border:0;height:1em;padding:1px 0 !important}

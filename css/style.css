@@ -1085,3 +1085,5 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .container .content table.border{border-top:1px solid #eee;}
 .container .content table.border tr{border-bottom:1px solid #ddd;}
 .page{text-align:center;}
+
+#dv_rolling ul li{border:0;}
