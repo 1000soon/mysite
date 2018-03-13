@@ -1,52 +1,4 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Banklist</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />	
-		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-panels.min.js"></script>
-		<script src="js/init.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="css/skel-noscript.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-desktop.css" />
-		</noscript>
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
-	</head>
-	<body class="left-sidebar">
-
-	<!-- Header -->
-		<div id="header">
-			<div class="container">					
-				<!-- Logo -->
-				<div id="logo">
-					<h1><a href="#">Bank<b style="color:#e95d3c">l</b>ist</a></h1>
-				</div>				
-				<!-- Nav -->
-				<nav id="nav">
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="my.html">나의 금리 진단받기</a></li>
-						<li><a href="compare.html">담보대출 금리 비교</a></li>
-						<li class="active"><a href="help.html">대출 도우미</a></li>
-						<li><a href="">고객센터</a></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	<!-- Header -->
-		
-	<!-- Banner -->
-		<div id="banner">
-			<div class="container">
-			</div>
-		</div>
-	<!-- /Banner -->
+<?php include("inc/header.php");?>
 
 	<!-- Main -->
 		<div id="page">
@@ -115,22 +67,4 @@
 		</div>
 	<!-- /Main -->
 <br/>
-<br/>
-	<!-- Footer -->
-		<div id="footer">
-			<div class="container">		
-					<div class="12u" style="text-align:center;">
-						<section>							
-							회사소개 | Sitemap | <strong>개인정보처리방침</strong> | 고객센터
-						</section>
-					</div>
-				</div>
-		</div>
-	<!-- /Footer -->
-
-	<!-- Copyright -->
-		<div id="copyright" class="container">
-			Copyright &copy; All right reserved.
-		</div>
-	</body>
-</html>
+<?php include("inc/footer.php");?>

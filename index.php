@@ -1,53 +1,25 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Banklist</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />	
-		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-panels.min.js"></script>
-		<script src="js/init.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="css/skel-noscript.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-desktop.css" />
-		</noscript>
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
-	</head>
-	<body class="homepage">
+<?php include("inc/header.php");?>
+<?php
+require_once("conf/dbconfig.php");
+$cache_key_name1 = "list";
+$cache_message = apc_fetch($cache_key_name1);
 
-	<!-- Header -->
-		<div id="header">
-			<div class="container">					
-				<!-- Logo -->
-				<div id="logo">
-					<h1><a href="index.html">Bank<b style="color:#e95d3c">l</b>ist</a></h1>
-				</div>				
-				<!-- Nav -->
-				<nav id="nav">
-					<ul>
-						<li class="active"><a href="index.html">Home</a></li>
-						<li><a href="my.html">나의 금리 진단받기</a></li>
-						<li><a href="compare.html">담보대출 금리 비교</a></li>
-						<li><a href="help.html">대출 도우미</a></li>
-						<li><a href="board.html">고객센터</a></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	<!-- Header -->
-		
-	<!-- Banner -->
-		<div id="banner">
-			<div class="container">
-			</div>
-		</div>
-	<!-- /Banner -->
-
+if($cache_message===false){	
+	$conn = new Connection();
+	$dbh = $conn->setConnection();
+	// 점검 메시지 조회(공통)
+	$query = "SELECT LEFT(v_name,1) as uname, v_phone1, v_phone3 FROM tb_request ORDER BY date_ins DESC LIMIT 20";
+	$stmt = $dbh->query($query);
+	while($rows = $stmt->fetch(PDO::FETCH_ASSOC)){
+		$arrRequest[] = $rows;
+	}
+	
+	// 캐싱
+	apc_store($cache_key_name1,  $arrRequest);		
+	$cache_message = apc_fetch($cache_key_name1);
+	$dbh = $conn->closeConn();
+}	
+?>
 	<!-- Main -->
 		<div id="page">
 			<!-- Extra -->
@@ -162,17 +134,14 @@
 								</li>
 								<li>					
 									<h3>실시간 상담 신청 list</h3>
-									<div id="dv_rolling" style="margin-bottom:5px;">
+									<div id="dv_rolling" style="margin-bottom:10px;">
 										<ul>
-											<li>김**  /  010-****-0298</li>
-											<li>김**  / 010-****-5849</li>
-											<li>이**  / 010-****-6724</li>
-											<li>박**  / 010-****-6724</li>
-											<li>정**  / 010-****-6724</li>
-											<li>최**  / 010-****-6724</li>
+										<?for($i=0;$i<count($cache_message);$i++){?>
+											<li><?=$cache_message[$i]['uname']?>**  /  <?=$cache_message[$i]['v_phone1']?>-****-<?=$cache_message[$i]['v_phone3']?></li>
+										<?}?>											
 										</ul>
 									</div>
-									<a href="my.html" class="button">상담신청</a>
+									<a href="my.php" class="button">상담신청</a>
 									<br/>
 								</li>
 								<li>
@@ -223,28 +192,4 @@
 		</div>
 	<!-- /Main -->
 <br>
-	<!-- Footer -->
-		<div id="footer">
-			<div class="container">		
-					<div class="12u" style="text-align:center;">
-						<section>	
-							<dl>
-								<dt>footer menu</dt>
-								<dd>회사소개</dd>
-								<dd>Sitemap</dd>
-								<dd>개인정보처리방침</dd>
-								<dd>고객센터</dd>								
-							</dl>
-							&nbsp;
-						</section>
-					</div>
-				</div>
-		</div>
-	<!-- /Footer -->
-
-	<!-- Copyright -->
-		<div id="copyright" class="container">
-			Copyright &copy; All right reserved.
-		</div>
-	</body>
-</html>
+<?php include("inc/footer.php");?>
