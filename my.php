@@ -17,7 +17,7 @@
 				
 					<div class="9u skel-cell-important">
 						<section>		
-						<h3>3월 특판상품</h3>
+						<h3><?=date("m")?>월 특판상품</h3>
 						<table>		
 							<tr>
 								<th>금융기관명</th>
@@ -26,37 +26,56 @@
 								<th>금리</th>
 							</tr>                  
 							<tr>
-								<td align="center">A 보험사</td>
+								<td align="center">A 은행</td>
 								<td align="center">40%~70%</td>
-								<td align="center"><font color="red">혼합고정</font></td>
-								<td align="center"><strong><font color="#FF6600"> 3.07%~3.47%</font></strong></td>
+								<td align="center"><font color="red">변동</font></td>
+								<td align="center"><strong><font color="#FF6600"> 3.23%~4.43%</font></strong></td>
 							</tr>
 							<tr>
 								<td align="center">A 은행</td>
 								<td align="center">40%~70%</td>
-								<td align="center"><font color="red">변동</font></td>
-								<td align="center"><strong><font color="#FF6600"> 2.59%~2.89%</font></strong></td>
+								<td align="center"><font color="red">고정</font></td>
+								<td align="center"><strong><font color="#FF6600"> 3.83%~4.93%</font></strong></td>
 							</tr>
 							<tr>
 								<td align="center" >B 보험사</td>
-								<td align="center" >40%~75%</td>
-								<td align="center" ><font color="red">장기고정</font></td>
-								<td align="center"><strong><font color="#FF6600"> 3.5%~4.25%</font></strong></td>
+								<td align="center" >40%~70%</td>
+								<td align="center" ><font color="red">변동</font></td>
+								<td align="center"><strong><font color="#FF6600"> 3.23%~3.85%</font></strong></td>
 							</tr>
 							<tr>
-								<td align="center" >A 농협</td>
-								<td align="center" >60%~80%</td>
-								<td align="center" ><font color="red">변동</font></td>
-								<td align="center"><strong><font color="#FF6600"> 3.39%~3.69%</font></strong></td>
+								<td align="center" >B 보험사</td>
+								<td align="center" >40%~70%</td>
+								<td align="center" ><font color="red">고정</font></td>
+								<td align="center"><strong><font color="#FF6600"> 3.83%~4.30%</font></strong></td>
 							</tr>
 							<tr>
-								<td align="center" >A 저축은행</td>
-								<td align="center" >85%~110%</td>
+								<td align="center" >C 보험사</td>
+								<td align="center" >40%~70%</td>
 								<td align="center" ><font color="red">변동</font></td>
-								<td align="center"><strong><font color="#FF6600"> 5.88%~11.7%</font></strong></td>
+								<td align="center"><strong><font color="#FF6600"> 3.23%~3.43%</font></strong></td>
+							</tr>
+							<tr>
+								<td align="center" >C 보험사</td>
+								<td align="center" >40%~70%</td>
+								<td align="center" ><font color="red">고정</font></td>
+								<td align="center"><strong><font color="#FF6600"> 3.83%~3.93%</font></strong></td>
+							</tr>
+							<tr>
+								<td align="center" >D 농협</td>
+								<td align="center" >40%~70%</td>
+								<td align="center" ><font color="red">변동</font></td>
+								<td align="center"><strong><font color="#FF6600"> 3.40%~3.63%</font></strong></td>
+							</tr>
+							<tr>
+								<td align="center" >D 농협</td>
+								<td align="center" >40%~70%</td>
+								<td align="center" ><font color="red">고정</font></td>
+								<td align="center"><strong><font color="#FF6600"> 3.83%~3.93%</font></strong></td>
 							</tr>
 						</table>
-						<p><font color="red">&lt;고객님의 지역 및 대출한도에 따라 특판금리 가능 여부는 달라질 수도 있습니다.&gt;</font></p>
+						<p><font color="red">* 기타 부대조건 없음</font></p>
+						<p><font color="red">* 고객님의 지역 및 대출한도에 따라 특판금리 가능 여부는 달라질 수도 있습니다.</font></p>					
 						
 						<br/>
 						<form action="request.php" method="post">
@@ -90,44 +109,31 @@
 									  <option value="018">018</option>
 									  <option value="019">019</option>
 									</select>
-									- <input type="tel" name="phone2" class="form num-only" style="width:50px;" maxlength="4">
-									- <input type="tel" name="phone3" class="form num-only" style="width:50px;" maxlength="4">
+									- <input type="tel" name="phone2" class="num-only" style="width:50px;" maxlength="4">
+									- <input type="tel" name="phone3" class="num-only" style="width:50px;" maxlength="4">
 								  </td>
 								</tr>
 								<tr id="D01_add01">
 								  <th>금액</th>
 								  <td colspan="3" align="left">
-									&nbsp;<input type="text" name="price" class="form" numberonly="true" value="" style="width:108px;"> 만원 
+									&nbsp;<input type="text" name="price" class="" numberonly="true" value="" style="width:108px;"> 만원 
 								  </td>
 								</tr>
 								<tr id="D02_add01" style="">
 								  <th>지역</th>
-								  <td colspan="3">
-									&nbsp;<select name="areacode" id="areacode" onchange="">
-									  <option value="">-광역시/도-</option>
-									  <option value="1100000">서울</option>
-									  <option value="1410000">경기</option>
-									  <option value="1400000">인천</option>
-									  <option value="1600000">부산</option>
-									  <option value="1700000">대구</option>
-									  <option value="1500000">광주</option>
-									  <option value="1300000">대전</option>
-									  <option value="1680000">울산</option>
-									  <option value="1200000">강원</option>
-									  <option value="1620000">경남</option>
-									  <option value="1710000">경북</option>
-									  <option value="1510000">전남</option>
-									  <option value="1560000">전북</option>
-									  <option value="1310000">충남</option>
-									  <option value="1360000">충북</option>
-									  <option value="1690000">제주</option>
-									</select>
-									<select name="sigugun" id="select2" onchange="">
-									  <option value="">-시/군/구-</option>
-									</select>
-									<select name="dong" id="select3" onchange="">
-									  <option value="">-읍/면/동-</option>
-									</select>
+								  <td colspan="3" align="left">
+									&nbsp;<select name="sido" class="" id="sido" onchange="loadlocal(1, this.value)">
+									 <option value="">-광역시/도-</option>
+									 <?while($rows = $stmt->fetch(PDO::FETCH_ASSOC)){?>
+									 <option value="<?=$rows['idx']?>"><?=$rows['local_name']?></option>
+									 <?}?>
+								   </select>
+								   <select name="gungu" class="" id="area1" onchange="loadlocal(2, this.value)">
+									 <option value="">-시/구/군-</option>
+								   </select>
+								   <select name="dong" class="" id="area2" onchange="">
+									 <option value="">-읍/면/동-</option>
+								   </select>
 								  </td>
 								</tr>
 								<tr>

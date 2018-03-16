@@ -1,11 +1,24 @@
-<?php include("inc/header.php");?>
-
+<?php 
+include("inc/header.php");
+require_once("conf/dbconfig.php");	
+$query = "SELECT * FROM tb_board";
+$conn = new Connection();
+$dbh = $conn->setConnection();
+$stmt = $dbh->query($query);
+?>
 	<!-- Main -->
 		<div id="page">				
 			<!-- Main -->
 			<div id="main" class="container">
 				<div class="row">
-					<div class="12u content">
+					<div class="3u">
+						<section class="sidebar">
+							<header>
+								<h2>Q&amp;A</h2>
+							</header>
+						</section>					
+					</div>
+					<div class="9u content">
 						<section>
 							<a href="board_insert.php?build=" class="button" >문의하기</a>
 							<br/><br/>
@@ -14,20 +27,25 @@
 									<col style="width:6%"/>
 									<col style="width:14%"/>					
 									<col style="width:*"/>
-									<col style="width:12%"/>
-									<col style="width:12%"/>				
+									<col style="width:15%"/>				
 								</colgroup>
 								<thead>
 									<tr>						
 										<th>번호</th>
 										<th>작성자</th>					
 										<th>제목</th>
-										<th>조회수</th>
 										<th>등록일</th>				
 									</tr>
 								</thead>
-								<tbody>								
-										<tr><td colspan=6 align=center>등록 된 글이 없습니다.</td></tr>							
+								<tbody>				
+									<?while($rows = $stmt->fetch(PDO::FETCH_ASSOC)){?>
+									<tr>
+										<td><?=$rows['idx']?></td>
+										<td><?=$rows['v_name']?></td>
+										<td><?=$rows['v_title']?></td>
+										<td><?=$rows['date_ins']?></td>
+									</tr>
+									<?}?>							
 								</tbody>
 							</table>
 							<br/>			

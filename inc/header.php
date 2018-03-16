@@ -1,3 +1,4 @@
+<?php include('/conf/functions.php');?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -6,10 +7,10 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />	
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-panels.min.js"></script>
-		<script src="js/init.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/skel.min.js"></script>
+		<script type="text/javascript" src="js/skel-panels.min.js"></script>
+		<script type="text/javascript" src="js/init.js"></script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/style.css" />
@@ -17,6 +18,13 @@
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<script type="text/javascript">
+			function loadlocal(t,v){
+				$.post("get_address.php", {t:t, v:v}).done(function(result){
+					$("#area"+t).empty().append(result);
+				});
+			}
+		</script>
 	</head>
 	<body class="homepage">
 

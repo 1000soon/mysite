@@ -1,8 +1,13 @@
 <?php include("inc/header.php");?>
-
+<?php
+require_once("conf/dbconfig.php");
+$conn = new Connection();
+$dbh = $conn->setConnection();
+$query = "SELECT * FROM tb_sido";
+$stmt = $dbh->query($query);
+?>
 	<!-- Main -->
-		<div id="page">
-				
+		<div id="page">				
 			<!-- Main -->
 			<div id="main" class="container">
 				<div class="row">
@@ -26,62 +31,46 @@
 						<section>
 							<header>
 								<h3>아파트 매매 잔금 대출 금리 비교</h3>
-								<span class="byline">2018.02.08 기준</span>
+								<span class="byline"><?=date("Y.m.d")?> 기준</span>
 							</header>
 							<form name="form1" method="post">
 								<table>
 									<tr>
 										<td>
-										  <select name="areacode" class="form2" id="areacode" onchange="">
+										지역&nbsp;
+										  <select name="sido" class="" id="sido" onchange="loadlocal(1, this.value)">
 											 <option value="">-광역시/도-</option>
-											 <option value="1100000">서울</option>
-											 <option value="1410000">경기</option>
-											 <option value="1400000">인천</option>
-											 <option value="1600000">부산</option>
-											 <option value="1700000">대구</option>
-											 <option value="1500000">광주</option>
-											 <option value="1300000">대전</option>
-											 <option value="1680000">울산</option>
-											 <option value="1200000">강원</option>
-											 <option value="1620000">경남</option>
-											 <option value="1710000">경북</option>
-											 <option value="1510000">전남</option>
-											 <option value="1560000">전북</option>
-											 <option value="1310000">충남</option>
-											 <option value="1360000">충북</option>
-											 <option value="1690000">제주</option>
-											 <option value="1900000">세종</option>
+											 <?while($rows = $stmt->fetch(PDO::FETCH_ASSOC)){?>
+											 <option value="<?=$rows['idx']?>"><?=$rows['local_name']?></option>
+											 <?}?>
 										   </select>
-										   <select name="sigugun" class="form2" id="select2" onchange="">
+										   <select name="gungu" class="" id="area1" onchange="loadlocal(2, this.value)">
 											 <option value="">-시/구/군-</option>
-											   <option value="강남구">강남구</option><option value="강동구">강동구</option><option value="강북구">강북구</option><option value="강서구">강서구</option>
-											   <option value="관악구">관악구</option><option value="광진구">광진구</option><option value="구로구">구로구</option><option value="금천구">금천구</option>
-											   <option value="노원구">노원구</option><option value="도봉구">도봉구</option><option value="동대문구">동대문구</option><option value="동작구">동작구</option>
-											   <option value="마포구">마포구</option><option value="서대문구">서대문구</option><option value="서초구">서초구</option><option value="성동구">성동구</option
-											   <option value="성북구">성북구</option><option value="송파구">송파구</option><option value="양천구">양천구</option><option value="영등포구">영등포구</option>
-											   <option value="용산구">용산구</option><option value="은평구">은평구</option><option value="종로구">종로구</option><option value="중구">중구</option>
-											   <option value="중랑구">중랑구</option>
 										   </select>
-										   <select name="dong" class="form2" id="select3" onchange="loadData3(this,'danji')">
+										   <select name="dong" class="" id="area2" onchange="">
 											 <option value="">-읍/면/동-</option>
-										   <option value="개포동">개포동</option><option value="논현동">논현동</option><option value="대치동">대치동</option><option value="도곡동">도곡동</option><option value="삼성동">삼성동</option><option value="세곡동">세곡동</option><option value="수서동">수서동</option><option value="신사동">신사동</option><option value="압구정동">압구정동</option><option value="역삼동">역삼동</option><option value="율현동">율현동</option><option value="일원동">일원동</option><option value="자곡동">자곡동</option><option value="청담동">청담동</option></select>
-										   <select name="danji" class="form2" id="select4" onchange="loadData4(this,'pyung')">
-											 <option value="">-아파트-</option>
-										   <option value="<해당 아파트 없음>">&lt;해당 아파트 없음&gt;</option><option value="강남파라곤">강남파라곤</option><option value="거평프리젠">거평프리젠</option><option value="경남논현">경남논현</option><option value="논현(신동아)">논현(신동아)</option><option value="논현동">논현동</option><option value="논현동동부센트레빌">논현동동부센트레빌</option><option value="논현동동양파라곤">논현동동양파라곤</option><option value="논현동한진로즈힐">논현동한진로즈힐</option><option value="논현동한화꿈에그린">논현동한화꿈에그린</option><option value="논현두산위브">논현두산위브</option><option value="논현베르빌">논현베르빌</option><option value="논현e-편한세상">논현e-편한세상</option><option value="동현">동현</option><option value="마일스디오빌">마일스디오빌</option><option value="쌍용">쌍용</option><option value="아크로힐스논현">아크로힐스논현</option><option value="우민">우민</option><option value="청학">청학</option></select>
-										   <select name="pyung" class="form2" id="pyung">
-											 <option value="">-평형-</option>
-										   <option value="100.88㎡">100.88㎡(31 평)</option><option value="140.85㎡">140.85㎡(43 평)</option><option value="143.68㎡">143.68㎡(43 평)</option><option value="179.7㎡">179.7㎡(54 평)</option><option value="203.87㎡">203.87㎡(62 평)</option>
 										   </select>
+										   <!--
+										   <select name="build" class="" id="area3" onchange="">
+											 <option value="">-아파트-</option>
+										   <option value="<해당 아파트 없음>">해당 아파트 없음</option></select>
+										   <select name="pyung" class="" id="">
+											 <option value="">-평형-</option>										   
+										   </select>
+										   -->
 										</td>
 									</tr>
 									<tr>
 										<td>
+										금액&nbsp;
 											  <select name="bankcode" class="form2" onchange="">
 												 <option value="">선택</option>
 												 <option value="1">매매가</option>
 												 <option value="1">분양가</option>
 											   </select>
-											  <input type="text" name="bondhigh" id="bondhigh" class="form2" size="15" style="background: rgb(255, 255, 255); text-align: right; color: rgb(0, 0, 0);" onkeyup="inputNumberFormat(this);numberKor(this,'kor');"><font color="white"> 만원 <span id="kor">(육억원)</span></font>
+											  <input type="text" name="price" id="" class="" size="15">만원
+											  &nbsp;
+											  <a href="https://landprice.org" target="_blank">&gt; 매매가 정보 조회 &lt;</a>
 										</td>
 									</tr>
 									<tr class="last"><td style="text-align:center" height="50"><input type="submit" class="button" value="조회하기"></td>
@@ -90,67 +79,83 @@
 						 </form>
 						<br/>
 						
-							<h4>한도 조회 분석 결과</h4>
-							<table>
-								<tbody>
+						<h4>한도 조회 분석 결과</h4>
+							<table>		
 								<tr>
-								  <th>금융기관명</th>
-								  <th>유형</th>
-								  <th>금리</th>
-								  <th>한도비율</th>
-								  <th>대출한도</th>
+									<th>금융기관명</th>
+									<th>LTV 비율</th>
+									<th>금리유형</th>
+									<th>금리</th>
+									<th>한도비율</th>
+									<th>대출한도</th>
+								</tr>                  
+								<tr>
+									<td align="center">A 은행</td>
+									<td align="center">40%~70%</td>
+									<td align="center"><font color="red">변동</font></td>
+									<td align="center"><strong><font color="#FF6600"> 3.23%~4.43%</font></strong></td>
+									<td align="center">70%</td>
+									<td align="center"><span></span>만원</td>
 								</tr>
 								<tr>
-								  <td align="center" style="border-right: 1px solid #e0e0e0">A 은행</td>
-								  <td align="center" style="border-right: 1px solid #e0e0e0">변동</td>
-								  <td align="center" style="border-right: 1px solid #e0e0e0"><strong><font color="#FF6600">2.91%~3.51%</font></strong></td>
-								  <td align="center" style="border-right: 1px solid #e0e0e0">80%</td>
-								  <td align="center"><strong class="text_18"><font color="#CC0000">8,000</font></strong> 만원</td>
+									<td align="center">A 은행</td>
+									<td align="center">40%~70%</td>
+									<td align="center"><font color="red">고정</font></td>
+									<td align="center"><strong><font color="#FF6600"> 3.83%~4.93%</font></strong></td>
+									<td align="center">70%</td>
+									<td align="center"><span></span>만원</td>
 								</tr>
 								<tr>
-								  <td align="center" style="border-right: 1px solid #e0e0e0">B 은행</td>
-								  <td align="center" style="border-right: 1px solid #e0e0e0">변동</td>
-								  <td align="center" style="border-right: 1px solid #e0e0e0"><strong><font color="#FF6600">2.92%~3.39%</font></strong></td>
-								  <td align="center" style="border-right: 1px solid #e0e0e0">80%</td>
-								  <td align="center"><strong class="text_18"><font color="#CC0000">8,000</font></strong> 만원</td>
+									<td align="center" >B 보험사</td>
+									<td align="center" >40%~70%</td>
+									<td align="center" ><font color="red">변동</font></td>
+									<td align="center"><strong><font color="#FF6600"> 3.23%~3.85%</font></strong></td>
+									<td align="center">70%</td>
+									<td align="center"><span></span>만원</td>
 								</tr>
 								<tr>
-								  <td align="center" style="border-right: 1px solid #e0e0e0">C 은행</td>
-								  <td align="center" style="border-right: 1px solid #e0e0e0">변동</td>
-								  <td align="center" style="border-right: 1px solid #e0e0e0"><strong><font color="#FF6600">2.93%~3.33%</font></strong></td>
-								  <td align="center" style="border-right: 1px solid #e0e0e0">80%</td>
-								  <td align="center"><strong class="text_18"><font color="#CC0000">8,000</font></strong> 만원</td>
+									<td align="center" >B 보험사</td>
+									<td align="center" >40%~70%</td>
+									<td align="center" ><font color="red">고정</font></td>
+									<td align="center"><strong><font color="#FF6600"> 3.83%~4.30%</font></strong></td>
+									<td align="center">70%</td>
+									<td align="center"><span></span>만원</td>
 								</tr>
 								<tr>
-								  <td align="center" style="border-right: 1px solid #e0e0e0">D 은행</td>
-								  <td align="center" style="border-right: 1px solid #e0e0e0">변동</td>
-								  <td align="center" style="border-right: 1px solid #e0e0e0"><strong><font color="#FF6600">2.93%~3.28%</font></strong></td>
-								  <td align="center" style="border-right: 1px solid #e0e0e0">80%</td>
-								  <td align="center"><strong class="text_18"><font color="#CC0000">8,000</font></strong> 만원</td>
+									<td align="center" >C 보험사</td>
+									<td align="center" >40%~70%</td>
+									<td align="center" ><font color="red">변동</font></td>
+									<td align="center"><strong><font color="#FF6600"> 3.23%~3.43%</font></strong></td>
+									<td align="center">70%</td>
+									<td align="center"><span></span>만원</td>
 								</tr>
 								<tr>
-								  <td align="center" style="border-right: 1px solid #e0e0e0">E 은행</td>
-								  <td align="center" style="border-right: 1px solid #e0e0e0">변동</td>
-								  <td align="center" style="border-right: 1px solid #e0e0e0"><strong><font color="#FF6600">3.06%~3.66%</font></strong></td>
-								  <td align="center" style="border-right: 1px solid #e0e0e0">80%</td>
-								  <td align="center"><strong class="text_18"><font color="#CC0000">8,000</font></strong> 만원</td>
+									<td align="center" >C 보험사</td>
+									<td align="center" >40%~70%</td>
+									<td align="center" ><font color="red">고정</font></td>
+									<td align="center"><strong><font color="#FF6600"> 3.83%~3.93%</font></strong></td>
+									<td align="center">70%</td>
+									<td align="center"><span></span>만원</td>
 								</tr>
 								<tr>
-								  <td align="center" style="border-right: 1px solid #e0e0e0">F 은행</td>
-								  <td align="center" style="border-right: 1px solid #e0e0e0">적격고정</td>
-								  <td align="center" style="border-right: 1px solid #e0e0e0"><strong><font color="#FF6600">3.43%~3.81%</font></strong></td>
-								  <td align="center" style="border-right: 1px solid #e0e0e0">80%</td>
-								  <td align="center"><strong class="text_18"><font color="#CC0000">8,000</font></strong> 만원</td>
+									<td align="center" >D 농협</td>
+									<td align="center" >40%~70%</td>
+									<td align="center" ><font color="red">변동</font></td>
+									<td align="center"><strong><font color="#FF6600"> 3.40%~3.63%</font></strong></td>
+									<td align="center">70%</td>
+									<td align="center"><span></span>만원</td>
 								</tr>
 								<tr>
-								  <td align="center" style="border-right: 1px solid #e0e0e0">A 보험사</td>
-								  <td align="center" style="border-right: 1px solid #e0e0e0">혼합고정</td>
-								  <td align="center" style="border-right: 1px solid #e0e0e0"><strong><font color="#FF6600">3.74%~4.14%</font></strong></td>
-								  <td align="center" style="border-right: 1px solid #e0e0e0">80%</td>
-								  <td align="center"><strong class="text_18"><font color="#CC0000">8,000</font></strong> 만원</td>
+									<td align="center" >D 농협</td>
+									<td align="center" >40%~70%</td>
+									<td align="center" ><font color="red">고정</font></td>
+									<td align="center"><strong><font color="#FF6600"> 3.83%~3.93%</font></strong></td>
+									<td align="center">70%</td>
+									<td align="center"><span></span>만원</td>
 								</tr>
-							  </tbody>
 							</table>
+							<p><font color="red">* 기타 부대조건 없음</font></p>
+							<p><font color="red">* 고객님의 지역 및 대출한도에 따라 특판금리 가능 여부는 달라질 수도 있습니다.</font></p>
 						</section>
 					</div>
 					

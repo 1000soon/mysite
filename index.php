@@ -124,16 +124,10 @@ if($cache_message===false){
 					<div class="3u">
 						<section class="sidebar">
 							<header>
-								<h3>즉시 상담</h3>
+								<h3>실시간 상담 신청 list</h3>
 							</header>
 							<ul class="style2">
-								<li>
-									<img src="images/ico/ico_phone.png" alt="전화"/>
-									<p style="font-size:20px;"><a href="tel:010-2706-2126">010-0000-0000</a></p>
-									<p style="font-size:12px;">* 가능시간 <br> 09:00 ~ 21:00</p>
-								</li>
-								<li>					
-									<h3>실시간 상담 신청 list</h3>
+								<li>														
 									<div id="dv_rolling" style="margin-bottom:10px;">
 										<ul>
 										<?for($i=0;$i<count($cache_message);$i++){?>
@@ -144,6 +138,13 @@ if($cache_message===false){
 									<a href="my.php" class="button">상담신청</a>
 									<br/>
 								</li>
+								<li>
+									<h3>즉시 상담</h3>
+									<img src="images/ico/ico_phone.png" alt="전화"/>
+									<p style="font-size:20px;"><a href="tel:010-2706-2126">010-0000-0000</a></p>
+									<p style="font-size:12px;">* 가능시간 <br> 09:00 ~ 21:00</p>
+								</li>
+								
 								<li>
 									<p>각 금융권과 제휴하여 전국 은행 상품을 찾아서 비교해 드립니다.</p>
 									<p>*제2금융권 및 보험사, 캐피탈사 상품을 포함합니다.</p>
@@ -156,7 +157,7 @@ if($cache_message===false){
 					<div class="3u">
 						<section class="sidebar">
 							<header>
-								<h2>상담 Q&amp;A</h2>
+								<h2>Q&amp;A</h2>
 							</header>
 							<ul class="style1">
 								<li><a href="#" class="title">새아파트 입주대출</a><span class="right">2018-02-06</span></li>

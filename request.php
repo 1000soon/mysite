@@ -9,6 +9,9 @@ $p1 = $_POST['phone1'];
 $p2 = $_POST['phone2'];
 $p3 = $_POST['phone3'];
 $price = $_POST['price'];
+$addr1 = $_POST['sido'];
+$addr2 = $_POST['gungu'];
+$addr3 = $_POST['dong'];
 $desc = $_POST['desc'];
 $ip = $_SERVER['REMOTE_ADDR'];
 if($p1=="" || $p2=="" || $p3==""){
@@ -16,8 +19,10 @@ if($p1=="" || $p2=="" || $p3==""){
 }
 
 // mail
-$message = "이름 : ".$name."<br>";
-$message .= "연락처 : ".$p1."-".$p2."-".$p3."<br>";
+$message = "이름 : ".$name."<br/>";
+$message .= "연락처 : ".$p1."-".$p2."-".$p3."<br/>";
+$message .= "금액 : ".$price."만원<br/>";
+$message .= "지역 : ".$addr."<br/>";
 $message .= "내용 : ".$desc;
 	
 $mail = new PHPMailer;
@@ -34,7 +39,7 @@ $mail->Password = "cjstns59";
 
 $mail->setFrom('hcsoon0212@gmail.com', 'BankList');
 $mail->addReplyTo('donotreply@gmail.com', 'BankList');
-$mail->addAddress('hcsoon0212@gmail.com', 'sojin04860@gmail.com');
+$mail->addAddress('sojin04860@gmail.com');
 $mail->CharSet = "utf-8";
 $mail->Encoding = "base64";
 
@@ -46,7 +51,7 @@ $mail->send();
 	
 $conn = new Connection();
 $dbh = $conn->setConnection();
-$query = "INSERT INTO tb_request (v_name, v_type, v_phone1, v_phone2, v_phone3, v_price, v_desc, ip_addr) VALUES (:name, :type, :p1, :p2, :p3, :price, :desc, :ip)";
+$query = "INSERT INTO tb_request (v_name, v_type, v_phone1, v_phone2, v_phone3, v_price, v_addr, v_desc, ip_addr) VALUES (:name, :type, :p1, :p2, :p3, :price, :addr, :desc, :ip)";
 $stmt = $dbh->prepare($query);
 $stmt->bindParam(":name", $name, PDO::PARAM_STR);
 $stmt->bindParam(":type", $type, PDO::PARAM_STR);
@@ -54,6 +59,7 @@ $stmt->bindParam(":p1", $p1, PDO::PARAM_STR);
 $stmt->bindParam(":p2", $p2, PDO::PARAM_STR);
 $stmt->bindParam(":p3", $p3, PDO::PARAM_STR);
 $stmt->bindParam(":price", $price, PDO::PARAM_STR);
+$stmt->bindParam(":addr", $addr, PDO::PARAM_STR);
 $stmt->bindParam(":desc", $desc, PDO::PARAM_STR);
 $stmt->bindParam(":ip", $ip, PDO::PARAM_STR);
 try{

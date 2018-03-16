@@ -1,4 +1,5 @@
 <?php
+@session_start();
 function alert($msg){
 	$str.= "<script type=\"text/javascript\">";
 	$str.= "alert('$msg');";
