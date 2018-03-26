@@ -1,5 +1,11 @@
 <?php include("inc/header.php");?>
-
+<?php
+require_once("conf/dbconfig.php");
+$conn = new Connection();
+$dbh = $conn->setConnection();
+$query = "SELECT * FROM tb_sido";
+$stmt = $dbh->query($query);
+?>
 	<!-- Main -->
 		<div id="page">
 				
@@ -157,4 +163,9 @@
 		</div>
 	<!-- /Main -->
 <br/>
+<script type="text/javascript">
+	$(function(){
+		$("#nav ul li").eq(1).addClass("active").siblings("li").removeClass("active");
+	});
+</script>
 <?php include("inc/footer.php");?>

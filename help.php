@@ -16,7 +16,6 @@
 								<li class="active"><a href="#">대출계산기</a></li>
 								<li><a href="#">부대비용 &amp; 필요 서류</a></li>
 								<li><a href="#">감정평가 절차 및 이해</a></li>
-								<li><a href="#">전세 계약 절차 및 주의사항</a></li>
 							</ul>							
 						</section>					
 					</div>
@@ -67,4 +66,9 @@
 		</div>
 	<!-- /Main -->
 <br/>
+<script type="text/javascript">
+	$(function(){
+		$("#nav ul li").eq(3).addClass("active").siblings("li").removeClass("active");
+	});
+</script>
 <?php include("inc/footer.php");?>
