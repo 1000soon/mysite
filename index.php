@@ -1,24 +1,30 @@
-<?php include("inc/header.php");?>
-<?php
-require_once("conf/dbconfig.php");
+<?php 
+include("inc/header.php");
 $cache_key_name1 = "list";
-$cache_message = apc_fetch($cache_key_name1);
-
+$cache_message = apcu_fetch($cache_key_name1);
+$conn = new Connection();
+$dbh = $conn->setConnection();
+	
 if($cache_message===false){	
-	$conn = new Connection();
-	$dbh = $conn->setConnection();
+
 	// 점검 메시지 조회(공통)
 	$query = "SELECT LEFT(v_name,1) as uname, v_phone1, v_phone3 FROM tb_request ORDER BY date_ins DESC LIMIT 20";
 	$stmt = $dbh->query($query);
 	while($rows = $stmt->fetch(PDO::FETCH_ASSOC)){
 		$arrRequest[] = $rows;
 	}
-	
 	// 캐싱
-	apc_store($cache_key_name1,  $arrRequest);		
-	$cache_message = apc_fetch($cache_key_name1);
+	apcu_store($cache_key_name1,  $arrRequest);		
+	$cache_message = apcu_fetch($cache_key_name1);
 	$dbh = $conn->closeConn();
 }	
+
+// QA
+$query = "SELECT *, DATE(date_ins) as dt FROM tb_board_qa ORDER BY date_ins DESC LIMIT 5";
+$result = $dbh->query($query);
+// 후기
+$query = "SELECT *, DATE(date_ins) as dt FROM tb_board_review ORDER BY date_ins DESC LIMIT 5";
+$result2 = $dbh->query($query);
 ?>
 	<!-- Main -->
 		<div id="page">
@@ -84,8 +90,6 @@ if($cache_message===false){
 								<span class="byline">2017.09</span>
 							</header>
 							<p>투기과열지구 및 투기지역 지정으로 인해 <strong>LTV, DTI 조건이 강화</strong> 되고, 투기지역 소재 아파트 담보대출에 대한 만기 연장이 제한됩니다. 또한 새로운 소득 기준이 적용되며, 대출 취급 시 처분조건부 여부를 확인하여 심사합니다.</p>
-							<p>자세한 가이드 확인 후, 부동산 매매거래 시 문제가 생기지 않도록 꼼꼼한 체크가 필요합니다.</p>							
-							<a href="#" class="button">자세히 보기</a>
 						</section>
 						<section>
 							<header>
@@ -160,32 +164,28 @@ if($cache_message===false){
 								<h2>Q&amp;A</h2>
 							</header>
 							<ul class="style1">
-								<li><a href="#" class="title">새아파트 입주대출</a><span class="right">2018-02-06</span></li>
-								<li><a href="#" class="title">전세자금대출</a><span class="right">2018-02-06</span></li>
-								<li><a href="#" class="title">디딤돌대출 가능할까요?</a><span class="right">2018-02-06</span></li>
-								<li><a href="#" class="title">전세자금대출 관련</a><span class="right">2018-02-06</span></li>
-								<li><a href="#" class="title">신규분양아파트 대출</a><span class="right">2018-02-06</span></li>
+							<?while($rows = $result->fetch(PDO::FETCH_ASSOC)){?>
+								<li><a href="board_view.php?num=<?=$rows['idx']?>" class="title"><?=$rows['v_title']?></a><span class="right"><?=$rows['dt']?></span></li>
+							<?}?>							
 							</ul>
 						</section>
 						<section class="sidebar">
 							<header>
-								<h2>금융정보</h2>
+								<h2>사용후기</h2>
 							</header>
 							<ul class="style1">
-								<li><a href="#" class="title">2월 보금자리론 금리 상승... 최저 3.20%</a><span class="right">2018-02-06</span></li>
-								<li><a href="#" class="title">2018년 기준금리 향방은?</a><span class="right">2018-02-06</span></li>
-								<li><a href="#" class="title">신DTI 언제 시행되나?</a><span class="right">2018-02-06</span></li>
-								<li><a href="#" class="title">유한책임 디딤돌대출 '부부합산 연소득 3천 > 5천만원'으로 확대</a><span class="right">2018-02-06</span></li>
-								<li><a href="#" class="title">디딤돌·버팀목 대출 0.1%p 우대, "전자계약"</a><span class="right">2018-02-06</span></li>
+							<?while($rows2 = $result2->fetch(PDO::FETCH_ASSOC)){?>
+								<li><a href="review_view.php?num=<?=$rows2['idx']?>" class="title"><?=$rows2['v_title']?></a><span class="right"><?=$rows2['dt']?></span></li>
+							<?}?>							
 							</ul>
 						</section>
 					</div>
 				</div>
 				<ul class="style5">
-					<li><a href="http://www.iros.go.kr"><img src="images/ico_law.jpg" alt="대법원 인터넷 등기소"></a></li>
-					<li><a href="http://www.egov.go.kr"><img src="images/ico_g4c.jpg" alt="토지대장열람"></a></li>
-					<li><a href="http://nland.kbstar.com/quics?page=B025914&cc=b043428:b043506"><img src="images/ico_kb.jpg" alt="부동산정보"></a></li>
-					<li><a href="http://rt.molit.go.kr/"><img src="images/ico_molit.jpg" alt="실거래가"></a></li>
+					<li><a href="http://www.iros.go.kr" target="_blank"><img src="images/ico_law.jpg" alt="대법원 인터넷 등기소"></a></li>
+					<li><a href="http://www.egov.go.kr" target="_blank"><img src="images/ico_g4c.jpg" alt="토지대장열람"></a></li>
+					<li><a href="http://nland.kbstar.com/quics?page=B025914&cc=b043428:b043506" target="_blank"><img src="images/ico_kb.jpg" alt="부동산정보"></a></li>
+					<li><a href="http://rt.molit.go.kr/" target="_blank"><img src="images/ico_molit.jpg" alt="실거래가"></a></li>
 				</ul>
 			</div>
 			<!-- Main -->

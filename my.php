@@ -1,6 +1,5 @@
-<?php include("inc/header.php");?>
-<?php
-require_once("conf/dbconfig.php");
+<?php 
+include("inc/header.php");
 $conn = new Connection();
 $dbh = $conn->setConnection();
 $query = "SELECT * FROM tb_sido";
@@ -21,7 +20,7 @@ $stmt = $dbh->query($query);
 						</section>					
 					</div>
 				
-					<div class="9u skel-cell-important">
+					<div class="9u content">
 						<section>		
 						<h3><?=date("m")?>월 특판상품</h3>
 						<table>		

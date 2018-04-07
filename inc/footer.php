@@ -19,7 +19,7 @@
 
 	<!-- Copyright -->
 		<div id="copyright" class="container">
-			Copyright &copy; All right reserved.
+			Copyright &copy;banklist All right reserved.
 		</div>
 	</body>
 </html>

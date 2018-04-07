@@ -8,15 +8,16 @@ if(isset($_POST['form1']) && $_POST['form1']=="form1"){
 	$name = $_POST['p_name'];
 	$content = $_POST['p_content'];
 	$pw = hash("sha256", $_POST['pw']);
-	$ip = $_SERVER['REMOTE_ADDR'];	
+	$ip = $_SERVER['REMOTE_ADDR'];
+	$code = $_SESSION['captcha']['code'];
 	if(trim($title)=="" || trim($name)=="" || trim($content)==""){
 		alertBack("이름, 제목, 내용은 필수 입력 사항입니다."); exit;
 	}
-	else if(strtolower($_POST['capt']) != strtolower($_POST['captcha'])){
-		alertBack("자동입력방지 문자를 정확히 입력 해 주세요."); exit;
+	else if($code != $_POST['captcha']){
+		alertBack("자동입력방지 문구를 정확히 입력 해 주세요."); exit;
 	}
 	
-	$query="INSERT INTO tb_board_qa (v_title, v_name, v_content, v_pass, ip_addr) VALUES (:title, :name, :content, :pw, :ip)";	
+	$query="INSERT INTO tb_board_review (v_title, v_name, v_content, v_pass, ip_addr) VALUES (:title, :name, :content, :pw, :ip)";	
 	$conn = new Connection();
 	$dbh = $conn->setConnection();
 	$stmt = $dbh->prepare($query);
@@ -28,9 +29,8 @@ if(isset($_POST['form1']) && $_POST['form1']=="form1"){
 	$stmt->execute();
 	$stmt->closeCursor();
 	$dbh=$conn->closeConn();
-	location_replace("글이 등록 되었습니다.", "board.php");
+	location_replace("글이 등록 되었습니다.", "review.php");
 }
-
 ?>
 <!-- Main -->
 	<div id="page">				
@@ -43,16 +43,16 @@ if(isset($_POST['form1']) && $_POST['form1']=="form1"){
 								<h2>고객센터</h2>
 							</header>
 							<ul class="style1">
-								<li class="active"><a href="board.php">Q&amp;A</a></li>
-								<li><a href="review.php">사용후기</a></li>
+								<li><a href="board.php">Q&amp;A</a></li>
+								<li class="active"><a href="review.php">사용후기</a></li>
 							</ul>		
 					</section>					
 				</div>
 				<div class="9u content">
-					<h3>Q&amp;A</h3>
+					<h3>사용 후기</h3>
 					<section>					
 						<!--검색-->
-						<form action="<?=$_SERVER['PHP_SELF']?>" method="post" id="form1" onsubmit="return valCheck();">
+						<form action="<?=$_SERVER['PHP_SELF']?>" method="post" id="form1" onsubmit="return valCheck()">
 							<table>
 								<tr>
 									<th style="width:20%">이름</th>
@@ -71,19 +71,17 @@ if(isset($_POST['form1']) && $_POST['form1']=="form1"){
 									<td>&nbsp;<input type="password" name="pw" id=""/> * 글 수정, 삭제 시 필요합니다.</td>
 								</tr>
 								<tr>
-									<td style="text-align:center;padding-top:10px;">							
+									<td>							
 										<img src="<?=$_SESSION['captcha']['image_src']?>" alt="자동입력방지"/>
 									</td>
-									<td >
-										&nbsp;<span>왼쪽에 보이는 글자를 입력 해 주세요.</span><br/>
+									<td>
+										<span>왼쪽에 보이는 글자를 입력 해 주세요.</span><br/>
 										&nbsp;<input type="text" name="captcha" id="captcha"/> 
 									</td>
 								</tr>
 							</table>
 							<input type="hidden" name="form1" value="form1"/>
-							<input type="hidden" name="capt" value="<?=$_SESSION['captcha']['code']?>"/>
 							<input type="submit" class="button" value="확인"/>				
-							<input type="reset" class="button" value="취소" onclick="history.back();"/>				
 						</form>						
 					</section>
 				</div>

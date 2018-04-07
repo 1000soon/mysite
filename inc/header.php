@@ -1,4 +1,4 @@
-<?php include('/conf/functions.php');?>
+<?php include('conf/functions.php');?>
 <!DOCTYPE HTML>
 <html>
 	<head>

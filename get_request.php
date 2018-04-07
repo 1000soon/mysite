@@ -1,5 +1,5 @@
 <?php
-require_once("conf/dbconfig.php");
+include("conf/functions.php");
 $cache_key_name1 = "list";
 $cache_message = apc_fetch($cache_key_name1);
 $arrRequest = array();

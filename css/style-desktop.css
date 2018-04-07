@@ -35,6 +35,9 @@ body,input,textarea,select
 {	
 	border-top: none;
 }
+.mobile{
+	display:none;
+}
 #footer
 {
 }

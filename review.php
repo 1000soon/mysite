@@ -12,7 +12,7 @@ if($searchType>0 && $seachVal!=""){
 }
 $conn = new Connection();
 $dbh = $conn->setConnection();
-$query = "SELECT idx, v_name, v_title, DATE(date_ins) as dt FROM tb_board_qa ".$whereStr." ORDER BY idx DESC" ;
+$query = "SELECT idx, v_name, v_title, DATE(date_ins) as dt FROM tb_board_review ".$whereStr." ORDER BY idx DESC";
 $stmt = $dbh->prepare($query);
 $stmt->execute();
 ?>
@@ -27,33 +27,37 @@ $stmt->execute();
 								<h2>고객센터</h2>
 							</header>
 							<ul class="style1">
-								<li class="active"><a href="board.php">Q&amp;A</a></li>
-								<li><a href="review.php">사용후기</a></li>
+								<li><a href="board.php">Q&amp;A</a></li>
+								<li class="active"><a href="review.php">사용후기</a></li>
 							</ul>		
 						</section>					
 					</div>
 					<div class="9u content">
-						<h3>Q&amp;A</h3>
+						<h3>사용후기</h3>
 						<section style="min-height:300px;">							
 							<br/>
 							<table class="gray border boardlist" style="width:100%;">
+								<colgroup>		
+									<col style="width:7%"/>												
+									<col style="width:*"/>
+									<col style="width:11%"/>		
+									<col style="width:14%"/>				
+								</colgroup>
 								<thead>
 									<tr>						
 										<th>번호</th>															
 										<th>제목</th>
-										<th class="pc">작성자</th>
-										<th class="pc">등록일</th>				
+										<th>작성자</th>
+										<th>등록일</th>				
 									</tr>
 								</thead>
 								<tbody>				
 									<?while($rows = $stmt->fetch(PDO::FETCH_ASSOC)){?>
 									<tr>
 										<td><?=$rows['idx']?></td>										
-										<td><a href="board_view.php?num=<?=$rows['idx']?>"><?=$rows['v_title']?></a>
-										<!--<p class="mobile"><?=$rows['v_name']?> (<?=$rows['dt']?>)</p>-->
-										</td>
-										<td class="pc"><?=$rows['v_name']?></td>
-										<td class="pc"><?=$rows['dt']?></td>
+										<td><a href="review_view.php?num=<?=$rows['idx']?>"><?=$rows['v_title']?></a></td>
+										<td><?=$rows['v_name']?></td>
+										<td><?=$rows['dt']?></td>
 									</tr>
 									<?}?>							
 								</tbody>
@@ -69,12 +73,11 @@ $stmt->execute();
 									<option value="2">작성자</option>
 									<option value="3">제목+내용</option>
 								</select>
-								<input type="text" name="searchVal" id="searchVal" value="" style="width:180px;"/>
+								<input type="text" name="searchVal" id="searchVal" value="" style="width:180px;" />
 								<input type="hidden" name="form1" value="form1"/>
 								<input type="submit" class="btn" value="검색" />														
 							</form>
-							<br/>
-							<a href="board_insert.php" class="button" >글쓰기</a>
+							<br/><a href="review_insert.php" class="button" >글쓰기</a>
 						</section>
 					</div>
 				</div>			

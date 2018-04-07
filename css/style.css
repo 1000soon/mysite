@@ -366,7 +366,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', end
 		{
 		}
 
-		
+		.sidebar li.active{
+			list-style:circle;
+			font-weight:bold;;
+		}
+		.sidebar li.active a{
+			color:#E36442;
+		}
 
 /* Buttons */
 	
@@ -388,7 +394,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', end
 		transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
 		cursor: pointer;
 	}
-		input[type=submit].button{border:0;}
+		input[type=submit].button, input[type=reset].button{border:0;}
 		.button:hover
 		{
 			background: #de3d27;
@@ -1090,6 +1096,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', end
 	color: #333 !important;
 }
 /****/
+.container .content h2{font-size:1.6em;}
+.container .content h3{font-size:1.4em;}
 .container .content #titleArea{width:700px;border-bottom:2px solid #ccc;padding-bottom:10px;margin-bottom:30px;}
 .container .content #titleArea h3{font-size:25px;}
 .container .content table{font-size:14px;}

@@ -1,6 +1,5 @@
-<?php include("inc/header.php");?>
-<?php
-require_once("conf/dbconfig.php");
+<?php 
+include("inc/header.php");
 $conn = new Connection();
 $dbh = $conn->setConnection();
 $query = "SELECT * FROM tb_sido";
@@ -11,7 +10,6 @@ $stmt = $dbh->query($query);
 			<!-- Main -->
 			<div id="main" class="container">
 				<div class="row">
-
 					<div class="3u">
 						<section class="sidebar">
 							<header>
@@ -27,7 +25,7 @@ $stmt = $dbh->query($query);
 						</section>					
 					</div>
 				
-					<div class="9u skel-cell-important">
+					<div class="9u  content">
 						<section>
 							<header>
 								<h3>아파트 매매 잔금 대출 금리 비교</h3>

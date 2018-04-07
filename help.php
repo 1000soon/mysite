@@ -20,7 +20,9 @@
 						</section>					
 					</div>
 				
-					<div class="9u skel-cell-important">
+					<div class="9u skel-cell-important content">
+						<h3>대출계산기</h3>
+						<br/>
 						<section>
 							<table>
 							<tbody>

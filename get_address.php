@@ -1,13 +1,13 @@
 <?php
-require_once("conf/dbconfig.php");
+include("conf/functions.php");
 $type=$_POST['t'];
 $value=$_POST['v'];
 $query="";
 $result="";
 switch($type){
-	case 1 : $query="SELECT idx, local_name FROM tb_gungu WHERE sido=:idx"; 
+	case 1 : $query="SELECT idx, local_name FROM tb_gungu WHERE sido=:idx ORDER BY local_name ASC"; 
 		$result.="<option value=''>-시/구/군-</option>";	break;
-	case 2 : $query="SELECT idx, local_name FROM tb_dong WHERE gungu=:idx";
+	case 2 : $query="SELECT idx, local_name FROM tb_dong WHERE gungu=:idx ORDER BY local_name ASC";
 		$result.="<option value=''>-읍/면/동-</option>";	break;
 }
 
