@@ -2,7 +2,7 @@
 @import url(nanumgothic.css);
 body
 {
-	background: #202020 url(images/bg_stripe.png) repeat;
+	background: #202020;
 }
 
 body,input,textarea,select
@@ -72,6 +72,7 @@ blockquote
 	font-style: italic;
 }
 */
+caption{display:none;}
 blockquote
 {
 	margin: 0;
@@ -91,7 +92,7 @@ table
 }
 tr
 {	
-	line-height:30px;
+	/*line-height:30px;*/
 	border-bottom:1px solid #e0e0e0;
 }
 tr.last{
@@ -140,7 +141,7 @@ header
 
 	header h2
 	{
-		font-size: 2.5em;
+		font-size: 1.7em;
 	}
 
 	header .byline
@@ -191,6 +192,9 @@ background: -o-linear-gradient(top,  rgba(246,246,246,1) 0%,rgba(225,225,225,1) 
 background: -ms-linear-gradient(top,  rgba(246,246,246,1) 0%,rgba(225,225,225,1) 49%,rgba(241,241,241,1) 50%,rgba(255,255,255,1) 100%);
 background: linear-gradient(to bottom,  rgba(246,246,246,1) 0%,rgba(225,225,225,1) 49%,rgba(241,241,241,1) 50%,rgba(255,255,255,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0 );
+}
+.btnAdd{
+	display:inline-block;width:25px;height:25px;vertical-align:top;border:1px solid #ccc; border-radius:3px;	
 }
 /* Sections/Articles */
 	section,
@@ -359,7 +363,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', end
 		{
 			float: left;
 			padding: 0.25em 0.25em;
-			line-height: 0;
 		}
 		
 		ul.style5 a
@@ -946,6 +949,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', end
 	border-top: 1px solid;
 	border-color: rgba(0,0,0,.2);
 }
+
 #bar
 {
 	padding:1em;background:#eee;
@@ -976,13 +980,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', end
 {
 	zoom:1;
 	display:inline-block;		
-	width:150px;
+	width:50%;
 	line-height: 1;
 	white-space:nowrap;
 	overflow:hidden;
 	text-overflow:ellipsis;
 	text-decoration:none;
-	color:#999;
 }
 .sidebar a.title:hover{
 	color:#000;
@@ -992,6 +995,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', end
 	float:right;
 }
 
+/****/
+.container .content h2{font-size:1.6em;}
+.container .content h3{font-size:1.4em;}
+.container .content #titleArea{width:700px;border-bottom:2px solid #ccc;padding-bottom:10px;margin-bottom:30px;}
+.container .content #titleArea h3{font-size:25px;}
+.container .content table{font-size:14px;}
+.container .content table tr{line-height:35px;}
+.container .content table.boardlist tr td{text-align:center;}
+.container .content table.gray thead{color:#000;background: rgb(255,255,255);
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNWU1ZTUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1)));
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
+background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
+background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );
+}
+.container .content table.border{border-top:1px solid #eee;}
+.container .content table.border tr{border-bottom:1px solid #ddd;}
+.page{text-align:center;}
 /* Footer */
 
 #footer
@@ -1075,9 +1099,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', end
 	padding: 1.4em;
 	font-size: 0.95em;
 }
-
-
-
 .balloon {
 	padding: 1.87em;
 	background: url(images/img08.jpg) repeat left top;
@@ -1086,7 +1107,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', end
 	font-size: 1.2em;
 	color: #333;
 }
-
+#fade{display:none;width:100%;height:100%;position:fixed;top:0;left:0;background:rgba(0,0,0,.8);}
+#info{
+	display:none;width:80%;background:#fff;height:80%;overflow-y:scroll;position:fixed;top:10%;left:10%;z-index:10;
+}
+#info table{
+	width:90%;margin:0 auto;
+}
+#info table th,#info table td{
+	border:0;
+}
 .ballon-bgbtm {
 	height: 1.87em;
 }
@@ -1095,26 +1125,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', end
 {
 	color: #333 !important;
 }
-/****/
-.container .content h2{font-size:1.6em;}
-.container .content h3{font-size:1.4em;}
-.container .content #titleArea{width:700px;border-bottom:2px solid #ccc;padding-bottom:10px;margin-bottom:30px;}
-.container .content #titleArea h3{font-size:25px;}
-.container .content table{font-size:14px;}
-.container .content table tr{line-height:35px;}
-.container .content table.boardlist tr td{text-align:center;}
-.container .content table.gray thead{color:#000;background: rgb(255,255,255);
-background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNWU1ZTUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%);
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1)));
-background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
-background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
-background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
-background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );
-}
-.container .content table.border{border-top:1px solid #eee;}
-.container .content table.border tr{border-bottom:1px solid #ddd;}
-.page{text-align:center;}
 
 #dv_rolling ul li{border:0;}
+
+.paging{width:100%;text-align:center;margin-top:20px;}
+.paging span, .paging a{display:inline-block;width:30px;border:1px solid #ccc;border-radius:3px;}
+.paging span.sel{color:#E36442;font-weight:bold;}
+.paging span img, .paging a img{vertical-align:top;padding-top:4px;}
+
+ol.process li{float:left;margin-bottom:10px;}
+ol.process li img{vertical-align:top;}
+ol.process li span{font-size:1.2em;font-weight:;display:inline-block;border:1px solid #ccc; border-radius:5px;padding:10px 15px;background:#f9f9f9;}

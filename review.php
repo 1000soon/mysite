@@ -12,9 +12,31 @@ if($searchType>0 && $seachVal!=""){
 }
 $conn = new Connection();
 $dbh = $conn->setConnection();
-$query = "SELECT idx, v_name, v_title, DATE(date_ins) as dt FROM tb_board_review ".$whereStr." ORDER BY idx DESC";
+$query_rs1 = "SELECT count(*) FROM tb_board_review";
+$rs1 = $dbh->query($query_rs1);
+$total=$rs1->fetchColumn();
+$limit =15;
+$pages = ceil($total/$limit);
+$page = min($pages, filter_input(INPUT_GET, 'page', FILTER_VALIDATE_INT, array('options'=>array('default'=>1,'min_range'=>1)
+)));
+
+$offset = ($page-1)*$limit;
+$current_num=$total-$limit*($page-1);
+
+$query = "SELECT idx, v_name, v_title, DATE(date_ins) as dt FROM tb_board_review ".$whereStr." ORDER BY idx DESC LIMIT ?,?" ;
 $stmt = $dbh->prepare($query);
+$stmt->bindParam(1,$offset,PDO::PARAM_INT);
+$stmt->bindParam(2,$limit,PDO::PARAM_INT);
 $stmt->execute();
+
+$page_param = array();
+$page_param['total_num']  = $total;
+$page_param['list_num']  = $limit;
+$page_param['page_block'] = 5;
+$page_param['current_page'] = $page;
+$page_param['link_url']  = $_SERVER['PHP_SELF'];
+$page_class = new Page();
+$page_class->init($page_param);
 ?>
 	<!-- Main -->
 		<div id="page">				
@@ -36,12 +58,13 @@ $stmt->execute();
 						<h3>사용후기</h3>
 						<section style="min-height:300px;">							
 							<br/>
+							total <?=$total?>건, <?=$page."/".$pages?>page
 							<table class="gray border boardlist" style="width:100%;">
-								<colgroup>		
-									<col style="width:7%"/>												
-									<col style="width:*"/>
-									<col style="width:11%"/>		
-									<col style="width:14%"/>				
+								<colgroup>
+									<col style="width:6%" />
+									<col style="width:;" />
+									<col style="width:7%" />
+									<col style="width:12%" />
 								</colgroup>
 								<thead>
 									<tr>						
@@ -63,9 +86,9 @@ $stmt->execute();
 								</tbody>
 							</table>
 							<?=get_nodata($stmt->rowCount())?>
-							<br/>			
 							<!--페이징-->
-							
+							<?=$page_class->getPaging();?>
+							<br/>							
 							<!--검색-->
 							<form action="<?=$_SERVER['PHP_SELF']?>" method="get" id="form1" class="">
 								<select name="searchType" id="searchType">

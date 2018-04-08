@@ -12,9 +12,32 @@ if($searchType>0 && $seachVal!=""){
 }
 $conn = new Connection();
 $dbh = $conn->setConnection();
-$query = "SELECT idx, v_name, v_title, DATE(date_ins) as dt FROM tb_board_qa ".$whereStr." ORDER BY idx DESC" ;
+
+$query_rs1 = "SELECT count(*) FROM tb_board_qa";
+$rs1 = $dbh->query($query_rs1);
+$total=$rs1->fetchColumn();
+$limit =15;
+$pages = ceil($total/$limit);
+$page = min($pages, filter_input(INPUT_GET, 'page', FILTER_VALIDATE_INT, array('options'=>array('default'=>1,'min_range'=>1)
+)));
+
+$offset = ($page-1)*$limit;
+$current_num=$total-$limit*($page-1);
+
+$query = "SELECT idx, v_name, v_title, DATE(date_ins) as dt FROM tb_board_qa ".$whereStr." ORDER BY idx DESC LIMIT ?,?" ;
 $stmt = $dbh->prepare($query);
+$stmt->bindParam(1,$offset,PDO::PARAM_INT);
+$stmt->bindParam(2,$limit,PDO::PARAM_INT);
 $stmt->execute();
+
+$page_param = array();
+$page_param['total_num']  = $total;
+$page_param['list_num']  = $limit;
+$page_param['page_block'] = 5;
+$page_param['current_page'] = $page;
+$page_param['link_url']  = $_SERVER['PHP_SELF'];
+$page_class = new Page();
+$page_class->init($page_param);
 ?>
 	<!-- Main -->
 		<div id="page">				
@@ -36,21 +59,28 @@ $stmt->execute();
 						<h3>Q&amp;A</h3>
 						<section style="min-height:300px;">							
 							<br/>
+							total <?=$total?>건, <?=$page."/".$pages?>page
 							<table class="gray border boardlist" style="width:100%;">
+								<colgroup>
+									<col style="width:6%" />
+									<col style="width:;" />
+									<col style="width:7%" />
+									<col style="width:12%" />
+								</colgroup>
 								<thead>
 									<tr>						
 										<th>번호</th>															
 										<th>제목</th>
-										<th class="pc">작성자</th>
-										<th class="pc">등록일</th>				
+										<th class="pc">글쓴이</th>
+										<th class="pc">날짜</th>				
 									</tr>
 								</thead>
 								<tbody>				
 									<?while($rows = $stmt->fetch(PDO::FETCH_ASSOC)){?>
 									<tr>
 										<td><?=$rows['idx']?></td>										
-										<td><a href="board_view.php?num=<?=$rows['idx']?>"><?=$rows['v_title']?></a>
-										<!--<p class="mobile"><?=$rows['v_name']?> (<?=$rows['dt']?>)</p>-->
+										<td style="text-align:left; text-indent:1em;"><a href="board_view.php?num=<?=$rows['idx']?>"><?=$rows['v_title']?></a>
+										<p class="mobile"><?=$rows['v_name']?> (<?=$rows['dt']?>)</p>
 										</td>
 										<td class="pc"><?=$rows['v_name']?></td>
 										<td class="pc"><?=$rows['dt']?></td>
@@ -58,18 +88,18 @@ $stmt->execute();
 									<?}?>							
 								</tbody>
 							</table>
-							<?=get_nodata($stmt->rowCount())?>
-							<br/>			
+							<?=get_nodata($stmt->rowCount())?>									
 							<!--페이징-->
-							
+							<?=$page_class->getPaging();?>
+							<br/>	
 							<!--검색-->
 							<form action="<?=$_SERVER['PHP_SELF']?>" method="get" id="form1" class="">
 								<select name="searchType" id="searchType">
-									<option value="1">제목</option>
-									<option value="2">작성자</option>
-									<option value="3">제목+내용</option>
+									<option value="1" <?=$searchType==1?"selected='selected'":""?>>제목</option>
+									<option value="2" <?=$searchType==2?"selected='selected'":""?>>작성자</option>
+									<option value="3" <?=$searchType==3?"selected='selected'":""?>>제목+내용</option>
 								</select>
-								<input type="text" name="searchVal" id="searchVal" value="" style="width:180px;"/>
+								<input type="text" name="searchVal" id="searchVal" value="<?=$seachVal?>" style="width:180px;"/>
 								<input type="hidden" name="form1" value="form1"/>
 								<input type="submit" class="btn" value="검색" />														
 							</form>

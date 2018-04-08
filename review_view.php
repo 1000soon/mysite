@@ -32,7 +32,7 @@ $data = $stmt->fetch(PDO::FETCH_ASSOC);
 							<p><?=$data['v_content'] ?></p>
 						</article>
 						비밀번호 <input type="text" name="pw" id="pw"style="width:150px;" />&nbsp;
-						<a href="javascript:chageform('r',<?=$data['v_idx']?>)" class="btn">수정</a>&nbsp;&nbsp;<a href="javascript:deleteform('r',<?=$data['v_idx']?>)" class="btn">삭제</a>
+						<a href="javascript:passform('r',<?=$data['idx']?>,'m')" class="btn">수정</a>&nbsp;&nbsp;<a href="javascript:passform('r',<?=$data['idx']?>,'d')" class="btn">삭제</a>
 						<hr/>						
 						<a href="review.php" class="button">목록으로</a>							
 					</section>
@@ -47,5 +47,31 @@ $data = $stmt->fetch(PDO::FETCH_ASSOC);
 	$(function(){
 		$("#nav ul li").eq(4).addClass("active").siblings("li").removeClass("active");
 	});
+	function passform(page, idx, proc){
+		var pw = $("#pw").val();
+		if(proc=='d' && !confirm("정말 삭제하시겠습니까?")){
+			return false;
+		}
+		$.post("pwcheck.php", {tb:page, num:idx, proc:proc, pw:pw}).done(function(result){
+			if(result=='err1'){
+				alert("글이 존재하지 않습니다.");
+			}
+			else if(result=='err2'){
+				alert("테이블이 존재하지 않습니다.");
+			}
+			else if(result=='err3'){
+				alert("비밀번호가 일치하지 않습니다.");
+			}
+			else if(result=='err4'){
+				alert("DB장애가 발생하였습니다.");
+			}
+			else if(result=='delete'){
+				alert("삭제되었습니다."); location.replace("review.php");
+			}
+			else{
+				location.replace(result);
+			}
+		});
+	}
 </script>
 <?php include("inc/footer.php");?>

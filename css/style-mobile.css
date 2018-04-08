@@ -188,12 +188,11 @@
 		padding-top: 0em;
 		border-top: none;
 	}
-
 	
 	.homepage #main
 	{
-		margin-top: 3em;
-		padding-top: 3em;
+		margin-top: 1em;
+		padding-top: 1em;
 	}
 	
 	.pc{
@@ -202,7 +201,8 @@
 	.mobile{
 		display:block;
 	}
-	
+	.container .content table.boardlist tr td{text-align:left; text-indent:5px;line-height:1.2em;}
+	.container .content table.boardlist{border-left:1px solid #ccc}
 /*********************************************************************************/
 /* Footer                                                                        */
 /*********************************************************************************/

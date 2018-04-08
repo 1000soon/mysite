@@ -13,14 +13,14 @@
 								<h2>대출 도우미</h2>
 							</header>
 							<ul class="style1">
-								<li class="active"><a href="#">대출계산기</a></li>
-								<li><a href="#">부대비용 &amp; 필요 서류</a></li>
-								<li><a href="#">감정평가 절차 및 이해</a></li>
+								<li class="active"><a href="help.php">대출계산기</a></li>
+								<li><a href="additional.php">부대비용 &amp; 필요 서류</a></li>
+								<li><a href="assess.php">감정평가 절차 및 이해</a></li>
 							</ul>							
 						</section>					
 					</div>
 				
-					<div class="9u skel-cell-important content">
+					<div class="9u content">
 						<h3>대출계산기</h3>
 						<br/>
 						<section>

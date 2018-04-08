@@ -1,6 +1,6 @@
 <?php
 @session_start();
-error_reporting(E_ALL); ini_set("display_errors", 1);
+//error_reporting(E_ALL); ini_set("display_errors", 1);
 @require_once("dbconfig.php");
 function alert($msg){
 	$str= "<script type=\"text/javascript\">";
@@ -42,7 +42,7 @@ function getlocation($type, $code){
 function get_nodata($num){
 	$rtn = "";
 	if ($num < 1)
-	$rtn = "<div style='text-align:center;line-height:32px; border:#dedede 1px solid;'>등록 된 글이 없습니다.</div>";
+	$rtn = "<div style='text-align:center;line-height:32px;'>등록 된 글이 없습니다.</div>";
 	return $rtn;
 }
 
@@ -160,7 +160,7 @@ class Page{
 		$this->current_block = ceil($this->current_page / $this->page_block);
 
 		$this->link_url = $param['link_url'];
-		$this->parameter = $param['link_param'];
+		$this->parameter = isset($param['link_param'])?$param['link_param']:"";
 	}
 
 	public function getPaging(){
@@ -171,17 +171,17 @@ class Page{
 		$this->page_result = "<div class='paging'>";
 		//맨앞
 		if($this->current_page ==1){
-			$this->page_result .= "<span><img src='/admin/common/images/btn_first.gif' alt='first'/></span>&nbsp;&nbsp;";
+			$this->page_result .= "<span><img src='/images/btn_first.png' alt='first'/></span>&nbsp;&nbsp;";
 		}else{
-			$this->page_result .= "<a href='".$this->link_url."?page=1".$this->parameter."' class='first'><img src='/admin/common/images/btn_first.gif' alt='first'/></a>&nbsp;&nbsp;";
+			$this->page_result .= "<a href='".$this->link_url."?page=1".$this->parameter."' class='first'><img src='/images/btn_first.png' alt='first'/></a>&nbsp;&nbsp;";
 		}
 
 		//이전페이지
 		if($this->current_page ==1){
-			$this->page_result .= "<span class=''><img src='/admin/common/images/btn_prev.gif' alt=''/></span>&nbsp;&nbsp;";
+			$this->page_result .= "<span class=''><img src='/images/btn_prev.png' alt=''/></span>&nbsp;&nbsp;";
 		}else{
 			$movepage = ($this->current_page)-1;
-			$this->page_result .= "<a href='".$this->link_url."?page=".$movepage.$this->parameter."' class=''><img src='/admin/common/images/btn_prev.gif' alt=''/></a>&nbsp;&nbsp;";
+			$this->page_result .= "<a href='".$this->link_url."?page=".$movepage.$this->parameter."' class=''><img src='/images/btn_prev.png' alt=''/></a>&nbsp;&nbsp;";
 		}
 
 		//페이지번호 링크
@@ -192,24 +192,24 @@ class Page{
 				if($i==$this->current_page){
 					$this->page_result .= "<span class='sel'>".$i."</span>&nbsp;&nbsp;";
 				}else{
-					$this->page_result .= "<a href='".$this->link_url."?page=".$i.$this->parameter."'>".$i."</a>&nbsp;&nbsp;";
+					$this->page_result .= "<a href='".$this->link_url."?page=".$i.$this->parameter."' class='num'>".$i."</a>&nbsp;&nbsp;";
 				}
 			}
 		}
 
 		//다음페이지
 		if($this->current_page == $this->total_num_pages){
-			$this->page_result .= "<span class=''><img src='/admin/common/images/btn_next.gif' alt=''/></span>&nbsp;&nbsp;";
+			$this->page_result .= "<span class=''><img src='/images/btn_next.png' alt=''/></span>&nbsp;&nbsp;";
 		}else{
 			$movepage = ($this->current_page)+1;
-			$this->page_result .= "<a href='".$this->link_url."?page=".$movepage.$this->parameter."' class=''><img src='/admin/common/images/btn_next.gif' alt=''/></a>&nbsp;&nbsp;";
+			$this->page_result .= "<a href='".$this->link_url."?page=".$movepage.$this->parameter."' class=''><img src='/images/btn_next.png' alt=''/></a>&nbsp;&nbsp;";
 		}
 
 		//맨끝
 		if($this->current_page ==$this->total_num_pages){
-			$this->page_result .= "<span class='last'><img src='/admin/common/images/btn_last.gif' alt='last'/></span>";
+			$this->page_result .= "<span class='last'><img src='/images/btn_last.png' alt='last'/></span>";
 		}else{
-			$this->page_result .= "<a href='".$this->link_url."?page=".$this->total_num_pages.$this->parameter."' class='last'><img src='/admin/common/images/btn_last.gif' alt='last'/></a>";
+			$this->page_result .= "<a href='".$this->link_url."?page=".$this->total_num_pages.$this->parameter."' class='last'><img src='/images/btn_last.png' alt='last'/></a>";
 		}
 
 		$this->page_result .= "</div>";
