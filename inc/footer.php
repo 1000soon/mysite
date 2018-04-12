@@ -22,6 +22,11 @@
 			Copyright &copy;banklist All right reserved.
 		</div>
 	<script type="text/javascript">
+	$(function(){
+		$("#anchor1").click(function(){
+			window.scrollTo(0,0);
+		});
+	});
 		function showinfo(){
 			$("#fade").show();
 			$("#info").show();			
@@ -35,9 +40,11 @@
 		
 	<div id="fade">&nbsp;</div>
 	<!-- 개인정보 -->	
+	
 	<div id="info">
-	<h2 id="topinfo" style="font-weight:bold;margin:3% 5%;font-size:1.3em;">개인정보 처리 방침
-	<button type="button" style="float:right;border:0;background:none;pointer:cursor;" onclick="closeinfo()"><img src="images/btn_close.png" alt="닫기"/></button></h2>
+	<button type="button" id="closeInfo" style="float:right;border:0;background:none;pointer:cursor;" onclick="closeinfo()"><img src="images/btn_close.png" alt="닫기"/></button>
+	<h2 id="topinfo" style="font-weight:bold;margin:3% 2%;font-size:1.3em;">개인정보 처리 방침
+	</h2>
 	
 	<table class="all" border="0" cellspacing="0" cellpadding="0">
 	<tbody>
@@ -166,17 +173,20 @@
 			<table class="sub2" border="0" cellspacing="0" cellpadding="0">
 			<tbody>
 			<tr>
-				<td>제공받는 자</td>
-				<td width="90px;" height="10px;">제공받는 자의 이용 목적</td>
-				<td width="90px;" height="10px;">제공하는 개인정보 항목</td>
-				<td width="90px;" height="10px;">개인정보 보유 및 이용 기간</td>
+				<td colspan=2>제공받는 자</td>
 			</tr>
 			<tr>
-				<td height="10px;">			신한은행,우리은행,한국SC은행,하나은행,국민은행,한국씨티은행,농협은행,기업은행,수협은행,전북은행,광주은행,부산은행,경남은행,대구은행,교보생명보험,한화손해보험,삼성화재보험,삼성생명보험,흥국생명보험,흥국화재보험,농협생명보험,농협손해보험,동부화재보험,현대해상보험,신한생명보험,현대라이프생명보험,LIG손해보험보험,롯데손해보험보험,메리츠화재보험,현대캐피탈,신한캐피탈,아주캐피탈,우리캐피탈,BS캐피탈,IBK캐피탈,SC캐피탈,NH캐피탈,하나캐피탈,상호저축은행
+				<td colspan=2>			신한은행,우리은행,한국SC은행,하나은행,국민은행,한국씨티은행,농협은행,기업은행,수협은행,전북은행,광주은행,부산은행,경남은행,대구은행,교보생명보험,한화손해보험,삼성화재보험,삼성생명보험,흥국생명보험,흥국화재보험,농협생명보험,농협손해보험,동부화재보험,현대해상보험,신한생명보험,현대라이프생명보험,LIG손해보험보험,롯데손해보험보험,메리츠화재보험,현대캐피탈,신한캐피탈,아주캐피탈,우리캐피탈,BS캐피탈,IBK캐피탈,SC캐피탈,NH캐피탈,하나캐피탈,상호저축은행
 				</td>
-				<td>대출금리 및 한도 확인</td>
-				<td>성명, 전화번호, 부동산정보, 대출금액</td>
-				<td>이용목적 달성 시 즉각 파기하도록 함</td>
+			</tr>
+			<tr>
+				<td>제공받는 자의 이용 목적</td><td>대출금리 및 한도 확인</td>
+			</tr>
+			<tr>
+				<td>제공하는 개인정보 항목</td><td>성명, 전화번호, 부동산정보, 대출금액</td>
+			</tr>
+			<tr>
+				<td>개인정보 보유 및 이용 기간</td><td>이용목적 달성 시 즉각 파기하도록 함</td>
 			</tr>
 			</tbody>
 			</table>
@@ -187,41 +197,8 @@
 		<td colspan="2"> 그 밖에 법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우, 회사는 귀하의 개인정보를 예외적으로 제공할 수 있습니다.  </td><td>
 		</td>
 	</tr>
-
-	<tr><td colspan="2"><h3><b>9. 개인정보 처리의 위탁</b></h3></td>
-	</tr>
-	
 	<tr>
-		<td  style="text-indent:5px"></td>
-		<td > 회사는 개인정보 처리 업무를 위탁하고 있으며, 위탁계약 체결 시 정보통신망법 제25조에 따라 위탁업무 수행목적 외 개인정보 처리 금지, 기술적· 관리적 보호조치, 재위탁 제한, 개인정보 처리 위탁을 받는 자(수탁자)에 대한 교육·감독 손해배상 등 책임에 관한 사항을 명확히 규정하고, 당해 계약내용을 보관하고 있습니다.<br><br> 개인정보 처리업무를 위탁받는 업체들은 다음과 같습니다. 
-		</td>
-	</tr>
-	
-	<tr>
-		<td colspan="2">
-			<table class="sub3" border="0" cellspacing="0" cellpadding="0">
-			<tbody>
-			<tr>
-				<td>개인정보 처리 위탁을 받는 자(수탁자)</td>
-				<td width="200px;" height="10px;">개인정보 처리 위탁하는 업무의 내용 </td>
-				<td>개인정보 이용기간</td>
-			</tr>
-			<tr>
-				<td>코리아서버호스팅</td>
-				<td>개인정보 처리시스템 관련 서버 운영 및 외부에서 웹 혹은 서버로 들어오려는 이상 징후를 감지하고 차단함</td>
-				<td>위탁 계약 종료 시까지</td>
-			</tr>
-			</tbody>
-			</table>
-		</td>
-	</tr>
-	<tr>
-		<td  style="text-indent:5px"></td>
-		<td colspan="2">회사는 위탁업무의 내용이나 수탁자가 변경될 경우에는 본 개인정보처리방침을 통해 고지하겠습니다.  </td><td>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2"><h3><b>10. 개인정보 자동 수집 장치의 설치·운영 및 거부에 관한 사항</b></h3></td>
+		<td colspan="2"><h3><b>9. 개인정보 자동 수집 장치의 설치·운영 및 거부에 관한 사항</b></h3></td>
 	</tr>
 
 	<tr>

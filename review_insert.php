@@ -74,22 +74,23 @@ if(isset($_POST['form1']) && $_POST['form1']=="form1"){
 								</tr>								
 								<tr>
 									<th>제목</th>
-									<td>&nbsp;<input type="text" name="p_title" id="p_title" value="<?=$data['v_title']?>" style="width:99%"/></td>
+									<td>&nbsp;<input type="text" name="p_title" id="p_title" value="<?=$data['v_title']?>" style="width:95%"/></td>
 								</tr>
 								<tr>
 									<th>문의 내용</th>
-									<td>&nbsp;<textarea name="p_content" id="p_content" cols="" rows="5" style="width:99%"><?=$data['v_content']?></textarea></td>
+									<td>&nbsp;<textarea name="p_content" id="p_content" cols="" rows="5" style="width:95%"><?=$data['v_content']?></textarea></td>
 								</tr>
 								<tr>
 									<th>비밀번호 설정</th>
 									<td>&nbsp;<input type="password" name="pw" id=""/> * 글 수정, 삭제 시 필요합니다.</td>
 								</tr>
 								<tr>
-									<td style="text-align:center;padding-top:10px;">							
-										<img src="<?=$_SESSION['captcha']['image_src']?>" alt="자동입력방지"/>
-									</td>
-									<td >
-										&nbsp;<span>왼쪽에 보이는 글자를 입력 해 주세요.</span><br/>
+									<th>							
+										자동입력 방지
+									</th>
+									<td style="vertical-align:top;">										
+										&nbsp;
+										<img src="<?=$_SESSION['captcha']['image_src']?>" alt="자동입력방지"/><br/>
 										&nbsp;<input type="text" name="captcha" id="captcha"/> 
 									</td>
 								</tr>
@@ -97,8 +98,7 @@ if(isset($_POST['form1']) && $_POST['form1']=="form1"){
 							<input type="hidden" name="form1" value="form1"/>
 							<input type="hidden" name="capt" value="<?=$_SESSION['captcha']['code']?>"/>
 							<input type="hidden" name="idx" value="<?=$num?>" />
-							<input type="submit" class="button" value="확인"/>				
-							<input type="reset" class="button" value="취소" onclick="history.back();"/>				
+							<input type="submit" class="button" value="확인"/>
 						</form>						
 					</section>
 				</div>
@@ -109,6 +109,9 @@ if(isset($_POST['form1']) && $_POST['form1']=="form1"){
 <!-- /Main -->
 <br>
 <script type="text/javascript">
+	$(function(){
+		$("#nav ul li").eq(3).addClass("active").siblings("li").removeClass("active");
+	});
 function valCheck(){
 	if($("#p_name").val()==""){
 		$("#p_name").focus(); return false;

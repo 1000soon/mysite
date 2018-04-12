@@ -7,6 +7,11 @@ $query = "SELECT *, DATE(date_ins) as dt FROM tb_board_review WHERE idx=".$num;
 $stmt = $dbh->prepare($query);
 $stmt->execute();
 $data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+// 댓글
+$query = "SELECT * FROM tb_reply WHERE board_type=2 AND parent_idx=".$num;
+$stmt = $dbh->prepare($query);
+$stmt->execute();
 ?>
 <!-- Main -->
 	<div id="page">				
@@ -31,9 +36,19 @@ $data = $stmt->fetch(PDO::FETCH_ASSOC);
 							<p><?=$data['v_name'] ?> (<?=$data['dt'] ?>)</p>						
 							<p><?=$data['v_content'] ?></p>
 						</article>
-						비밀번호 <input type="text" name="pw" id="pw"style="width:150px;" />&nbsp;
-						<a href="javascript:passform('r',<?=$data['idx']?>,'m')" class="btn">수정</a>&nbsp;&nbsp;<a href="javascript:passform('r',<?=$data['idx']?>,'d')" class="btn">삭제</a>
-						<hr/>						
+						<p>
+							비밀번호 <input type="password" name="pw" id="pw" style="width:150px;" />&nbsp;
+							<a href="javascript:passform('b',<?=$data['idx']?>,'m')" class="btn">수정</a>&nbsp;&nbsp;<a href="javascript:passform('b',<?=$data['idx']?>,'d')" class="btn">삭제</a>	
+						</p>
+						<br/>
+						<?while($rows = $stmt->fetch(PDO::FETCH_ASSOC)){?>					
+						<table>
+						<tr style="border:0;">
+							<td style="width:30px;vertical-align:top;border:0;padding-top:8px;padding-left:8px;"><img src="images/ico/ico_reply.png" alt=""/></td>
+							<td style="border:0;vertical-align:top;padding-left:10px;"><?=$rows['content']?></td>
+						</tr>
+						</table>
+						<?}?><hr/>
 						<a href="review.php" class="button">목록으로</a>							
 					</section>
 				</div>
@@ -45,7 +60,7 @@ $data = $stmt->fetch(PDO::FETCH_ASSOC);
 <br>
 <script type="text/javascript">
 	$(function(){
-		$("#nav ul li").eq(4).addClass("active").siblings("li").removeClass("active");
+		$("#nav ul li").eq(3).addClass("active").siblings("li").removeClass("active");
 	});
 	function passform(page, idx, proc){
 		var pw = $("#pw").val();

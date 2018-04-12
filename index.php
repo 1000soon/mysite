@@ -34,45 +34,45 @@ $result2 = $dbh->query($query);
 					<div class="3u">
 						<section>
 							<header>
-								<a href="compare.php" class="">
+								<a href="my.php" class="">
 									<img src="images/ico_building0.png" alt="" style="width:100px;" />
 								</a>
 								<h2>아파트 잔금 대출</h2>
 							</header>
-							<a href="compare.php" class=""><b style="color:#e95d3c;">최저 3.23%~</b></a>
+							<a href="my.php" class=""><b style="color:#e95d3c;">최저 3.23%~</b></a>
 						</section>
 					</div>
 					<div class="3u">
 						<section>
 							<header>
-								<a href="compare2.php" class="">
+								<a href="my.php" class="">
 									<img src="images/ico_building1.png" alt="" style="width:100px;" />
 								</a>
 								<h2>아파트 담보 대출</h2>
 							</header>
-							<a href="compare2.php" class=""><b style="color:#e95d3c;">최저 3.23%~</b></a>
+							<a href="my.php" class=""><b style="color:#e95d3c;">최저 3.23%~</b></a>
 						</section>
 					</div>
 					<div class="3u">
 						<section>
 							<header>
-								<a href="compare3.php" class="">
+								<a href="my.php" class="">
 									<img src="images/ico_building4.png" alt="" style="width:100px;" />
 								</a>
 								<h2>빌라/주택 담보 대출</h2>
 							</header>
-							<a href="compare3.php" class=""><b style="color:#e95d3c;">최저 3.33%~</b></a>
+							<a href="my.php" class=""><b style="color:#e95d3c;">최저 3.33%~</b></a>
 						</section>
 					</div>
 					<div class="3u">
 						<section>
 							<header>
-								<a href="compare4.php" class="">
+								<a href="my.php" class="">
 									<img src="images/ico_building3.png" alt="" style="width:100px;" />
 								</a>
 								<h2>오피스텔 담보 대출</h2>
 							</header>
-							<a href="compare4.php" class=""><b style="color:#e95d3c;">최저 3.43%~</b></a>
+							<a href="my.php" class=""><b style="color:#e95d3c;">최저 3.43%~</b></a>
 						</section>
 					</div>
 				</div>

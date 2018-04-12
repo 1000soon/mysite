@@ -23,7 +23,7 @@ $page = min($pages, filter_input(INPUT_GET, 'page', FILTER_VALIDATE_INT, array('
 $offset = ($page-1)*$limit;
 $current_num=$total-$limit*($page-1);
 
-$query = "SELECT idx, v_name, v_title, DATE(date_ins) as dt FROM tb_board_review ".$whereStr." ORDER BY idx DESC LIMIT ?,?" ;
+$query = "SELECT idx, v_name, v_title, DATE(date_ins) as dt, reply_cnt FROM tb_board_review ".$whereStr." ORDER BY idx DESC LIMIT ?,?" ;
 $stmt = $dbh->prepare($query);
 $stmt->bindParam(1,$offset,PDO::PARAM_INT);
 $stmt->bindParam(2,$limit,PDO::PARAM_INT);
@@ -61,7 +61,7 @@ $page_class->init($page_param);
 							total <?=$total?>건, <?=$page."/".$pages?>page
 							<table class="gray border boardlist" style="width:100%;">
 								<colgroup>
-									<col style="width:6%" />
+									<col style="width:50px" />
 									<col style="width:;" />
 									<col style="width:7%" />
 									<col style="width:12%" />
@@ -70,17 +70,22 @@ $page_class->init($page_param);
 									<tr>						
 										<th>번호</th>															
 										<th>제목</th>
-										<th>작성자</th>
-										<th>등록일</th>				
+										<th class="pc">글쓴이</th>
+										<th class="pc">날짜</th>				
 									</tr>
 								</thead>
 								<tbody>				
 									<?while($rows = $stmt->fetch(PDO::FETCH_ASSOC)){?>
 									<tr>
-										<td><?=$rows['idx']?></td>										
-										<td><a href="review_view.php?num=<?=$rows['idx']?>"><?=$rows['v_title']?></a></td>
-										<td><?=$rows['v_name']?></td>
-										<td><?=$rows['dt']?></td>
+										<td><?=$rows['idx']?></td>																				
+										<td style="text-align:left; text-indent:1em;"><a href="review_view.php?num=<?=$rows['idx']?>"><?=$rows['v_title']?></a>
+										<?if($rows['reply_cnt']>0){?>
+										<span style="color:red">&nbsp;(<?=$rows['reply_cnt']?>)</span>
+										<?}?>
+										<p class="mobile"><?=$rows['v_name']?> (<?=$rows['dt']?>)</p>
+										</td>
+										<td class="pc"><?=$rows['v_name']?></td>
+										<td class="pc"><?=$rows['dt']?></td>
 									</tr>
 									<?}?>							
 								</tbody>
@@ -111,7 +116,7 @@ $page_class->init($page_param);
 	<br>
 <script type="text/javascript">
 	$(function(){
-		$("#nav ul li").eq(4).addClass("active").siblings("li").removeClass("active");
+		$("#nav ul li").eq(3).addClass("active").siblings("li").removeClass("active");
 	});
 </script>
 <?php include("inc/footer.php");?>

@@ -40,7 +40,7 @@
 					<ul>
 						<li class="active"><a href="index.php">Home</a></li>
 						<li><a href="my.php">나의 금리 진단받기</a></li>
-						<li><a href="compare.php">담보대출 금리 비교</a></li>
+						<!--<li><a href="compare.php">담보대출 금리 비교</a></li>-->
 						<li><a href="help.php">대출 도우미</a></li>
 						<li><a href="board.php">고객센터</a></li>
 					</ul>

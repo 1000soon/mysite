@@ -1,0 +1,19 @@
+1. 코드 받기
+https://kauth.kakao.com/oauth/authorize?client_id=41580f1157bd8d22632712b2e8c93df5&redirect_uri=/auth.php&response_type=code
+
+결과값) 
+J8EpiAJQ--N_MfHxhL6XXbhdEetU-GCw4nkhvzNCnZz_7DYA88h9hS99l0lpOrHeUYnA4Qo8BkMAAAFiuRPwuQ
+
+2. 토큰 받기
+curl -v -X POST https://kauth.kakao.com/oauth/token \
+ -d 'grant_type=authorization_code' \
+ -d 'client_id=41580f1157bd8d22632712b2e8c93df5' \
+ -d 'redirect_uri=http://211.253.30.86/auth.php' \
+ -d 'code=J8EpiAJQ--N_MfHxhL6XXbhdEetU-GCw4nkhvzNCnZz_7DYA88h9hS99l0lpOrHeUYnA4Qo8BkMAAAFiuRPwuQ'
+ 
+결과값) {"access_token":"NtQsnJrv_6aRgMeZlhK1nSPIM5PXRAlIVQh8wwo8BZUAAAFiuQG2IA","token_type":"bearer","refresh_token":"Ku5CoeQMALnfgYQ0A0dFU8mjDoSMzSToKr0q7go8BZUAAAFiuQG2Hw","expires_in":21599,"scope":"profile","refresh_token_expires_in":2591999}[root@vm1523087896426 banklist]# 
+
+gLV32YwNjQa7TJ7ONSyjVJdRjVDCDonbWlmqcwo8BdgAAAFiuRXenQ
+
+ 3. 메시지 수신 동의
+ https://kauth.kakao.com/oauth/authorize?client_id=41580f1157bd8d22632712b2e8c93df5&redirect_uri=http://211.253.30.86/auth.php&response_type=code&scope=talk_message

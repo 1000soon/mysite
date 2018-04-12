@@ -29,33 +29,31 @@
 								<tr>
 									<th style="width:20%">대출금액</th>
 									<td>
-									&nbsp;<input type="text" dir="rtl" name="loanprice2" id="loanprice2"  size="15">원
+									&nbsp;<input type="text" name="loanprice" id="loanprice"  size="15">원
 									</td>
 								</tr>
 								<tr>
 									<th>대출기간</th>
-									<td>&nbsp;<input type="text" dir="rtl" name="period" id="period" value="">개월</td>
+									<td>&nbsp;<input type="text"  name="period" id="period" value="">개월</td>
 								</tr>
 								<tr>
 									<th>대출금리</th>
-									<td>&nbsp;<input type="text" dir="rtl" name="rate" value="" size="15">%</td>
-								</tr>
-								<tr>
-									<th>거치기간</th>
-									<td>&nbsp;<input type="text" dir="rtl" name="period_year" id="period_year">년</td>
+									<td>&nbsp;<input type="text" name="rate" id="rate" value="" size="15">%</td>
 								</tr>
 								<tr>
 									<th>상환방법</th>
 									<td>&nbsp;
-									<input type="radio" value="1" name="RPM">원리금균등상환
-									<input type="radio" value="2" name="RPM">원금균등상환
-									<input type="radio" value="3" name="RPM">원금만기일시상환
-									<input type="radio" value="4" name="RPM">거치후원리금균등상환
-									<input type="radio" value="5" name="RPM">거치후원금균등상환
+									<select name="stype" id="">
+									<option value="1">원리금 균등 상환</option>
+									<option value="2">원금 균등 상환</option>
+									<option value="3">원금 만기 일시상환</option>
+									<option value="4">거치 후 분할 상환</option>									
+									</select>
 									</td>
 								</tr>
 								<tr class="last">
-									<td colspan="2" height="50" align="center"><input type="submit" class="button" value="대출이자계산" ></td>
+									<td colspan="2" height="50" align="center">
+									<input type="button" class="button" value="이자 계산하기" onclick="calculate();" /></td>
 								</tr>        
 							</tbody>
 							</table>						
@@ -70,7 +68,7 @@
 <br/>
 <script type="text/javascript">
 	$(function(){
-		$("#nav ul li").eq(3).addClass("active").siblings("li").removeClass("active");
+		$("#nav ul li").eq(2).addClass("active").siblings("li").removeClass("active");
 	});
 </script>
 <?php include("inc/footer.php");?>
