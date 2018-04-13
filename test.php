@@ -1,7 +1,7 @@
 <?php
 $shellCommand=
 curl -v -X POST "https://kapi.kakao.com/v2/api/talk/memo/default/send" \
--H "Authorization:  Bearer gLV32YwNjQa7TJ7ONSyjVJdRjVDCDonbWlmqcwo8BdgAAAFiuRXenQ" \
+-H "Authorization:  Bearer NtQsnJrv_6aRgMeZlhK1nSPIM5PXRAlIVQh8wwo8BZUAAAFiuQG2IA" \
 -d 'template_object= {
   "object_type": "feed",
   "content": {
