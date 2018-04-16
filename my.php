@@ -144,7 +144,7 @@ $stmt = $dbh->query($query);
 								</tr>
 								<tr>
 								  <th>기타사항</th>
-								  <td colspan="3">&nbsp;<textarea name="desc"  style="width:100%" rows=5  placeholder="특이사항이나 상담 가능 시간을 남겨주세요"></textarea></td>
+								  <td colspan="3">&nbsp;<textarea name="desc"  style="width:95%" rows=5  placeholder="특이사항이나 상담 가능 시간을 남겨주세요"></textarea></td>
 								</tr>
 								<tr class="last">
 									<td colspan=4 height="50" style="text-align:center">

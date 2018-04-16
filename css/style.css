@@ -10,7 +10,7 @@ body,input,textarea,select
 	font-family: "Nanum Gothic", Arial, Helvetica, sans-serif;
 	font-weight: 300;
 	font-size: 11pt;
-	line-height: 1.75em;
+	
 }
 
 h1,h2,h3,h4,h5,h6
@@ -130,7 +130,7 @@ textarea {
 	color: inherit;
 	display: inline-block;
 	outline: 0;
-	padding: 0 0.5em;
+	padding: 0.1em 0.5em;
 	text-decoration: none;
 }
 header
