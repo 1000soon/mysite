@@ -77,7 +77,7 @@ if(isset($_POST['form1']) && $_POST['form1']=="form1"){
 									<td>&nbsp;<input type="text" name="p_title" id="p_title" value="<?=$data['v_title']?>" style="width:95%"/></td>
 								</tr>
 								<tr>
-									<th>문의 내용</th>
+									<th>내용</th>
 									<td>&nbsp;<textarea name="p_content" id="p_content" cols="" rows="5" style="width:95%"><?=$data['v_content']?></textarea></td>
 								</tr>
 								<tr>

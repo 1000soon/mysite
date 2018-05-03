@@ -29,7 +29,7 @@
 								<tr>
 									<th style="width:20%">대출금액</th>
 									<td>
-									&nbsp;<input type="text" name="loanprice" id="loanprice"  size="15">원
+									&nbsp;<input type="text" name="origin" id="origin"  size="15">원
 									</td>
 								</tr>
 								<tr>
@@ -43,20 +43,23 @@
 								<tr>
 									<th>상환방법</th>
 									<td>&nbsp;
-									<select name="stype" id="">
+									<select name="stype" id="stype">
 									<option value="1">원리금 균등 상환</option>
 									<option value="2">원금 균등 상환</option>
-									<option value="3">원금 만기 일시상환</option>
-									<option value="4">거치 후 분할 상환</option>									
+									<option value="3">원금 만기 일시상환</option>							
 									</select>
 									</td>
 								</tr>
 								<tr class="last">
-									<td colspan="2" height="50" align="center">
-									<input type="button" class="button" value="이자 계산하기" onclick="calculate();" /></td>
+									<td colspan="2" align="center">
+									<br/>
+									<a href="javascript:calculate();" class="button">이자 계산하기</a>
+									</td>
 								</tr>        
 							</tbody>
-							</table>						
+							</table>
+							<br/>
+							<table id="result"></table>
 						</section>
 					</div>
 					
@@ -70,5 +73,14 @@
 	$(function(){
 		$("#nav ul li").eq(2).addClass("active").siblings("li").removeClass("active");
 	});
+	function calculate(){
+		var origin = $("#origin").val();
+		var period = $("#period").val();
+		var rate = $("#rate").val();
+		var type = $("#stype").val();
+		$.post("calculate.php", {origin:origin, period:period, rate:rate, type:type}).done(function(result){
+			$("#result").empty().append(result);
+		});
+	}
 </script>
 <?php include("inc/footer.php");?>

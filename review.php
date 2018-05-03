@@ -68,7 +68,7 @@ $page_class->init($page_param);
 								</colgroup>
 								<thead>
 									<tr>						
-										<th>번호</th>															
+										<th class="pc">번호</th>															
 										<th>제목</th>
 										<th class="pc">글쓴이</th>
 										<th class="pc">날짜</th>				
@@ -78,11 +78,12 @@ $page_class->init($page_param);
 									<?while($rows = $stmt->fetch(PDO::FETCH_ASSOC)){?>
 									<tr>
 										<td><?=$rows['idx']?></td>																				
-										<td style="text-align:left; text-indent:1em;"><a href="review_view.php?num=<?=$rows['idx']?>"><?=$rows['v_title']?></a>
+										<td style="text-align:left; text-indent:3px;"><a href="review_view.php?num=<?=$rows['idx']?>"><?=$rows['v_title']?></a>
 										<?if($rows['reply_cnt']>0){?>
 										<span style="color:red">&nbsp;(<?=$rows['reply_cnt']?>)</span>
 										<?}?>
-										<p class="mobile"><?=$rows['v_name']?> (<?=$rows['dt']?>)</p>
+										<br/>
+										<span class="mobile"><?=$rows['v_name']?> (<?=$rows['dt']?>)</span>
 										</td>
 										<td class="pc"><?=$rows['v_name']?></td>
 										<td class="pc"><?=$rows['dt']?></td>
@@ -109,6 +110,9 @@ $page_class->init($page_param);
 						</section>
 					</div>
 				</div>			
+				
+				<br/>
+				<p  style="text-align:right"><a href="#header" id="anchor1" class="anchorLink" title="페이지 상단으로 이동"><img src="/images/btn_top.gif" alt="페이지상단 이동버튼"></a></p>
 			</div>
 			<!-- Main -->
 		</div>

@@ -194,14 +194,13 @@
 		margin-top: 1em;
 		padding-top: 1em;
 	}
-	
 	.pc{
 		display:none;
 	}
 	.mobile{
 		display:block;
 	}
-	.container .content table.boardlist tr td{text-align:left; text-indent:5px;line-height:1.2em;}
+	.container .content table.boardlist tr td{text-align:left;}
 	.container .content table.boardlist{border-left:1px solid #ccc}
 /*********************************************************************************/
 /* Footer                                                                        */

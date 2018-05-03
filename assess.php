@@ -31,9 +31,9 @@ include("inc/header.php");
 					<p class="">
 						<ol class="process fix">
 							<li><span>문의 및 상담</span></li>							
-							<li><img src="images/img_next.png" alt=""/><span>약식감정 의뢰</span></li>							
-							<li><img src="images/img_next.png" alt=""/><span>대출한도 설정</span></li>							
-							<li><img src="images/img_next.png" alt=""/><span>대출 진행</span></li>
+							<li><img src="images/img_next.png" alt=">" style="display:inline-block;padding:15px 5px;" /><span>약식감정 의뢰</span></li>							
+							<li><img src="images/img_next.png" alt=">" style="display:inline-block;padding:15px 5px;" /><span>대출한도 설정</span></li>							
+							<li><img src="images/img_next.png" alt=">" style="display:inline-block;padding:15px 5px;" /><span>대출 진행</span></li>
 						</ol>
 					</p>
 					
@@ -43,11 +43,11 @@ include("inc/header.php");
 					<p class="">
 						<ol class="process fix">
 							<li><span>문의 및 상담</span></li>							
-							<li><img src="images/img_next.png" alt=""/><span>약식/탁상 감정</span></li>							
-							<li><img src="images/img_next.png" alt=""/><span>1차 감정가 산정</span></li>							
-							<li><img src="images/img_next.png" alt=""/><span>정식 감정 의뢰</span></li>							
-							<li><img src="images/img_next.png" alt=""/><span>대출한도 설정</span></li>							
-							<li><img src="images/img_next.png" alt=""/><span>대출 진행</span></li>
+							<li><img src="images/img_next.png" alt=">" style="display:inline-block;padding:15px 5px;" /><span>약식/탁상 감정</span></li>							
+							<li><img src="images/img_next.png" alt=">" style="display:inline-block;padding:15px 5px;" /><span>1차 감정가 산정</span></li>							
+							<li><img src="images/img_next.png" alt=">" style="display:inline-block;padding:15px 5px;" /><span>정식 감정 의뢰</span></li>							
+							<li><img src="images/img_next.png" alt=">" style="display:inline-block;padding:15px 5px;" /><span>대출한도 설정</span></li>							
+							<li><img src="images/img_next.png" alt=">" style="display:inline-block;padding:15px 5px;" /><span>대출 진행</span></li>
 						</ol>
 					</p>
 				</div>					

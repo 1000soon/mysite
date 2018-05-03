@@ -169,21 +169,22 @@ class Page{
 			if($this->end_num > $this->total_num_pages) $this->end_num = $this->total_num_pages;
 
 		$this->page_result = "<div class='paging'>";
-		//맨앞
-		if($this->current_page ==1){
-			$this->page_result .= "<span><img src='/images/btn_first.png' alt='first'/></span>&nbsp;&nbsp;";
-		}else{
-			$this->page_result .= "<a href='".$this->link_url."?page=1".$this->parameter."' class='first'><img src='/images/btn_first.png' alt='first'/></a>&nbsp;&nbsp;";
-		}
+		if($this->total_num > 0 && $this->current_page >1){
+			//맨앞
+			if($this->current_page ==1){
+				$this->page_result .= "<span><img src='/images/btn_first.png' alt='처음'/></span>&nbsp;&nbsp;";
+			}else{
+				$this->page_result .= "<a href='".$this->link_url."?page=1".$this->parameter."' class='처음'><img src='/images/btn_first.png' alt='first'/></a>&nbsp;&nbsp;";
+			}
 
-		//이전페이지
-		if($this->current_page ==1){
-			$this->page_result .= "<span class=''><img src='/images/btn_prev.png' alt=''/></span>&nbsp;&nbsp;";
-		}else{
-			$movepage = ($this->current_page)-1;
-			$this->page_result .= "<a href='".$this->link_url."?page=".$movepage.$this->parameter."' class=''><img src='/images/btn_prev.png' alt=''/></a>&nbsp;&nbsp;";
+			//이전페이지
+			if($this->current_page ==1){
+				$this->page_result .= "<span class=''><img src='/images/btn_prev.png' alt='이전'/></span>&nbsp;&nbsp;";
+			}else{
+				$movepage = ($this->current_page)-1;
+				$this->page_result .= "<a href='".$this->link_url."?page=".$movepage.$this->parameter."' class=''><img src='/images/btn_prev.png' alt='이전'/></a>&nbsp;&nbsp;";
+			}
 		}
-
 		//페이지번호 링크
 		if($this->total_num==0){
 			$this->page_result .= "<span class='sel'>1</span>&nbsp;&nbsp;";
@@ -196,22 +197,22 @@ class Page{
 				}
 			}
 		}
+		if($this->total_num > 0 && $this->current_page < $this->total_num_pages){
+			//다음페이지
+			if($this->current_page == $this->total_num_pages){
+				$this->page_result .= "<span class=''><img src='/images/btn_next.png' alt='다음'/></span>&nbsp;&nbsp;";
+			}else{
+				$movepage = ($this->current_page)+1;
+				$this->page_result .= "<a href='".$this->link_url."?page=".$movepage.$this->parameter."' class=''><img src='/images/btn_next.png' alt='다음'/></a>&nbsp;&nbsp;";
+			}
 
-		//다음페이지
-		if($this->current_page == $this->total_num_pages){
-			$this->page_result .= "<span class=''><img src='/images/btn_next.png' alt=''/></span>&nbsp;&nbsp;";
-		}else{
-			$movepage = ($this->current_page)+1;
-			$this->page_result .= "<a href='".$this->link_url."?page=".$movepage.$this->parameter."' class=''><img src='/images/btn_next.png' alt=''/></a>&nbsp;&nbsp;";
+			//맨끝
+			if($this->current_page ==$this->total_num_pages){
+				$this->page_result .= "<span class='last'><img src='/images/btn_last.png' alt='마지막'/></span>";
+			}else{
+				$this->page_result .= "<a href='".$this->link_url."?page=".$this->total_num_pages.$this->parameter."' class='last'><img src='/images/btn_last.png' alt='마지막'/></a>";
+			}
 		}
-
-		//맨끝
-		if($this->current_page ==$this->total_num_pages){
-			$this->page_result .= "<span class='last'><img src='/images/btn_last.png' alt='last'/></span>";
-		}else{
-			$this->page_result .= "<a href='".$this->link_url."?page=".$this->total_num_pages.$this->parameter."' class='last'><img src='/images/btn_last.png' alt='last'/></a>";
-		}
-
 		$this->page_result .= "</div>";
 
 		return $this->page_result;

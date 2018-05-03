@@ -84,14 +84,14 @@ $result2 = $dbh->query($query);
 			<div id="main" class="container">
 				<div class="row">
 					<div class="6u">
-						<section>
+						<section class="pc">
 							<header>
 								<h2>주택담보대출 개정 내용(2017.09)</h2>
 								<!--<span class="byline">2017.09</span>-->
 							</header>
 							<p>투기과열지구 및 투기지역 지정으로 인해 <strong>LTV, DTI 조건이 강화</strong> 되고, 투기지역 소재 아파트 담보대출에 대한 만기 연장이 제한됩니다. 또한 새로운 소득 기준이 적용되며, 대출 취급 시 처분조건부 여부를 확인하여 심사합니다.</p>
 						</section>
-						<section>
+						<section class="pc">
 							<header>
 								<h2>신(新) DTI</h2>
 							</header>
@@ -105,8 +105,8 @@ $result2 = $dbh->query($query);
 								<h2>무료 신용정보 조회</h2>
 							</header>
 							<p>신용정보의 이용 및 보호에 관한 법률에 의거, 연 3회 서비스를 무료로 이용할 수 있습니다. <br/>4개월 단위로 횟수 구분되며, 매 회 마다 한 번만 조회 가능합니다.</p>
-							<a href="http://www.allcredit.co.kr/index.jsp" target="_blank"><img src="images/ico_allcredit.jpg" alt="AllCredit" style="border:1px solid #eee" /></a>&nbsp;&nbsp;
-							<a href="https://www.credit.co.kr/ib20/mnu/BZWOCCCSE99" target="_blank"><img src="images/ico_nice.png" alt="NICE지키미" style="border:1px solid #eee" /></a>
+							<a href="http://www.allcredit.co.kr/index.jsp" target="_blank"><img src="images/ico_allcredit.png" alt="AllCredit" /></a>&nbsp;&nbsp;
+							<a href="https://www.credit.co.kr/ib20/mnu/BZWOCCCSE99" target="_blank"><img src="images/ico_nice.png" alt="NICE지키미" /></a>
 						</section>
 						<section>
 						<ul class="style5">
@@ -176,7 +176,7 @@ $result2 = $dbh->query($query);
 					<div class="3u">
 						<section class="sidebar">
 							<header>
-								<h2>Q&amp;A <a href="board.php" class="btnAdd"><img src="images/btn_add.png" alt="더보기"/></a></h2>
+								<h2>Q&amp;A <a href="board.php" style="font-size:12px;vertical-align:top;margin-left:30px;">more<img src='/images/btn_next.png' alt='더보기' style="padding-top:5px;" /></a></h2>
 							</header>
 							<ul class="style1">
 							<?while($rows = $result->fetch(PDO::FETCH_ASSOC)){?>
@@ -186,7 +186,7 @@ $result2 = $dbh->query($query);
 						</section>
 						<section class="sidebar">
 							<header>
-								<h2>사용후기 <a href="review.php" class="btnAdd"><img src="images/btn_add.png" alt="더보기"/></a></h2>
+								<h2>사용후기<a href="review.php" style="font-size:12px;vertical-align:top;margin-left:30px;">more<img src='/images/btn_next.png' alt='더보기' style="padding-top:5px;" /</h2>
 							</header>
 							<ul class="style1">
 							<?while($rows2 = $result2->fetch(PDO::FETCH_ASSOC)){?>

@@ -10,7 +10,7 @@ body,input,textarea,select
 	font-family: "Nanum Gothic", Arial, Helvetica, sans-serif;
 	font-weight: 300;
 	font-size: 11pt;
-	
+	line-height: 1.75em;
 }
 
 h1,h2,h3,h4,h5,h6
@@ -996,8 +996,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', end
 }
 
 /****/
-.container .content h2{font-size:1.6em;}
-.container .content h3{font-size:1.4em;}
+.container .content h2{font-size:1.5em;}
+.container .content h3{font-size:1.3em;}
 .container .content #titleArea{width:700px;border-bottom:2px solid #ccc;padding-bottom:10px;margin-bottom:30px;}
 .container .content #titleArea h3{font-size:25px;}
 .container .content table{font-size:14px;}
