@@ -348,7 +348,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', end
 		ul.style2 img
 		{
 			float: left;
-			padding-right: 1em;
+			
 		}
 		
 	ul.style5
@@ -362,7 +362,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', end
 		ul.style5 li
 		{
 			float: left;
-			padding: 0.25em 0.25em;
+			/*padding: 0.25em 0.25em;*/
 		}
 		
 		ul.style5 a

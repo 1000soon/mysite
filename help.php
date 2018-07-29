@@ -42,8 +42,8 @@
 								</tr>
 								<tr>
 									<th>상환방법</th>
-									<td>&nbsp;
-									<select name="stype" id="stype">
+									<td>
+									<select name="stype" id="stype" style="margin-left:4px;">
 									<option value="1">원리금 균등 상환</option>
 									<option value="2">원금 균등 상환</option>
 									<option value="3">원금 만기 일시상환</option>							

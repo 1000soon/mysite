@@ -83,23 +83,7 @@ $result2 = $dbh->query($query);
 			<!-- Main -->
 			<div id="main" class="container">
 				<div class="row">
-					<div class="6u">
-						<section class="pc">
-							<header>
-								<h2>주택담보대출 개정 내용(2017.09)</h2>
-								<!--<span class="byline">2017.09</span>-->
-							</header>
-							<p>투기과열지구 및 투기지역 지정으로 인해 <strong>LTV, DTI 조건이 강화</strong> 되고, 투기지역 소재 아파트 담보대출에 대한 만기 연장이 제한됩니다. 또한 새로운 소득 기준이 적용되며, 대출 취급 시 처분조건부 여부를 확인하여 심사합니다.</p>
-						</section>
-						<section class="pc">
-							<header>
-								<h2>신(新) DTI</h2>
-							</header>
-							<p><strong>등장</strong>&nbsp; 2017년 '10.24 가계부채 종합 대책'에서 발표 <br/>
-							<strong>적용</strong>&nbsp; 2018년 1월부터 적용 <br/>
-							<strong>지역</strong>&nbsp; 서울 수도권 및 세종시, 부산 해운대구 등 청약조정 지역에 우선 적용</p>
-							<a href="#" class="button">자세히 보기</a>
-						</section>
+					<div class="6u">						
 						<section>
 							<header>
 								<h2>무료 신용정보 조회</h2>
@@ -109,14 +93,25 @@ $result2 = $dbh->query($query);
 							<a href="https://www.credit.co.kr/ib20/mnu/BZWOCCCSE99" target="_blank"><img src="images/ico_nice.png" alt="NICE지키미" /></a>
 						</section>
 						<section>
-						<ul class="style5">
-					<li><b>부동산 정보 열람 &gt;</b></li>
-					<li><a href="http://www.iros.go.kr" target="_blank"><img src="images/ico_law.jpg" alt="대법원 인터넷 등기소"></a></li>
-					<li><a href="http://www.egov.go.kr" target="_blank"><img src="images/ico_g4c.jpg" alt="토지대장열람"></a></li>
-					<li><a href="http://nland.kbstar.com/quics?page=B025914&cc=b043428:b043506" target="_blank"><img src="images/ico_kb.jpg" alt="부동산정보"></a></li>
-					<li><a href="http://rt.molit.go.kr/" target="_blank"><img src="images/ico_molit.jpg" alt="실거래가"></a></li>
-				</ul>
+							<header>
+								<h2>광고/제휴 문의</h2>
+							</header>
+							<p>Banklist는 각 금융권과 제휴하여 전국 은행 상품을 비교해 드립니다.</p>
+							<p>*제2금융권 및 보험사, 캐피탈사 상품을 포함합니다.</p>
+							<a href="#" class="button">문의하기</a>
 						</section>
+						<section>
+							<header>
+								<h2>부동산 정보 열람</h2>
+							</header>
+							<p></p>
+							<ul class="style5">
+								<li><a href="http://nland.kbstar.com/quics?page=B025914&cc=b043428:b043506" target="_blank"><img src="images/ico_kb.jpg" alt="부동산정보"></a></li>
+								<li><a href="http://rt.molit.go.kr/" target="_blank"><img src="images/ico_molit.jpg" alt="실거래가"></a></li>
+								<li><a href="http://www.iros.go.kr" target="_blank"><img src="images/ico_law.jpg" alt="대법원 인터넷 등기소"></a></li>
+								<li><a href="http://www.egov.go.kr" target="_blank"><img src="images/ico_g4c.jpg" alt="토지대장열람"></a></li>
+							</ul>
+						</section>						
 					</div>
 					
 					<script type="text/javascript" src="js/jquery.vticker-min.js"></script>  
@@ -158,18 +153,12 @@ $result2 = $dbh->query($query);
 									<a href="my.php" class="button">상담신청</a>
 									<br/>
 								</li>
-								<li>
-									<h3>실시간 무료 상담</h3>
+								<li id="call">
+									<h3 style="margin-bottom:1em;">실시간 무료 상담</h3>									
 									<img src="images/ico/ico_phone.png" alt="전화"/>
 									<p style="font-size:20px;"><a href="tel:010-2706-2126">010-0000-0000</a></p>
 									<p style="font-size:12px;">* 가능시간 <br> 09:00 ~ 21:00</p>
-								</li>								
-								<li>
-									<p>각 금융권과 제휴하여 전국 은행 상품을 찾아서 비교해 드립니다.</p>
-									<p>*제2금융권 및 보험사, 캐피탈사 상품을 포함합니다.</p>
-									<a href="#" class="button">광고/제휴 문의</a>
-									<br/>
-								</li>
+								</li>	
 							</ul>						
 						</section>
 					</div>
@@ -186,7 +175,8 @@ $result2 = $dbh->query($query);
 						</section>
 						<section class="sidebar">
 							<header>
-								<h2>사용후기<a href="review.php" style="font-size:12px;vertical-align:top;margin-left:30px;">more<img src='/images/btn_next.png' alt='더보기' style="padding-top:5px;" /</h2>
+								<h2>사용후기 <a href="review.php" style="font-size:12px;vertical-align:top;margin-left:30px;">more<img src='/images/btn_next.png' alt='더보기' style="padding-top:5px;" /></a>
+								</h2>
 							</header>
 							<ul class="style1">
 							<?while($rows2 = $result2->fetch(PDO::FETCH_ASSOC)){?>

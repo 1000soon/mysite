@@ -24,7 +24,7 @@ include("inc/header.php");
 				<div class="9u content">				
 					<h3>대출신청시 준비하셔야할 서류</h3> 
 					<br/>
-					<table class="lType01" summary="이 표는 구분,준비서류,발급기관에 대한 정보를 확인할 수 있습니다."> 
+					<table class="" summary="이 표는 구분,준비서류,발급기관에 대한 정보를 확인할 수 있습니다."> 
 					<caption>가계 대출신청시 준비서류</caption> 
 					<colgroup> 
 						<col style="width: 20%;"> 
