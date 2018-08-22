@@ -384,7 +384,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', end
 		position: relative;
 		display: inline-block;
 		padding: 0.50em 1.5em;
-		background: #5B73D5;
+		/*background: #5B73D5;*/
+		background:#1F688C;
 		border-radius: 4px;
 		text-decoration: none;
 		text-transform: uppercase;
@@ -400,7 +401,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', end
 		input[type=submit].button, input[type=reset].button{border:0;}
 		.button:hover
 		{
-			background: #de3d27;
+			background: #de3d27;			
 			color: #FFF !important;
 		}
 
@@ -856,7 +857,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', end
 {
 	position: absolute;
 	left: 0em;
-	top: 3em;
+	top: 2.2em;
 }
 
 	#logo h1

@@ -153,11 +153,10 @@ $result2 = $dbh->query($query);
 									<a href="my.php" class="button">상담신청</a>
 									<br/>
 								</li>
-								<li id="call">
-									<h3 style="margin-bottom:1em;">실시간 무료 상담</h3>									
+								<li id="call">									
 									<img src="images/ico/ico_phone.png" alt="전화"/>
-									<p style="font-size:20px;"><a href="tel:010-2706-2126">010-0000-0000</a></p>
-									<p style="font-size:12px;">* 가능시간 <br> 09:00 ~ 21:00</p>
+									<p style="font-size:25px;font-weight:bold"><a href="tel:1800-0164">1800-0164</a></p>
+									<p>실시간 무료 상담</p>
 								</li>	
 							</ul>						
 						</section>

@@ -33,7 +33,8 @@
 			<div class="container">					
 				<!-- Logo -->
 				<div id="logo">
-					<h1><a href="index.php">Bank<b style="color:#e95d3c">l</b>ist</a></h1>
+					<!--<h1><a href="index.php">Bank<b style="color:#e95d3c">l</b>ist</a></h1>-->
+					<h1><img src="/images/logo2.png" alt="banklist"/></h1>
 				</div>				
 				<!-- Nav -->
 				<nav id="nav">
