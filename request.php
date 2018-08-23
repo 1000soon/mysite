@@ -1,7 +1,7 @@
 <?php
 include("conf/functions.php");
 require_once("lib/PHPMailer/PHPMailerAutoload.php");
-
+$arrType = array( 1=>"아파트 담보 대출" ,2=>"아파트매매잔금 대출" ,3=>"빌라/다세대" ,4=>"주택 담보 대출" ,5=>"오피스텔 담보 대출" ,6=>"일반부동산 담보 대출" ,7=>"상가보증금 대출");							  
 $name = $_POST['vname'];
 $type = $_POST['type'];
 $p1 = $_POST['phone1'];
@@ -20,6 +20,7 @@ if($p1=="" || $p2=="" || $p3==""){
 }
 
 // mail
+$message = "구분 : ".$arrType[$type]."<br/>";
 $message = "이름 : ".$name."<br/>";
 $message .= "연락처 : ".$p1."-".$p2."-".$p3."<br/>";
 $message .= "금액 : ".$price."만원<br/>";

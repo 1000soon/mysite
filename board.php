@@ -122,7 +122,7 @@ $page_class->init($page_param);
 	<br>
 <script type="text/javascript">
 	$(function(){
-		$("#nav ul li").eq(3).addClass("active").siblings("li").removeClass("active");
+		$("#nav ul li").eq(2).addClass("active").siblings("li").removeClass("active");
 	});
 </script>
 <?php include("inc/footer.php");?>

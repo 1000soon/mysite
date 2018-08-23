@@ -110,7 +110,7 @@ if(isset($_POST['form1']) && $_POST['form1']=="form1"){
 <br>
 <script type="text/javascript">
 	$(function(){
-		$("#nav ul li").eq(3).addClass("active").siblings("li").removeClass("active");
+		$("#nav ul li").eq(2).addClass("active").siblings("li").removeClass("active");
 	});
 	
 function valCheck(){

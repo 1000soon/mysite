@@ -33,14 +33,14 @@
 			<div class="container">					
 				<!-- Logo -->
 				<div id="logo">
-					<!--<h1><a href="index.php">Bank<b style="color:#e95d3c">l</b>ist</a></h1>-->
-					<h1><img src="/images/logo2.png" alt="banklist"/></h1>
+					<h1 class="mobile"><a href="index.php">Bank<b style="color:#e95d3c">l</b>ist</a></h1>
+					<h1 class="pc"><img src="/images/logo3.png" alt="banklist"/></h1>
 				</div>				
 				<!-- Nav -->
 				<nav id="nav">
 					<ul>
 						<li class="active"><a href="index.php">Home</a></li>
-						<li><a href="my.php">나의 금리 진단받기</a></li>
+						<!--<li><a href="my.php">나의 금리 진단받기</a></li>--?
 						<!--<li><a href="compare.php">담보대출 금리 비교</a></li>-->
 						<li><a href="help.php">대출 도우미</a></li>
 						<li><a href="board.php">고객센터</a></li>

@@ -71,7 +71,7 @@
 <br/>
 <script type="text/javascript">
 	$(function(){
-		$("#nav ul li").eq(2).addClass("active").siblings("li").removeClass("active");
+		$("#nav ul li").eq(1).addClass("active").siblings("li").removeClass("active");
 	});
 	function calculate(){
 		var origin = $("#origin").val();

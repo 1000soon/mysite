@@ -3,13 +3,11 @@
 			<div class="container">		
 					<div class="12u" style="text-align:center;">
 						<section>	
-							<dl>
-								<dt>footer menu</dt>
-								<dd>회사소개</dd>
-								<dd>Sitemap</dd>
-								<dd><a href="javascript:showinfo();">개인정보처리방침</a></dd>
-								<dd><a href="board.php" style="color:#fff">고객센터</a></dd>								
-							</dl>
+							<span style="margin-right:30px;">이루리대부중계 (등록번호 181-65-00220)</span>
+							<br class="mobile"/>
+							<a href="javascript:showinfo();" style="font-weight:bold;">개인정보처리방침</a>
+							&nbsp;
+							<a href="board.php" style="color:#fff">고객센터</a>
 							&nbsp;
 						</section>
 					</div>
@@ -19,7 +17,7 @@
 
 	<!-- Copyright -->
 		<div id="copyright" class="container">
-			Copyright &copy;banklist All right reserved.
+			Copyright 2018&copy;banklist All right reserved.
 		</div>
 	<script type="text/javascript">
 	$(function(){
@@ -42,7 +40,7 @@
 	<!-- 개인정보 -->	
 	
 	<div id="info">
-	<button type="button" id="closeInfo" style="float:right;border:0;background:none;pointer:cursor;" onclick="closeinfo()"><img src="images/btn_close.png" alt="닫기"/></button>
+	<button type="button" id="closeInfo" style="float:right;border:0;background:none;cursor:pointer;" onclick="closeinfo()"><img src="images/btn_close.png" alt="닫기"/></button>
 	<h2 id="topinfo" style="font-weight:bold;margin:3% 2%;font-size:1.3em;">개인정보 처리 방침
 	</h2>
 	
