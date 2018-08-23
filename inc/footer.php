@@ -3,13 +3,14 @@
 			<div class="container">		
 					<div class="12u" style="text-align:center;">
 						<section>	
-							<span style="margin-right:30px;">이루리대부중계 (등록번호 181-65-00220)</span>
-							<br class="mobile"/>
+							<span>상호 : 이루리대부중계 (등록번호 2018-경기군포-002) / 대표자 : 정윤경 / 전화 : 1800-0164 / fax : 0303-3447-3443 / 주소 : 경기도 군포시 번영로 502, 산본역사상가 406호(금정동)</span>			
+							<br/>							
 							<a href="javascript:showinfo();" style="font-weight:bold;">개인정보처리방침</a>
 							&nbsp;
 							<a href="board.php" style="color:#fff">고객센터</a>
 							&nbsp;
 						</section>
+						
 					</div>
 				</div>
 		</div>

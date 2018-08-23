@@ -370,11 +370,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', end
 		}
 
 		.sidebar li.active{
-			list-style:circle;
-			font-weight:bold;;
+			
+			font-weight:bold;
 		}
 		.sidebar li.active a{
-			color:#E36442;
+			/*color:#E36442;*/
+			color:#FFA200;
 		}
 
 /* Buttons */
@@ -384,8 +385,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', end
 		position: relative;
 		display: inline-block;
 		padding: 0.50em 1.5em;
-		/*background: #5B73D5;*/
-		background:#1F688C;
+		/*background: #5B73D5;
+		background:#1F688C;*/
+		background:#0959B2;
 		border-radius: 4px;
 		text-decoration: none;
 		text-transform: uppercase;
@@ -401,7 +403,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', end
 		input[type=submit].button, input[type=reset].button{border:0;}
 		.button:hover
 		{
-			background: #de3d27;			
+			background: #FFA200;			
 			color: #FFF !important;
 		}
 
@@ -480,7 +482,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', end
 
 		#nav li.active a
 		{
-			background: #e95d3c;
+			/*background: #e95d3c;*/
+			background: #FFA200;
 			border-radius: 5px;
 			color: #FFF;
 		}

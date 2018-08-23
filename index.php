@@ -5,8 +5,7 @@ $cache_message = apcu_fetch($cache_key_name1);
 $conn = new Connection();
 $dbh = $conn->setConnection();
 
-if($cache_message===false){	
-
+if(!$cache_message){	
 	// 점검 메시지 조회(공통)
 	$query = "SELECT LEFT(v_name,1) as uname, v_phone1, v_phone3 FROM tb_request ORDER BY date_ins DESC LIMIT 20";
 	$stmt = $dbh->query($query);
@@ -26,6 +25,18 @@ $result = $dbh->query($query);
 $query = "SELECT *, DATE(date_ins) as dt FROM tb_board_review ORDER BY date_ins DESC LIMIT 5";
 $result2 = $dbh->query($query);
 ?>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script type='text/javascript'>
+  //<![CDATA[    
+    Kakao.init('3e8ea8c829d207b2137167e1e2401c68');
+    function plusFriendChat() {
+      Kakao.PlusFriend.chat({
+        plusFriendId: '_xnxmrIj' 
+      });
+    }
+  //]]>
+</script>
+
 	<!-- Main -->
 	<div id="page">
 	<!-- Extra -->
@@ -100,12 +111,19 @@ $result2 = $dbh->query($query);
 						  <td colspan="3">&nbsp;<textarea name="desc"  style="width:95%" rows=5  placeholder="특이사항이나 상담 가능 시간을 남겨주세요"></textarea></td>
 						</tr>
 						<tr class="last">
-							<td colspan=4 height="50" style="text-align:center">
+							<td colspan=4 height="50" style="text-align:center;padding:0;">
 							<input type="submit" class="button" value="상담신청">
 							</td>
 						</tr>
 					</table>	
 				</form>				
+				<p>대출금리 : <b>연 24% 이내</b> / 연체이율 : <b>연 24% 이내</b> /상환방법 : 원리금균등상환방식, 만기일시상환방식</p>
+				<p>LTV 최대 85% ~100 % (물건 종류, 면적, 지역에 따라 차등 적용)</p>
+				<p>취급수수료 및 부대비용없음/조기상환조건 없음.
+				중개수수료를 요구하거나 받는것은 불법으로 대출과 관련된 일체 수수료를 받지 않습니다.</p>
+				<p>대출 진행 시 귀하의 신용등급이 하락할 수 있습니다.</p>
+				<p>연체 시 연체이자가 발생 할 수 있으며, 과도한 빚은 당신에게 큰 불행을 안겨줄 수 있습니다.</p>
+				<p><b>대출빙자형 보이스피싱 주의! "신용등급 상향비, 대출진행비 등 요구하면 100%사기!"</b></p>
 			</div>		<!--9u end-->
 			<div class="3u skel-cell-important">
 					<section class="sidebar">
@@ -127,6 +145,9 @@ $result2 = $dbh->query($query);
 								<p style="font-size:25px;font-weight:bold"><a href="tel:1800-0164">1800-0164</a></p>
 								<p>실시간 무료 상담</p>
 							</li>	
+							<li>
+								<a href="javascript:void plusFriendChat()"><img src="images/consult_small_yellow_pc.png"/></a>
+							</li>
 						</ul>						
 					</section>
 				</div>

@@ -11,6 +11,7 @@
 		<script type="text/javascript" src="js/skel.min.js"></script>
 		<script type="text/javascript" src="js/skel-panels.min.js"></script>
 		<script type="text/javascript" src="js/init.js"></script>
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 		<noscript>
 			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/style.css" />
@@ -34,7 +35,7 @@
 				<!-- Logo -->
 				<div id="logo">
 					<h1 class="mobile"><a href="index.php">Bank<b style="color:#e95d3c">l</b>ist</a></h1>
-					<h1 class="pc"><img src="/images/logo3.png" alt="banklist"/></h1>
+					<h1 class="pc"><img src="/images/logo.png" alt="banklist"/></h1>
 				</div>				
 				<!-- Nav -->
 				<nav id="nav">
@@ -52,7 +53,8 @@
 		
 	<!-- Banner -->
 		<div id="banner">
-			<div class="container">
+			<div class="container" style="background:rgba(0,0,0,.6);padding:2em;text-indent:20px;">
+				<h2></h2>
 			</div>
 		</div>
 	<!-- /Banner -->
