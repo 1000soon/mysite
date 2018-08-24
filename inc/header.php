@@ -11,6 +11,8 @@
 		<script type="text/javascript" src="js/skel.min.js"></script>
 		<script type="text/javascript" src="js/skel-panels.min.js"></script>
 		<script type="text/javascript" src="js/init.js"></script>
+		<script src="js/kakao.min.js"></script>
+		
 		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 		<noscript>
 			<link rel="stylesheet" href="css/skel-noscript.css" />
@@ -53,8 +55,12 @@
 		
 	<!-- Banner -->
 		<div id="banner">
-			<div class="container" style="background:rgba(0,0,0,.6);padding:2em;text-indent:20px;">
-				<h2></h2>
+			<div class="container pc" style="background:rgba(0,0,0,.3);padding:3em 2em 5em;text-indent:20px;">
+				<h3 style="font-size:24px;">대출 한도와 금리, Banklist와 상의하세요!</h3>
+				<br/>
+				<p style="font-size:16px;">Banklist는 각 금융권과 제휴하여 전국 은행 상품을 빠르고 쉽게 비교해 드립니다.</p>
+				<p style="font-size:16px;">* 상담 및 중개 수수료가 발생하지 않습니다.</p>
+				<p style="font-size:14px;">* 제2금융권 및 보험사, 캐피탈사 상품을 포함합니다.</p>
 			</div>
 		</div>
 	<!-- /Banner -->

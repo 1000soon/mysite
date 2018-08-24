@@ -6,8 +6,7 @@ body,input,textarea,select
 	font-size: 11pt;
 }
 .homepage #banner
-{
-	padding: 10em 0em;
+{	
 }
 .homepage #page
 {
@@ -21,7 +20,7 @@ body,input,textarea,select
 }
 #banner
 {
-	padding: 6em 0em;
+	padding: 0em 0em;
 }
 #page
 {

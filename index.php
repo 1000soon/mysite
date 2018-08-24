@@ -1,11 +1,11 @@
 <?php 
 include("inc/header.php");
-$cache_key_name1 = "list";
-$cache_message = apcu_fetch($cache_key_name1);
 $conn = new Connection();
 $dbh = $conn->setConnection();
 
-if(!$cache_message){	
+$cache_key_name1 = "list";
+$cache_message = apcu_fetch($cache_key_name1);
+if($cache_message===false){	
 	// 점검 메시지 조회(공통)
 	$query = "SELECT LEFT(v_name,1) as uname, v_phone1, v_phone3 FROM tb_request ORDER BY date_ins DESC LIMIT 20";
 	$stmt = $dbh->query($query);
@@ -14,8 +14,7 @@ if(!$cache_message){
 	}
 	// 캐싱
 	apcu_store($cache_key_name1,  $arrRequest);		
-	$cache_message = apcu_fetch($cache_key_name1);
-	$dbh = $conn->closeConn();
+	$cache_message = apcu_fetch($cache_key_name1);	
 }	
 
 // QA
@@ -25,7 +24,7 @@ $result = $dbh->query($query);
 $query = "SELECT *, DATE(date_ins) as dt FROM tb_board_review ORDER BY date_ins DESC LIMIT 5";
 $result2 = $dbh->query($query);
 ?>
-<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+
 <script type='text/javascript'>
   //<![CDATA[    
     Kakao.init('3e8ea8c829d207b2137167e1e2401c68');
@@ -39,8 +38,12 @@ $result2 = $dbh->query($query);
 
 	<!-- Main -->
 	<div id="page">
+		
 	<!-- Extra -->
 	<div id="marketing" class="container">
+		<p class="mobile">대출 한도와 금리, Banklist와 상의하세요! <br/>
+		Banklist는 각 금융권과 제휴하여 전국 은행 대출 상품을 비교해 드립니다. <br/>
+		*제2금융권 및 보험사, 캐피탈사 상품을 포함합니다.</p>
 		<div class="row">
 			<div class="9u">
 				<form action="request.php" method="post">
@@ -157,9 +160,9 @@ $result2 = $dbh->query($query);
 	</div>
 		
 		<!-- Main -->
-		<div id="main" class="container">
+		<div id="main" class="container" style="border-top:1px solid #f1f1f1;">
 			<div class="row">
-				<div class="6u">						
+				<div class="6u" style="border-right:1px solid #f1f1f1;">
 					<section>
 						<header>
 							<h2>무료 신용정보 조회</h2>
@@ -179,15 +182,7 @@ $result2 = $dbh->query($query);
 							<li><a href="http://www.iros.go.kr" target="_blank"><img src="images/ico_law.jpg" alt="대법원 인터넷 등기소"></a></li>
 							<li><a href="http://www.egov.go.kr" target="_blank"><img src="images/ico_g4c.jpg" alt="토지대장열람"></a></li>
 						</ul>
-					</section>					
-					<!--<section>
-						<header>
-							<h2>광고/제휴 문의</h2>
-						</header>
-						<p>Banklist는 각 금융권과 제휴하여 전국 은행 상품을 비교해 드립니다.</p>
-						<p>*제2금융권 및 보험사, 캐피탈사 상품을 포함합니다.</p>
-						<a href="#" class="button">문의하기</a>
-					</section>					-->
+					</section>
 				</div>
 				
 				<script type="text/javascript" src="js/jquery.vticker-min.js"></script>  
