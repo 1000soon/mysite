@@ -35,7 +35,6 @@ $result2 = $dbh->query($query);
     }
   //]]>
 </script>
-
 	<!-- Main -->
 	<div id="page">
 		
@@ -46,7 +45,7 @@ $result2 = $dbh->query($query);
 		*제2금융권 및 보험사, 캐피탈사 상품을 포함합니다.</p>
 		<div class="row">
 			<div class="9u">
-				<form action="request.php" method="post">
+				<form action="request.php" method="post" onsubmit="return noticeTalk();">
 					<table>
 						<tr>
 						  <th style="width:18%">구분</th>
@@ -65,7 +64,7 @@ $result2 = $dbh->query($query);
 						<tr>
 						  <th>성함</th>
 						  <td colspan="3" align="left">
-							&nbsp;<input type="text" name="vname" style="width:100px;">
+							&nbsp;<input type="text" name="vname" id="vname" style="width:100px;">
 						  </td>
 						</tr>
 						<tr>
@@ -243,4 +242,10 @@ $result2 = $dbh->query($query);
 	</div>
 <!-- /Main -->
 <br>
+<script type="text/javascript">
+	function noticeTalk(){
+		var user = $("#vname").val();
+		
+	}
+</script>
 <?php include("inc/footer.php");?>

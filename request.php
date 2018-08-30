@@ -21,7 +21,7 @@ if($p1=="" || $p2=="" || $p3==""){
 
 // mail
 $message = "구분 : ".$arrType[$type]."<br/>";
-$message = "이름 : ".$name."<br/>";
+$message .= "이름 : ".$name."<br/>";
 $message .= "연락처 : ".$p1."-".$p2."-".$p3."<br/>";
 $message .= "금액 : ".$price."만원<br/>";
 $message .= "지역 : ".$addr."<br/>";
@@ -41,8 +41,8 @@ $mail->Password = "cjstns59";
 
 $mail->setFrom('hcsoon0212@gmail.com', 'BankList');
 $mail->addReplyTo('donotreply@gmail.com', 'BankList');
-//$mail->addAddress('banklist@naver.com');
-$mail->addAddress('hcsoon0212@gmail.com');
+$mail->addAddress('banklist@naver.com');
+//$mail->addAddress('hcsoon0212@gmail.com');
 $mail->CharSet = "utf-8";
 $mail->Encoding = "base64";
 
