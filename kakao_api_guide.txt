@@ -13,7 +13,7 @@ curl -v -X POST https://kauth.kakao.com/oauth/token \
 
 3. 나에게 보내기
 curl -v -X POST "https://kapi.kakao.com/v2/api/talk/memo/default/send" \
--H "Authorization: Bearer DGiSofhYmabIeMRG-szDH4FQGGzSqQ0Yd54IyAo8BhkAAAFligCp3A" \
+-H "Authorization: Bearer 6_InKabPJz_c3q3CjLzdD2PZ2juHKwV6AYw_mQo8BdgAAAFljjaj4Q" \
 -d 'template_object= {
   "object_type": "text",
   "text": "새로운 상담메일이 도착하였습니다.",
@@ -40,4 +40,4 @@ curl -v -X POST https://kauth.kakao.com/oauth/token \
  -d 'refresh_token=22UTlls847FHJycZcFotDMZ89gS2xn1Uecj3mwoqAuYAAAFlid3FQg'
  
 결과값)
-{"access_token":"DGiSofhYmabIeMRG-szDH4FQGGzSqQ0Yd54IyAo8BhkAAAFligCp3A","token_type":"bearer","expires_in":21599}
+{"access_token":"6_InKabPJz_c3q3CjLzdD2PZ2juHKwV6AYw_mQo8BdgAAAFljjaj4Q","token_type":"bearer","expires_in":21599}

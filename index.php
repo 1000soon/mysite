@@ -70,7 +70,7 @@ $result2 = $dbh->query($query);
 						<tr>
 						  <th>연락처</th>
 						  <td colspan="3" align="left">
-							&nbsp;<select name="phone1" style="width:50px;">
+							&nbsp;<select name="phone1" id="phone1" style="width:50px;">
 							  <option value="010" selected="">010</option>
 							  <option value="011">011</option>
 							  <option value="016">016</option>
@@ -78,8 +78,8 @@ $result2 = $dbh->query($query);
 							  <option value="018">018</option>
 							  <option value="019">019</option>
 							</select>
-							- <input type="tel" name="phone2" class="num-only" style="width:50px;" maxlength="4">
-							- <input type="tel" name="phone3" class="num-only" style="width:50px;" maxlength="4">
+							- <input type="tel" name="phone2" id="phone2" class="num-only" style="width:50px;" maxlength="4">
+							- <input type="tel" name="phone3" id="phone3" class="num-only" style="width:50px;" maxlength="4">
 						  </td>
 						</tr>
 						<tr id="D01_add01">
@@ -110,7 +110,7 @@ $result2 = $dbh->query($query);
 						</tr>
 						<tr>
 						  <th>기타사항</th>
-						  <td colspan="3">&nbsp;<textarea name="desc"  style="width:95%" rows=5  placeholder="특이사항이나 상담 가능 시간을 남겨주세요"></textarea></td>
+						  <td colspan="3">&nbsp;<textarea name="desc" id="desc"  style="width:95%" rows=5  placeholder="특이사항이나 상담 가능 시간을 남겨주세요"></textarea></td>
 						</tr>
 						<tr class="last">
 							<td colspan=4 height="50" style="text-align:center;padding:0;">
@@ -245,7 +245,12 @@ $result2 = $dbh->query($query);
 <script type="text/javascript">
 	function noticeTalk(){
 		var user = $("#vname").val();
-		
+		var p1 = $("#phone1").val();
+		var p2 = $("#phone2").val();
+		var p3 = $("#phone3").val();
+		var desc = $("#desc").val();
+		var param = user+" "+p1+p2+p3+" "+desc;
+		$.post("send_talk.php", {req:param});
 	}
 </script>
 <?php include("inc/footer.php");?>
