@@ -13,13 +13,13 @@ curl -v -X POST https://kauth.kakao.com/oauth/token \
 
 3. 나에게 보내기
 curl -v -X POST "https://kapi.kakao.com/v2/api/talk/memo/default/send" \
--H "Authorization: Bearer 5EZhLHOwBl5lGwCIT29hLkRzsLfRWIt6r_8d7wopdeIAAAFlnSs88g" \
+-H "Authorization: Bearer P_M8ahUH3v5SPXdc7m_Ym_ECcL2iLGOsjXo-5wo8BkMAAAFlriyLOQ" \
 -d 'template_object= {
   "object_type": "text",
-  "text": "새로운 상담메일이 도착하였습니다.",
+  "text": "테스트 알림",
   "link": {
-    "web_url": "http://banklist.co.kr",
-    "mobile_web_url": "http://banklist.co.kr"
+    "web_url": "https://banklist.co.kr",
+    "mobile_web_url": "https://banklist.co.kr"
   }
 }'
 
@@ -40,4 +40,4 @@ curl -v -X POST https://kauth.kakao.com/oauth/token \
  -d 'refresh_token=22UTlls847FHJycZcFotDMZ89gS2xn1Uecj3mwoqAuYAAAFlid3FQg'
  
 결과값)
-{"access_token":"5EZhLHOwBl5lGwCIT29hLkRzsLfRWIt6r_8d7wopdeIAAAFlnSs88g","token_type":"bearer","expires_in":21599}
+{"access_token":"35oqCJdk6-56mMwlb6LpIWyhB3pcnImLuRWxUQo8BJ4AAAFlrit-pA","token_type":"bearer","expires_in":21599}

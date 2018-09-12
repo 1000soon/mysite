@@ -119,7 +119,7 @@ $result2 = $dbh->query($query);
 						</tr>
 					</table>	
 				</form>			
-				
+				<p><b>대출빙자형 보이스피싱 주의! "신용등급 상향비, 대출진행비 등 요구하면 100%사기!"</b></p>
 			</div>		<!--9u end-->
 			<div class="3u skel-cell-important">
 					<section class="sidebar">
