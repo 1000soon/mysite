@@ -4,8 +4,8 @@
 	<head>
 		<title>Banklist</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />	
+		<meta name="viewport" content="width=device-width">
+		<meta name="keywords" content="bankllist bank 대출상담 후순위 추가대출 무설정 저신용 수수료면제 사업자대출 최대한도 신용불량대출 전세대출 이자계산기" />	
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/skel.min.js"></script>

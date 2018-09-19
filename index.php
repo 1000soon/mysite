@@ -30,7 +30,7 @@ $result2 = $dbh->query($query);
     Kakao.init('3e8ea8c829d207b2137167e1e2401c68');
     function plusFriendChat() {
       Kakao.PlusFriend.chat({
-        plusFriendId: '_xnxmrIj' 
+        plusFriendId: '_xfJYVj' 
       });
     }
   //]]>
@@ -48,22 +48,27 @@ $result2 = $dbh->query($query);
 				<form action="request.php" method="post" onsubmit="return noticeTalk();">
 					<table>
 						<tr>
-						  <th style="width:18%">구분</th>
+						  <th style="width:18%">대출 종류</th>
 						  <td style="width:82%" colspan="3">
 							&nbsp;<select name="type">
+							  <option value="0">기타</option>
 							  <option value="1">아파트 담보 대출</option>
-							  <option value="2">아파트매매잔금 대출</option>
-							  <option value="3">빌라/다세대</option>
+							  <option value="2">아파트매매 잔금 대출</option>
+							  <option value="3">빌라/다세대 담보 대출</option>
 							  <option value="4">주택 담보 대출</option>
 							  <option value="5">오피스텔 담보 대출</option>
 							  <option value="6">일반부동산 담보 대출</option>									  
 							  <option value="7">상가보증금 대출</option>									  
+							  <option value="8">전세 대출</option>	
+							  <option value="9">사업자 대출</option>	
+							  <option value="10">신용 대출</option>	
+							  <option value="11">후순위 추가 대출</option>	
 							</select>
 						  </td>
 						</tr>
 						<tr>
-						  <th>성함</th>
-						  <td colspan="3" align="left">
+						  <th style="width:18%">성함</th>
+						  <td style="width:82%" colspan="3" align="left">
 							&nbsp;<input type="text" name="vname" id="vname" style="width:100px;">
 						  </td>
 						</tr>

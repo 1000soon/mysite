@@ -13,9 +13,9 @@ $data = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if(isset($_POST['form1']) && $_POST['form1']=="form1"){
 	$idx = $_POST['idx'];
-	$title = $_POST['p_title'];
-	$name = $_POST['p_name'];
-	$content = $_POST['p_content'];
+	$title = sqlparam($_POST['p_title']);
+	$name = sqlparam($_POST['p_name']);
+	$content = sqlparam($_POST['p_content']);
 	$pw = hash("sha256", $_POST['pw']);
 	$ip = $_SERVER['REMOTE_ADDR'];	
 	if(trim($title)=="" || trim($name)=="" || trim($content)==""){
