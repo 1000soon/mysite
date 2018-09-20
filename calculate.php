@@ -60,20 +60,25 @@ else if($type==2){
 }
 else{
 	// 원금 만기 일시 상환
-	$resultHtml = "<tr><th>회차</th><th>납입액</th><th>납입 이자</th><th>납입 이자 누계</th><th>대출 잔액</th></tr>";
 	for($i=0; $i<$month; $i++){		
+		$payOrigin = ($i==$month-1)?$origin:0;
 		$payRate = $origin*$r2;
-		$t1 += $payRate;
-		$t3 += $payRate;
+		$payTotal = $payOrigin+$payRate;
+		$t1 += $payTotal;
+		$t2 += $payOrigin;
+		$t3 += $payRate;		
 		$resultHtml .= "<tr>";
 		$resultHtml .= "<td align=center>".($i+1)."</td>";	
+		$resultHtml .= "<td align=right>".number_format(round($payTotal,0))."</td>";	
+		$resultHtml .= "<td align=right>".number_format(round($payOrigin,0))."</td>";	
 		$resultHtml .= "<td align=right>".number_format(round($payRate,0))."</td>";	
-		$resultHtml .= "<td align=right>".number_format(round($payRate,0))."</td>";	
-		$resultHtml .= "<td align=right>".number_format(round($t3,0))."</td>";	
+		$resultHtml .= "<td align=right class='pc'>".number_format(round($t2,0))."</td>";	
+		$resultHtml .= "<td align=right class='pc'>".number_format(round($t3,0))."</td>";
+		$origin = $origin - $payOrigin;
 		$resultHtml .= "<td align=right>".number_format($origin)."</td>";		
 		$resultHtml .= "</tr>";	
 	}
-	$resultHtml .= "<tr><td align=center><b>총 상환액</b></td><td align=right>".number_format($t1)."</td><td align=right>".number_format($t3)."</td><td></td><td></td><td></td></tr>";	
+	$resultHtml .= "<tr><td align=center><b>총 상환액</b></td><td align=right>".number_format($t1)."</td><td align=right>".number_format($t2)."</td><td align=right>".number_format($t3)."</td><td class='pc'></td><td class='pc'></td><td class='pc'></td></tr>";
 }
 echo $resultHtml; exit;
 ?>
