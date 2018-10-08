@@ -67,13 +67,13 @@ $result2 = $dbh->query($query);
 						  </td>
 						</tr>
 						<tr>
-						  <th style="width:18%">성함</th>
+						  <th style="width:18%"><sup style="color:red">*</sup> 성함</th>
 						  <td style="width:82%" colspan="3" align="left">
 							&nbsp;<input type="text" name="vname" id="vname" style="width:100px;">
 						  </td>
 						</tr>
 						<tr>
-						  <th>연락처</th>
+						  <th><sup style="color:red">*</sup> 연락처</th>
 						  <td colspan="3" align="left">
 							&nbsp;<select name="phone1" id="phone1" style="width:50px;">
 							  <option value="010" selected="">010</option>
@@ -87,17 +87,17 @@ $result2 = $dbh->query($query);
 							- <input type="tel" name="phone3" id="phone3" class="num-only" style="width:50px;" maxlength="4">
 						  </td>
 						</tr>
-						<!--<tr id="D01_add01">
+						<!--<tr>
 						  <th>금액</th>
 						  <td colspan="3" align="left">
 							&nbsp;<input type="text" name="price" class="" numberonly="true" value="" style="width:108px;"> 만원 
 						  </td>
 						</tr>-->
-						<tr id="D02_add01" style="">
+						<tr>
 						  <th>지역</th>
 						  <td colspan="3" align="left">
 							&nbsp;<select name="sido" class="" id="sido" onchange="loadlocal(1, this.value)">
-							 <option value="">-광역시/도-</option>
+							 <option value="-1">-광역시/도-</option>
 							 <?
 							 $query = "SELECT * FROM tb_sido";
 							$stmt = $dbh->query($query);
@@ -106,10 +106,10 @@ $result2 = $dbh->query($query);
 							 <?}?>
 						   </select>
 						   <select name="gungu" class="" id="area1" onchange="loadlocal(2, this.value)">
-							 <option value="">-시/구/군-</option>
+							 <option value="-1">-시/구/군-</option>
 						   </select>
 						   <select name="dong" class="" id="area2" onchange="">
-							 <option value="">-읍/면/동-</option>
+							 <option value="-1">-읍/면/동-</option>
 						   </select>
 						  </td>
 						</tr>
@@ -243,12 +243,19 @@ $result2 = $dbh->query($query);
 <br>
 <script type="text/javascript">
 	function noticeTalk(){
+		var regex=/^(-?)[0-9]+$/;
 		var user = $("#vname").val();
 		var p1 = $("#phone1").val();
 		var p2 = $("#phone2").val();
 		var p3 = $("#phone3").val();
 		var desc = $("#desc").val();
 		var param = user+" "+p1+p2+p3+" "+desc;
+		if(user==""){
+			alert("성함을 입력 해 주세요."); $("#vname").focus(); return false;
+		}
+		else if(p2=="" || p3=="" || !regex.test(p2) || !regex.test(p3)){
+			alert("연락처를 남겨 주세요."); $("#phone2").focus(); return false;
+		}
 		$.post("send_talk.php", {req:param});
 	}
 </script>

@@ -8,9 +8,9 @@ $p1 = sqlparam($_POST['phone1']);
 $p2 = sqlparam($_POST['phone2']);
 $p3 = sqlparam($_POST['phone3']);
 //$price = $_POST['price'];
-$addr1 = getlocation('sido', $_POST['sido']);
-$addr2 = getlocation('gungu', $_POST['gungu']);
-$addr3 = getlocation('dong', $_POST['dong']);
+$addr1 = isset($_POST['sido'])? getlocation('sido', $_POST['sido']):"";
+$addr2 = isset($_POST['gungu'])? getlocation('gungu', $_POST['gungu']):"";
+$addr3 = isset($_POST['dong'])? getlocation('dong', $_POST['dong']):"";
 $addr = $addr1." ".$addr2." ".$addr3;
 
 $desc =sqlparam($_POST['desc']);
