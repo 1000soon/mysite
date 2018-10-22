@@ -32,6 +32,7 @@ $result2 = $dbh->query($query);
       Kakao.PlusFriend.chat({
         plusFriendId: '_xfJYVj' 
       });
+	  ga('send', 'event', 'reply', 'click', 'kakao', 1);
     }
   //]]>
 </script>
