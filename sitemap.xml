@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://banklist.co.kr/</loc>
+  <lastmod>2018-10-26T07:55:04+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://banklist.co.kr/index.php</loc>
+  <lastmod>2018-10-26T07:55:04+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://banklist.co.kr/help.php</loc>
+  <lastmod>2018-10-26T07:55:04+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://banklist.co.kr/board.php</loc>
+  <lastmod>2018-10-26T07:55:04+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://banklist.co.kr/review.php</loc>
+  <lastmod>2018-10-26T07:55:04+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://banklist.co.kr/review_view.php?num=1</loc>
+  <lastmod>2018-10-26T07:55:04+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://banklist.co.kr/additional.php</loc>
+  <lastmod>2018-10-26T07:55:04+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://banklist.co.kr/assess.php</loc>
+  <lastmod>2018-10-26T07:55:04+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://banklist.co.kr/board_insert.php</loc>
+  <lastmod>2018-10-26T07:55:04+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://banklist.co.kr/review_insert.php</loc>
+  <lastmod>2018-10-26T07:55:04+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>

@@ -2,15 +2,17 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Banklist</title>
+		<title>뱅크리스트</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width">
 		<meta name="keywords" content="뱅크리스트, bankllist, bank, 대출, 대출상담, 후순위 추가대출, 무설정, 저신용, 수수료면제, 사업자대출, 최대한도, 신용불량대출, 전세대출, 이자계산기" />	
+		<meta name="description" content="뱅크리스트, bankllist, bank, 대출, 대출상담, 후순위 추가대출, 무설정, 저신용, 수수료면제, 사업자대출, 최대한도, 신용불량대출, 전세대출, 이자계산기" />	
+		<meta name="naver-site-verification" content="e7ef4c64434abcaedc5f0b95aaaab3cf6f5d1fa0"/>
 		<meta property="og:type" content="article">
 		<meta property="og:title" content="뱅크리스트">
 		<meta property="og:url" content="https://banklist.co.kr">
 		<meta property="og:site_name" content="banklist">
-		<meta property="og:description" content="모든 금융권 금리와 한도를 비교 상담 해 드립니다. 대출상담, 후순위 추가대출, 무설정, 저신용, 수수료면제, 사업자대출, 최대한도, 신용불량대출, 전세대출, 이자계산기">
+		<meta property="og:description" content="모든 금융권 금리와 한도 비교 상담. 대출상담, 후순위 추가대출, 저신용, 사업자대출, 전세대출">
 		<meta property="og:image" content="https://banklist.co.kr/images/og.jpg">
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
 		<script type="text/javascript" src="js/jquery.min.js"></script>
