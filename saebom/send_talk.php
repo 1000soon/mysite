@@ -6,8 +6,8 @@ $data = 'template_object= {
   "object_type": "text",
   "text": "'.$request.'",
   "link": {
-    "web_url": "http://banklist.co.kr",
-    "mobile_web_url": "http://banklist.co.kr"
+    "web_url": "http://bom.banklist.co.kr",
+    "mobile_web_url": "http://bom.banklist.co.kr"
   }
 }';
 

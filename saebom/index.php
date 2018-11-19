@@ -48,26 +48,7 @@ $result2 = $dbh->query($query);
 			<div class="9u">
 			
 				<form action="request.php" method="post" onsubmit="return noticeTalk();">
-					<table>
-						<tr>
-						  <th style="width:18%">대출 종류</th>
-						  <td style="width:82%" colspan="3">
-							&nbsp;<select name="type">
-							  <option value="0">기타</option>
-							  <option value="1">아파트 담보 대출</option>
-							  <option value="2">아파트매매 잔금 대출</option>
-							  <option value="3">빌라/다세대 담보 대출</option>
-							  <option value="4">주택 담보 대출</option>
-							  <option value="5">오피스텔 담보 대출</option>
-							  <option value="6">일반부동산 담보 대출</option>									  
-							  <option value="7">상가보증금 대출</option>									  
-							  <option value="8">전세 대출</option>	
-							  <option value="9">사업자 대출</option>	
-							  <option value="10">신용 대출</option>	
-							  <option value="11">후순위 추가 대출</option>	
-							</select>
-						  </td>
-						</tr>
+					<table>					
 						<tr>
 						  <th style="width:18%"><sup style="color:red">*</sup> 성함</th>
 						  <td style="width:82%" colspan="3" align="left">
@@ -88,33 +69,7 @@ $result2 = $dbh->query($query);
 							- <input type="tel" name="phone2" id="phone2" class="num-only" style="width:50px;" maxlength="4">
 							- <input type="tel" name="phone3" id="phone3" class="num-only" style="width:50px;" maxlength="4">
 						  </td>
-						</tr>
-						<!--<tr>
-						  <th>금액</th>
-						  <td colspan="3" align="left">
-							&nbsp;<input type="text" name="price" class="" numberonly="true" value="" style="width:108px;"> 만원 
-						  </td>
-						</tr>-->
-						<tr>
-						  <th>지역</th>
-						  <td colspan="3" align="left">
-							&nbsp;<select name="sido" class="" id="sido" onchange="loadlocal(1, this.value)">
-							 <option value="-1">-광역시/도-</option>
-							 <?
-							 $query = "SELECT * FROM tb_sido";
-							$stmt = $dbh->query($query);
-							 while($rows = $stmt->fetch(PDO::FETCH_ASSOC)){?>
-							 <option value="<?=$rows['idx']?>"><?=$rows['local_name']?></option>
-							 <?}?>
-						   </select>
-						   <select name="gungu" class="" id="area1" onchange="loadlocal(2, this.value)">
-							 <option value="-1">-시/구/군-</option>
-						   </select>
-						   <select name="dong" class="" id="area2" onchange="">
-							 <option value="-1">-읍/면/동-</option>
-						   </select>
-						  </td>
-						</tr>
+						</tr>					
 						<tr>
 						  <th>문의 내용</th>
 						  <td colspan="3">&nbsp;<textarea name="desc" id="desc"  style="width:95%" rows=5  placeholder="특이사항이나 상담 가능 시간을 남겨주세요"></textarea></td>

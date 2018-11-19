@@ -1,0 +1,13 @@
+인증키 발급
+https://kauth.kakao.com/oauth/authorize?client_id=01392ee59a4397035bcf8acf976cea44&redirect_uri=http://bom.banklist.co.kr/oauth.php&response_type=code&scope=talk_message
+결과값
+http://bom.banklist.co.kr/oauth.php?code=P-ELIpjOL9tSi9XUn0lnzNK6fVoNn1lRcPEmKDZQZLHOEQQo9ZAPiYv2RHpIW-T0Ge7KtwopdtYAAAFnKxc7kg
+
+토큰 생성
+curl -v -X POST https://kauth.kakao.com/oauth/token \
+ -d 'grant_type=authorization_code' \
+ -d 'client_id=01392ee59a4397035bcf8acf976cea44' \
+ -d 'redirect_uri=http://bom.banklist.co.kr/oauth.php' \
+ -d 'code=P-ELIpjOL9tSi9XUn0lnzNK6fVoNn1lRcPEmKDZQZLHOEQQo9ZAPiYv2RHpIW-T0Ge7KtwopdtYAAAFnKxc7kg'
+ 
+결과값 {"access_token":"b_nXfcIyqXn78xUNF1w9S-qeofBC5OTxwX6CMQoqAq8AAAFnKxsiIw","token_type":"bearer","refresh_token":"ZvRBB8A5SffT-D9QpCE3VQ-04iJKxOry4eNgTQoqAq8AAAFnKxsiIQ","expires_in":21599,"scope":"talk_message profile","refresh_token_expires_in":2591999}
