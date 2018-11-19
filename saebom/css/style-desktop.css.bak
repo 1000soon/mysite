@@ -1,0 +1,48 @@
+body
+{
+}
+body,input,textarea,select
+{
+	font-size: 11pt;
+}
+#banner
+{
+	padding: 6em 0em;
+}
+.homepage #banner
+{
+	padding: 12em 0em;
+}
+
+#page
+{
+	padding: 2em 0em 4em 0em;
+}
+.homepage #page
+{
+	padding-top: 3em
+}
+
+#main
+{
+	margin-top: 2em;
+	border-top: none;
+}
+.homepage #main
+{
+	margin-top: 2em;
+	padding-top: 4em;
+}
+
+#footer
+{
+}
+
+#featured
+{
+	padding: 4em 0em;
+}
+#featured .divider
+{
+	padding: 2em 0em;
+}

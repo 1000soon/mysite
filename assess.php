@@ -14,7 +14,7 @@ include("inc/header.php");
 							<h2>대출 도우미</h2>
 						</header>
 						<ul class="style1">
-							<li><a href="help.php">대출계산기</a></li>
+							<li><a href="help.php">이자계산기</a></li>
 							<li><a href="additional.php">부대비용 &amp; 필요 서류</a></li>
 							<li class="active"><a href="assess.php">감정평가 절차 및 이해</a></li>
 						</ul>							

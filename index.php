@@ -46,6 +46,14 @@ $result2 = $dbh->query($query);
 		*제2금융권 및 보험사, 캐피탈사 상품을 포함합니다.</p>
 		<div class="row">
 			<div class="9u">
+				<ul id="middle" class="pc fix">
+					<li><a href="help.php"><img src="images/ico/ico_calculate.png" alt="계산기"/><br/>이자계산기</a></li>
+					<li><a href="additional.php"><img src="images/ico/ico_interface.png" alt="필요서류"/><br/>필요서류안내</a></li>
+					<li><a href="assess.php"><img src="images/ico/ico_checklist.png" alt="감정평가"/><br/>감정평가절차</a></li>
+					<li><a href="board.php"><img src="images/ico/ico_info.png" alt="QA"/><br/>Q&amp;A</a></li>
+					<li><a href="review.php"><img src="images/ico/ico_review.png" alt="사용후기"/><br/>사용후기</a></li>
+				</ul>
+				<br/>
 				<form action="request.php" method="post" onsubmit="return noticeTalk();">
 					<table>
 						<tr>
@@ -125,7 +133,7 @@ $result2 = $dbh->query($query);
 						</tr>
 					</table>	
 				</form>			
-				<p><b>대출빙자형 보이스피싱 주의! "신용등급 상향비, 대출진행비 등 요구하면 100%사기!"</b></p>
+				<b>대출빙자형 보이스피싱 주의! "신용등급 상향비, 대출진행비 등 요구하면 100%사기!"</b>
 			</div>		<!--9u end-->
 			<div class="3u skel-cell-important">
 					<section class="sidebar">
@@ -143,7 +151,7 @@ $result2 = $dbh->query($query);
 								</div>
 							</li>
 							<li id="call">									
-								<img src="images/ico/ico_phone.png" alt="전화"/>
+								<img src="images/ico/ico_phone.png" alt="전화" style="inline-block;margin:-0.8em 1em 0 0;">
 								<p style="font-size:25px;font-weight:bold"><a href="tel:1800-0164">1800-0164</a></p>
 								<p>실시간 무료 상담</p>
 							</li>	

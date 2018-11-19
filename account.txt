@@ -1,0 +1,27 @@
+호스팅		
+https://www.gabia.com		
+banklist / mina7671!		
+		
+https://ucloudbiz.olleh.com/console/main		
+banklist@naver.com		Mina7671!
+		
+ncloud		
+id : iruryagency@naver.com		
+pw : irury7671!		
+
+SSH	106.10.53.128					Mysql
+서버 이름						root / Mina7671!
+banklist						1000soon / Mina7671
+관리자 이름						
+root	*직접 접속 차단		banklist / Mina7671 로 접속			
+비밀번호						
+irury7671!						
+
+		
+kakao		
+iruryagency@naver.com		
+irury7671!		
+		
+naver블로그		naver메일
+e-rury		banklist
+2ruryrury!		mina7671!
