@@ -27,7 +27,7 @@ $result2 = $dbh->query($query);
 
 <script type='text/javascript'>
   //<![CDATA[    
-    Kakao.init('3e8ea8c829d207b2137167e1e2401c68');
+    Kakao.init('aa47953955467e1c8576cce503d501bf');
     function plusFriendChat() {
       Kakao.PlusFriend.chat({
         plusFriendId: '_SkIGj' 
@@ -46,14 +46,7 @@ $result2 = $dbh->query($query);
 		*제2금융권 및 보험사, 캐피탈사 상품을 포함합니다.</p>
 		<div class="row">
 			<div class="9u">
-				<ul id="middle" class="pc fix">
-					<li><a href="help.php"><img src="images/ico/ico_calculate.png" alt="계산기"/><br/>이자계산기</a></li>
-					<li><a href="additional.php"><img src="images/ico/ico_interface.png" alt="필요서류"/><br/>필요서류안내</a></li>
-					<li><a href="assess.php"><img src="images/ico/ico_checklist.png" alt="감정평가"/><br/>감정평가절차</a></li>
-					<li><a href="board.php"><img src="images/ico/ico_info.png" alt="QA"/><br/>Q&amp;A</a></li>
-					<li><a href="review.php"><img src="images/ico/ico_review.png" alt="사용후기"/><br/>사용후기</a></li>
-				</ul>
-				<br/>
+			
 				<form action="request.php" method="post" onsubmit="return noticeTalk();">
 					<table>
 						<tr>
@@ -133,7 +126,6 @@ $result2 = $dbh->query($query);
 						</tr>
 					</table>	
 				</form>			
-				<b>대출빙자형 보이스피싱 주의! "신용등급 상향비, 대출진행비 등 요구하면 100%사기!"</b>
 			</div>		<!--9u end-->
 			<div class="3u skel-cell-important">
 					<section class="sidebar">
@@ -177,19 +169,7 @@ $result2 = $dbh->query($query);
 						<p>신용정보의 이용 및 보호에 관한 법률에 의거, 연 3회 서비스를 무료로 이용할 수 있습니다. <br/>4개월 단위로 횟수 구분되며, 매 회 마다 한 번만 조회 가능합니다.</p>
 						<a href="http://www.allcredit.co.kr/index.jsp" target="_blank"><img src="images/ico_allcredit.png" alt="AllCredit" /></a>&nbsp;&nbsp;
 						<a href="https://www.credit.co.kr/ib20/mnu/BZWOCCCSE99" target="_blank"><img src="images/ico_nice.png" alt="NICE지키미" /></a>
-					</section>
-					<section>
-						<header>
-							<h2>부동산 정보 열람</h2>
-						</header>
-						<p></p>
-						<ul class="style5">
-							<li><a href="http://nland.kbstar.com/quics?page=B025914&cc=b043428:b043506" target="_blank"><img src="images/ico_kb.jpg" alt="부동산정보"></a></li>
-							<li><a href="http://rt.molit.go.kr/" target="_blank"><img src="images/ico_molit.jpg" alt="실거래가"></a></li>
-							<li><a href="http://www.iros.go.kr" target="_blank"><img src="images/ico_law.jpg" alt="대법원 인터넷 등기소"></a></li>
-							<li><a href="http://www.egov.go.kr" target="_blank"><img src="images/ico_g4c.jpg" alt="토지대장열람"></a></li>
-						</ul>
-					</section>
+					</section>				
 				</div>
 				
 				<script type="text/javascript" src="js/jquery.vticker-min.js"></script>  
