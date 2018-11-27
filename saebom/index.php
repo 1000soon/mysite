@@ -41,9 +41,6 @@ $result2 = $dbh->query($query);
 		
 	<!-- Extra -->
 	<div id="marketing" class="container">
-		<p class="mobile">대출 한도와 금리, Banklist와 상의하세요! <br/>
-		Banklist는 각 금융권과 제휴하여 전국 은행 대출 상품을 비교해 드립니다. <br/>
-		*제2금융권 및 보험사, 캐피탈사 상품을 포함합니다.</p>
 		<div class="row">
 			<div class="9u">
 			

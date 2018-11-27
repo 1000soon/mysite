@@ -6,7 +6,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width">
 		<meta name="keywords" content="뱅크리스트, bankllist, bank, 대출, 대출상담, 후순위 추가대출, 무설정, 저신용, 수수료면제, 사업자대출, 최대한도, 신용불량대출, 전세대출, 이자계산기" />	
-		<meta name="description" content="뱅크리스트, bankllist, bank, 대출, 대출상담, 후순위 추가대출, 무설정, 저신용, 수수료면제, 사업자대출, 최대한도, 신용불량대출, 전세대출, 이자계산기" />	
+		<meta name="description" content="뱅크리스트는 각 금융권과 제휴하여 전국 은행 상품을 빠르고 쉽게 비교해 드립니다." />	
 		<meta name="naver-site-verification" content="e7ef4c64434abcaedc5f0b95aaaab3cf6f5d1fa0"/>
 		<meta property="og:type" content="article">
 		<meta property="og:title" content="뱅크리스트">
@@ -21,6 +21,7 @@
 		<script type="text/javascript" src="js/init.js"></script>
 		<script src="js/kakao.min.js"></script>
 		
+		<link rel="canonical" href="https://banklist.co.kr/">
 		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 		<noscript>
 			<link rel="stylesheet" href="css/skel-noscript.css" />
@@ -74,9 +75,9 @@
 	<!-- Banner -->
 		<div id="banner">
 			<div class="container pc" style="background:rgba(0,0,0,.3);padding:3em 2em 3em;text-indent:20px;">
-				<h3 style="font-size:24px;">대출 한도와 금리, Banklist와 상의하세요!</h3>
+				<h3 style="font-size:24px;">대출 한도와 금리, 뱅크리스트와 상의하세요!</h3>
 				<br/>
-				<p style="font-size:16px;">Banklist는 각 금융권과 제휴하여 전국 은행 상품을 빠르고 쉽게 비교해 드립니다.</p>
+				<p style="font-size:16px;">뱅크리스트는 각 금융권과 제휴하여 전국 은행 상품을 빠르고 쉽게 비교해 드립니다.</p>
 				<p style="font-size:16px;">* 상담 및 중개 수수료가 발생하지 않습니다.</p>
 				<p style="font-size:14px;">* 제2금융권 및 보험사, 캐피탈사 상품을 포함합니다.</p>
 				<p style="font-size:16px;">#후순위대출 #추가대출 #무설정신용대출 #사업자대출 #신용대출 #전세대출 #최대한도 #최저금리</p>

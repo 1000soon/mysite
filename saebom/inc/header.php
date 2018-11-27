@@ -53,8 +53,8 @@
 			<div class="container">					
 				<!-- Logo -->
 				<div id="logo">
-					<h1 class="mobile"><a href="index.php">Bank<b style="color:#e95d3c">l</b>ist</a></h1>
-					<h1 class="pc"><img src="images/logo.png" alt="banklist"/></h1>
+					<h1 class="mobile"><a href="index.php">새봄 - 개인회생, 파산</a></h1>
+					<h1 class="pc"><img src="images/logo.png" alt="새봄"/></h1>
 				</div>			
 	
 			</div>
