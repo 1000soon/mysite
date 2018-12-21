@@ -1,8 +1,8 @@
 <?php 
+error_reporting(E_ALL); ini_set("display_errors", 1);
 include("inc/header.php");
 $conn = new Connection();
 $dbh = $conn->setConnection();
-
 $cache_key_name1 = "list";
 $cache_message = apcu_fetch($cache_key_name1);
 if($cache_message===false){	
@@ -43,7 +43,7 @@ $result2 = $dbh->query($query);
 	<div id="marketing" class="container">
 		<div class="row">
 			<div class="9u">
-			
+				<h3>개인회생, 파산, 저희 새봄과 상담 하세요.</h3>
 				<form action="request.php" method="post" onsubmit="return noticeTalk();">
 					<table>					
 						<tr>

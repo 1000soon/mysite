@@ -23,7 +23,7 @@ $page = min($pages, filter_input(INPUT_GET, 'page', FILTER_VALIDATE_INT, array('
 $offset = ($page-1)*$limit;
 $current_num=$total-$limit*($page-1);
 
-$query = "SELECT idx, v_name, v_title, DATE(date_ins) as dt, reply_cnt FROM tb_board_qa ".$whereStr." ORDER BY idx DESC LIMIT ?,?" ;
+$query = "SELECT idx, v_name, v_title, DATE(date_ins) as dt, reply_cnt, is_notice FROM tb_board_qa ".$whereStr." ORDER BY date_ins DESC LIMIT ?,?" ;
 $stmt = $dbh->prepare($query);
 $stmt->bindParam(1,$offset,PDO::PARAM_INT);
 $stmt->bindParam(2,$limit,PDO::PARAM_INT);
@@ -77,7 +77,7 @@ $page_class->init($page_param);
 								<tbody>				
 									<?while($rows = $stmt->fetch(PDO::FETCH_ASSOC)){?>
 									<tr>
-										<td class="pc"><?=$rows['idx']?></td>										
+										<td class="pc"><?=$rows['is_notice']==1?"<span style='color: #FFA200;'>News</span>":$rows['idx'];?></td>
 										<td style="text-align:left; text-indent:3px;">
 										<a href="board_view.php?num=<?=$rows['idx']?>"><?=$rows['v_title']?></a>
 										<?if($rows['reply_cnt']>0){?>

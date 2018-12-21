@@ -37,10 +37,12 @@ $stmt->execute();
 							<p><?=$data['v_name'] ?> (<?=$data['dt'] ?>)</p>						
 							<p><?=$data['v_content'] ?></p>
 						</article>
+						<?if($data['is_notice']!=1){?>
 						<p>
 							비밀번호 <input type="password" name="pw" id="pw" style="width:150px;" />&nbsp;
 							<a href="javascript:passform('b',<?=$data['idx']?>,'m')" class="btn">수정</a>&nbsp;&nbsp;<a href="javascript:passform('b',<?=$data['idx']?>,'d')" class="btn">삭제</a>	
 						</p>
+						<?}?>
 						<br/>
 						<?while($rows = $stmt->fetch(PDO::FETCH_ASSOC)){?>					
 						<table>

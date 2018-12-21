@@ -56,7 +56,7 @@
 				<!-- Logo -->
 				<div id="logo">
 					<h1 class="mobile"><a href="index.php">Bank<b style="color:#e95d3c">l</b>ist</a></h1>
-					<h1 class="pc"><img src="/images/logo.png" alt="banklist"/></h1>
+					<h1 class="pc"><a href="index.php"><img src="/images/logo.png" alt="banklist"/></a></h1>
 				</div>				
 				<!-- Nav -->
 				<nav id="nav">

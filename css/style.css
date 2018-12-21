@@ -83,7 +83,7 @@ input[type=submit].button,input[type=reset].button{border:0}
 #bar.container dl dt,#bar.container dl dd{float:left;margin-right:20px}
 .sidebar header h2{font-size:1.6em}
 .sidebar h3{font-size:1.3em;font-weight:700;margin-bottom:3px}
-.sidebar a.title{zoom:1;display:inline-block;width:50%;line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}
+.sidebar a.title{zoom:1;display:inline-block;width:60%;line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}
 .sidebar a.title:hover{color:#000}
 .sidebar .right{float:right}
 .container .content h2{font-size:1.5em}
